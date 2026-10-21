@@ -1,0 +1,83 @@
+{
+  "schema": "completed-import-payload-v1",
+  "excludes": [
+    "payload_manifest.json"
+  ],
+  "files": [
+    {
+      "path": "boundary_scan.py",
+      "bytes": 12447,
+      "sha256": "9312da41df2569d8916c0ab02a0f221abaa354a6e68e73cccaa5d5ddbd8fbb85"
+    },
+    {
+      "path": "coverage.csv",
+      "bytes": 191321,
+      "sha256": "c625a0d137b5b77c28771e1e396f668df151346f3677fdcc217ba1f647970c24"
+    },
+    {
+      "path": "derivation_and_scope.txt",
+      "bytes": 7758,
+      "sha256": "a6d4da24fe7e603203c4abe5833a4f00e0354c0fc45e122dc3819be9e8a11fd9"
+    },
+    {
+      "path": "direct_validation.json",
+      "bytes": 6794,
+      "sha256": "38a70e8094ff34097dae5252c1776f995b85c081c57e898fcc7c835dd366f544"
+    },
+    {
+      "path": "extremal_cases.json",
+      "bytes": 20548,
+      "sha256": "28019d6df84a60dcc3e4e1798a514c3268ecd014643f318ad795abb0f5d8f04f"
+    },
+    {
+      "path": "final_validation.json",
+      "bytes": 2301,
+      "sha256": "9e80cb57bc25345242f8d890169e4ab91dd27d88f6021824eb62b1f5af872900"
+    },
+    {
+      "path": "import_provenance.json",
+      "bytes": 11069,
+      "sha256": "325bb1b1fecbc9ae170bbe94c39c3204a2298c6653e18917431b6d9be0738a31"
+    },
+    {
+      "path": "p53_counterexamples.json",
+      "bytes": 9907,
+      "sha256": "03f1bef11b86bf42e4e139db54e2d8e2501cb0af496f866eaf12cd8e2cdf6f3a"
+    },
+    {
+      "path": "protocol.json",
+      "bytes": 2368,
+      "sha256": "be84f94976ffe0441fa5ffc94b50e7a761157d0520b9a76cbcccd05e5780444c"
+    },
+    {
+      "path": "README.txt",
+      "bytes": 4744,
+      "sha256": "1109da44238543a73a995deb44200f71b3198f53d12e5e279af7236d760c209c"
+    },
+    {
+      "path": "results.json",
+      "bytes": 28658,
+      "sha256": "479a3d24995c6f427194e12f2bf554b86b8fc20453c507565741af415453faf0"
+    },
+    {
+      "path": "scale_checks.json",
+      "bytes": 78903,
+      "sha256": "b1458164cd3ce5a8b9c3d514665ef5defacd1fce0bfba80ff2d1aba9f226d1f4"
+    },
+    {
+      "path": "theorem_mapping.txt",
+      "bytes": 5743,
+      "sha256": "61e5c5310ae902a909c96fd55b8029f903c2756c17dc53ebd184b6fc611124ae"
+    },
+    {
+      "path": "validate_boundaries.py",
+      "bytes": 4340,
+      "sha256": "c77f05a38158daf835508592e3e4ed1f80a2d83d82c31bd257fe76dfcfa1107e"
+    },
+    {
+      "path": "verify_import.py",
+      "bytes": 2062,
+      "sha256": "05524961ca5067558acc63466633b76ce6f1e69c412ecb78bee41c03307a6237"
+    }
+  ]
+}

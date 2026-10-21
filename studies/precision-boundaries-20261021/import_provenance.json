@@ -1,0 +1,272 @@
+{
+  "schema": "completed-study-import-v1",
+  "checked_utc": "2026-10-21T03:23:45.990006+00:00",
+  "baseline_commit": "3cff792a70b419eaf1c2a9dc029c057ebad00978",
+  "actual_experiment_source_git_commit": null,
+  "experiment_source_identity": "Preregistered source SHA256 in the sealed original; the experiment was completed outside this Git repository",
+  "primary_protocol_sha256": "be84f94976ffe0441fa5ffc94b50e7a761157d0520b9a76cbcccd05e5780444c",
+  "primary_source_sha256": "9312da41df2569d8916c0ab02a0f221abaa354a6e68e73cccaa5d5ddbd8fbb85",
+  "original_evidence_manifest_sha256": "153a2abe3402286f08a532c265f08d09806fd9b58a401c7740eefacf6f0d814c",
+  "original_archive": {
+    "logical_id": "fp4-boundary-round-20261021-01a15c54",
+    "sha256": "d139b93db4cb1649846ecd5bc7a64b767f4a79572a8b50362cda5966a1ee216b",
+    "bytes": 2234525,
+    "crc_check": "PASS",
+    "remote_archive_status": "NOT_UPLOADED_BY_THIS_IMPORT",
+    "b2_file_id": null
+  },
+  "copied_files": [
+    {
+      "source_relative_name": "boundary_scan.py",
+      "path": "boundary_scan.py",
+      "bytes": 12447,
+      "sha256": "9312da41df2569d8916c0ab02a0f221abaa354a6e68e73cccaa5d5ddbd8fbb85",
+      "operation": "BYTE_IDENTICAL_COPY"
+    },
+    {
+      "source_relative_name": "validate_boundaries.py",
+      "path": "validate_boundaries.py",
+      "bytes": 4340,
+      "sha256": "c77f05a38158daf835508592e3e4ed1f80a2d83d82c31bd257fe76dfcfa1107e",
+      "operation": "BYTE_IDENTICAL_COPY"
+    },
+    {
+      "source_relative_name": "protocol.json",
+      "path": "protocol.json",
+      "bytes": 2368,
+      "sha256": "be84f94976ffe0441fa5ffc94b50e7a761157d0520b9a76cbcccd05e5780444c",
+      "operation": "BYTE_IDENTICAL_COPY"
+    },
+    {
+      "source_relative_name": "results.json",
+      "path": "results.json",
+      "bytes": 28658,
+      "sha256": "479a3d24995c6f427194e12f2bf554b86b8fc20453c507565741af415453faf0",
+      "operation": "BYTE_IDENTICAL_COPY"
+    },
+    {
+      "source_relative_name": "coverage.csv",
+      "path": "coverage.csv",
+      "bytes": 191321,
+      "sha256": "c625a0d137b5b77c28771e1e396f668df151346f3677fdcc217ba1f647970c24",
+      "operation": "BYTE_IDENTICAL_COPY"
+    },
+    {
+      "source_relative_name": "scale_checks.json",
+      "path": "scale_checks.json",
+      "bytes": 78903,
+      "sha256": "b1458164cd3ce5a8b9c3d514665ef5defacd1fce0bfba80ff2d1aba9f226d1f4",
+      "operation": "BYTE_IDENTICAL_COPY"
+    },
+    {
+      "source_relative_name": "extremal_cases.json",
+      "path": "extremal_cases.json",
+      "bytes": 20548,
+      "sha256": "28019d6df84a60dcc3e4e1798a514c3268ecd014643f318ad795abb0f5d8f04f",
+      "operation": "BYTE_IDENTICAL_COPY"
+    },
+    {
+      "source_relative_name": "direct_validation.json",
+      "path": "direct_validation.json",
+      "bytes": 6794,
+      "sha256": "38a70e8094ff34097dae5252c1776f995b85c081c57e898fcc7c835dd366f544",
+      "operation": "BYTE_IDENTICAL_COPY"
+    },
+    {
+      "source_relative_name": "FINAL_VALIDATION.json",
+      "path": "final_validation.json",
+      "bytes": 2301,
+      "sha256": "9e80cb57bc25345242f8d890169e4ab91dd27d88f6021824eb62b1f5af872900",
+      "operation": "BYTE_IDENTICAL_COPY"
+    },
+    {
+      "source_relative_name": "THEOREM_MAPPING.txt",
+      "path": "theorem_mapping.txt",
+      "bytes": 5743,
+      "sha256": "61e5c5310ae902a909c96fd55b8029f903c2756c17dc53ebd184b6fc611124ae",
+      "operation": "BYTE_IDENTICAL_COPY"
+    },
+    {
+      "source_relative_name": "DERIVATION_AND_SCOPE.txt",
+      "path": "derivation_and_scope.txt",
+      "bytes": 7758,
+      "sha256": "a6d4da24fe7e603203c4abe5833a4f00e0354c0fc45e122dc3819be9e8a11fd9",
+      "operation": "BYTE_IDENTICAL_COPY"
+    }
+  ],
+  "original_only_artifacts": [
+    {
+      "sha256": "b75957973c6c1679b12743eb327408566e96f21414ca2909e35da3e656c4b940",
+      "bytes": 485,
+      "artifact_role": "SEALED_ORIGINAL_ONLY",
+      "repository_imported": false
+    },
+    {
+      "sha256": "233703c34ac31b3dfbed15a1eb3817496a215958d5913406f686391178d7e33b",
+      "bytes": 8461409,
+      "artifact_role": "SEALED_ORIGINAL_ONLY",
+      "repository_imported": false
+    },
+    {
+      "sha256": "da5767ad081b3b0ce8ddd4da72f558cfbb5245e7d4bcca92a6343204624e6299",
+      "bytes": 3384,
+      "artifact_role": "SEALED_ORIGINAL_ONLY",
+      "repository_imported": false
+    },
+    {
+      "sha256": "dc9426e3aebdf38fe9c9c092fedd659687fe87311fbf207b0570c410efe6cf04",
+      "bytes": 503449,
+      "artifact_role": "SEALED_ORIGINAL_ONLY",
+      "repository_imported": false
+    },
+    {
+      "sha256": "a36ab4562a9d91ab577bb83edd9766d9ffbbe3e62f155d5f5b7a9761081239d7",
+      "bytes": 111198,
+      "artifact_role": "SEALED_ORIGINAL_ONLY",
+      "repository_imported": false
+    },
+    {
+      "sha256": "a962071796e138492e6633439a8a964904f4e8a95509606b70e7294cca86a930",
+      "bytes": 124026,
+      "artifact_role": "SEALED_ORIGINAL_ONLY",
+      "repository_imported": false
+    },
+    {
+      "sha256": "6a4a00767dbc542c814956daf682a7566cf70be7b6ec8944d10c085e1a6e21ed",
+      "bytes": 5695,
+      "artifact_role": "SEALED_ORIGINAL_ONLY",
+      "repository_imported": false
+    },
+    {
+      "sha256": "7282823d3cf5083e1abdcf98be1c2bfa5960cfb16909292a44c346bf0be87ca2",
+      "bytes": 25820,
+      "artifact_role": "SEALED_ORIGINAL_ONLY",
+      "repository_imported": false
+    },
+    {
+      "sha256": "e790bc77cfe51106d98a5798ee2a067c6b408bbcf0efb7fe5970031d2fb1bd3c",
+      "bytes": 870,
+      "artifact_role": "SEALED_ORIGINAL_ONLY",
+      "repository_imported": false
+    },
+    {
+      "sha256": "5dda94218f64445a17ab9131d2be7a229d0997d57070de8c06df35d6b4bd7ea0",
+      "bytes": 353156,
+      "artifact_role": "SEALED_ORIGINAL_ONLY",
+      "repository_imported": false
+    },
+    {
+      "sha256": "f90fb57b24b197323fed76ae907c2a294f132853348d2c9f1206e9a23cc2f0e0",
+      "bytes": 31434,
+      "artifact_role": "SEALED_ORIGINAL_ONLY",
+      "repository_imported": false
+    },
+    {
+      "sha256": "5d26c589b9f4ea4ba6c56ed64fc840bd93eb4e370967ae857e2de89b4459f453",
+      "bytes": 290974,
+      "artifact_role": "SEALED_ORIGINAL_ONLY",
+      "repository_imported": false
+    },
+    {
+      "sha256": "a24010003cf1b29fd374d47606b371ce6b458ef2cfa0274c8dca5b09e640ae70",
+      "bytes": 932727,
+      "artifact_role": "SEALED_ORIGINAL_ONLY",
+      "repository_imported": false
+    },
+    {
+      "sha256": "29449a1961717604830cae52193c08fc9c2b5c9655c8dfb185bc0d9c27183f51",
+      "bytes": 1763,
+      "artifact_role": "SEALED_ORIGINAL_ONLY",
+      "repository_imported": false
+    },
+    {
+      "sha256": "8fb7d6160a3b768984b26db51cfba8641c36db75de036b10c05e8012709fea30",
+      "bytes": 5953,
+      "artifact_role": "SEALED_ORIGINAL_ONLY",
+      "repository_imported": false
+    },
+    {
+      "sha256": "50bf57af0fa64558ee58b614de7b5884a26bb31d7cfd7061050cb765548eced5",
+      "bytes": 1562,
+      "artifact_role": "SEALED_ORIGINAL_ONLY",
+      "repository_imported": false
+    }
+  ],
+  "historical_source_rechecks": [
+    {
+      "source_id": "WIN_PAPER/R4_DOMAIN_AND_APPLICATION_CPU_RESEARCH_20261017/REPRO/ANALYTIC_LEMMA_DRAFT.md",
+      "status": "LOCAL_COPY_MATCHES_ARCHIVE_IDENTITY",
+      "repository_path": "results/domain/analytic_lemma_draft.md",
+      "sha256": "cb3140b4e663f7b7b4fa65f65025f3799120bd46e67545233a9cdd2be7bf2067",
+      "old_round_input_status": "UNAVAILABLE_AT_INPUT_SEAL",
+      "old_round_input_status_preserved": true
+    },
+    {
+      "source_id": "WIN_PAPER/R4_DOMAIN_AND_APPLICATION_CPU_RESEARCH_20261017/03_DOMAIN_EXACTNESS_RESULTS.md",
+      "status": "LOCAL_COPY_MATCHES_ARCHIVE_IDENTITY",
+      "repository_path": "docs/historical_03_domain_exactness_results.md",
+      "sha256": "25aa4a8aae964e58257036ab6bf274c17fd17e4a1a409d3ae4c9617350e8cf53",
+      "old_round_input_status": "UNAVAILABLE_AT_INPUT_SEAL",
+      "old_round_input_status_preserved": true
+    },
+    {
+      "source_id": "WIN_PAPER/R4_DOMAIN_AND_APPLICATION_CPU_RESEARCH_20261017/04_PRIOR_ART_DELTA.md",
+      "status": "LOCAL_COPY_MATCHES_ARCHIVE_IDENTITY",
+      "repository_path": "docs/historical_04_prior_art_delta.md",
+      "sha256": "86b5ddf6f58b7df47f698517f610c963e33d5b43aa8ced790ca3e03a1af2dcae",
+      "old_round_input_status": "UNAVAILABLE_AT_INPUT_SEAL",
+      "old_round_input_status_preserved": true
+    },
+    {
+      "source_id": "WIN_PAPER/R4_FINAL_GPU_VALIDATION_AND_PAPER_FREEZE_20261017/04_FINAL_NOVELTY_AND_LIMITATIONS.md",
+      "status": "NOT_VERIFIED_IN_SELECTED_SNAPSHOT",
+      "repository_path": null,
+      "sha256": null,
+      "old_round_input_status": "UNAVAILABLE_AT_INPUT_SEAL",
+      "old_round_input_status_preserved": true
+    }
+  ],
+  "selected_historical_sources_checked": 22,
+  "archive_only_originals_checked": 3,
+  "curated_manifest_files_checked": 34,
+  "baseline_tracked_files": 37,
+  "known_preflight_failure": {
+    "status": "CORRECTED_READ_ONLY_LOOKUP",
+    "detail": "Target-path-only source-plan lookup missed a decoder alias; matching by original source identity validated both aliases. No hash mismatch or experiment rerun occurred."
+  },
+  "scientific_experiment_rerun": false,
+  "gpu_execution": false,
+  "missing_original_paths_requeried": false,
+  "archive_transfers": 0,
+  "b2_transfer_status": "HELD_PENDING_ONCE_ONLY_LEDGER_MERGE_AND_BOUNDED_ACCOUNT_COST",
+  "theory_novelty_status": "OPEN",
+  "rump_lemma_status": "OPEN_SOURCE_ACCESS_INCOMPLETE",
+  "protected_restore_verification": {
+    "checked_utc": "2026-10-21T03:25:20.720459+00:00",
+    "handoff_sha256": "1dd9ecd9df94a0d7dd21f128d4d42e135afa752113ed8d7a2eb3ce747692dcb3",
+    "files": [
+      {
+        "source_id": "WIN_PAPER/R4_DOMAIN_AND_APPLICATION_CPU_RESEARCH_20261017/REPRO/ANALYTIC_LEMMA_DRAFT.md",
+        "repository_path": "results/domain/analytic_lemma_draft.md",
+        "bytes": 6229,
+        "sha256": "cb3140b4e663f7b7b4fa65f65025f3799120bd46e67545233a9cdd2be7bf2067",
+        "status": "PROTECTED_RESTORE_AND_REPOSITORY_BYTES_IDENTICAL"
+      },
+      {
+        "source_id": "WIN_PAPER/R4_DOMAIN_AND_APPLICATION_CPU_RESEARCH_20261017/03_DOMAIN_EXACTNESS_RESULTS.md",
+        "repository_path": "docs/historical_03_domain_exactness_results.md",
+        "bytes": 9807,
+        "sha256": "25aa4a8aae964e58257036ab6bf274c17fd17e4a1a409d3ae4c9617350e8cf53",
+        "status": "PROTECTED_RESTORE_AND_REPOSITORY_BYTES_IDENTICAL"
+      },
+      {
+        "source_id": "WIN_PAPER/R4_DOMAIN_AND_APPLICATION_CPU_RESEARCH_20261017/04_PRIOR_ART_DELTA.md",
+        "repository_path": "docs/historical_04_prior_art_delta.md",
+        "bytes": 9715,
+        "sha256": "86b5ddf6f58b7df47f698517f610c963e33d5b43aa8ced790ca3e03a1af2dcae",
+        "status": "PROTECTED_RESTORE_AND_REPOSITORY_BYTES_IDENTICAL"
+      }
+    ],
+    "unidentified_final_limits_report": "NOT_SUBSTITUTED_WITH_NEARBY_DECISION_REPORT"
+  }
+}

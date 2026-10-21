@@ -1,0 +1,84 @@
+{
+  "checked_utc": "2026-10-21T03:08:31.051589+00:00",
+  "protocol_and_primary_code_pre_run_hashes_unchanged": true,
+  "available_input_snapshots_sha256_pass": 3,
+  "missing_old_inputs_requeried": false,
+  "restoration_identity_verified": false,
+  "coverage_rows": 6325,
+  "primary_cases": 8242261,
+  "direct_evaluations": 3105916,
+  "fraction_checks": 24159,
+  "all_p53_counterexamples": 37,
+  "host_binary64_b38_checks": [
+    {
+      "amax_bf16": 16,
+      "x_bf16": 4,
+      "host_binary64_ratio_hex": "0x1.7fffd00006000p+0",
+      "base": 2,
+      "T": 274876334083
+    },
+    {
+      "amax_bf16": 16,
+      "x_bf16": 8,
+      "host_binary64_ratio_hex": "0x1.7fffd00006000p+1",
+      "base": 4,
+      "T": 274876334083
+    },
+    {
+      "amax_bf16": 16,
+      "x_bf16": 16,
+      "host_binary64_ratio_hex": "0x1.7fffd00006000p+2",
+      "base": 6,
+      "T": 274876334083
+    },
+    {
+      "amax_bf16": 206,
+      "x_bf16": 179,
+      "host_binary64_ratio_hex": "0x1.4dab81ff2e000p+2",
+      "base": 6,
+      "T": 166794952599
+    },
+    {
+      "amax_bf16": 268,
+      "x_bf16": 209,
+      "host_binary64_ratio_hex": "0x1.1ea0e80282000p+2",
+      "base": 6,
+      "T": 65774289217
+    },
+    {
+      "amax_bf16": 297,
+      "x_bf16": 205,
+      "host_binary64_ratio_hex": "0x1.d1cc81ffb2000p+1",
+      "base": 5,
+      "T": 175661711321
+    },
+    {
+      "amax_bf16": 422,
+      "x_bf16": 149,
+      "host_binary64_ratio_hex": "0x1.58acb805a6000p+0",
+      "base": 2,
+      "T": 190427431635
+    },
+    {
+      "amax_bf16": 422,
+      "x_bf16": 277,
+      "host_binary64_ratio_hex": "0x1.58acb805a6000p+1",
+      "base": 4,
+      "T": 190427431635
+    },
+    {
+      "amax_bf16": 422,
+      "x_bf16": 405,
+      "host_binary64_ratio_hex": "0x1.58acb805a6000p+2",
+      "base": 6,
+      "T": 190427431635
+    }
+  ],
+  "status": "PASS_WITH_EXPLICIT_PROVENANCE_AND_THEOREM_OPEN_ITEMS",
+  "limitations": [
+    "Four old selected reports unavailable at input seal; no restored original identity confirmed",
+    "Rump exact lemma access incomplete",
+    "Written exponent reduction and finite arithmetic certificate; no proof-assistant run",
+    "Virtual p arithmetic is not a GPU instruction or speed result"
+  ]
+}

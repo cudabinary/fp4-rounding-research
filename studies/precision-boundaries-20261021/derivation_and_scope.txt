@@ -1,0 +1,143 @@
+Finite arithmetic precision boundaries and coverage argument
+2026-10-21 KST
+
+New CPU results
+
+b    first safe p, normal scale    first safe p, subnormal scale    all-domain p
+16               32                           32                       32
+24               39                           39                       39
+32               45                           49                       49
+33               50                           49                       50
+34               50                           51                       51
+35               50                           51                       51
+36               53                           53                       53
+37               53                           53                       53
+38               53                           58                       58
+39               53                           58                       58
+40               53                           58                       58
+
+Here p is the virtual working significand precision, with binary64 exponent
+range, RNE, and p>=b+3 through p=64. These are not timings or hardware types.
+Normal-only and all-domain minima refer to this tested precision region.
+The complete direct independent pass re-evaluated the b32 boundaries and
+the b37/b38 distinction at p53; other cells use the exact gap test with
+independent checks of all extremal cases, all p53 failures and stratified controls.
+
+The primary scan evaluated 8,242,261 (b, representative-pair) cases across
+eleven b values. These are repeated arithmetic conditions on related values,
+not independent workloads, not new samples of GPU executions, and not another
+532,701,120-pair full raw-code sweep. Fraction/nearest-neighbor checks: 24,159.
+Independent direct-integer RNE/interpolation evaluations: 3,105,916.
+All scale codes in the reduced domain (575) passed integer RNE, independent
+F32-encoding bisection, and host F32 packing cross-checks.
+
+Coverage reduction
+
+1. Normal F32 scales
+
+Normalize positive BF16 a as a=A*2^(ea-7), A in [128,255]. For a normal derived
+F32 scale, multiplying a by a power of two multiplies its scale by the same
+power of two, without changing its rounded significand. The representative
+a=A*2^-7 therefore has exactly the same ratio set after the corresponding
+power-of-two change to x. Its scale exponent is -3 for A<192, otherwise -2.
+
+Normalize nonzero BF16 x as X*2^(ex-7), X in [128,255]. Subnormal x has such
+a representation with trailing zeros in X. Let t=ex-ea. Legality x<=a gives
+t<=0 and X<=A at t=0. All t<0 can use any X in [128,255]. The chosen finite
+representatives a=A*2^-7, x=X*2^(t-7) are themselves legal normal BF16 values
+for t in [-(b+6),0], b<=40. Thus this portion is not unrealizable input padding.
+
+For smaller t, the representative scale is at least RN32(1/6)>1/6, so
+r=x/s < 12*2^t < 3*2^(-b-4). With p>=b+3>=19, rounding cannot move this
+ratio up to the first threshold lattice point 2^(-b-1). Both thresholds
+are zero. Zero x is exact separately. Saturated ratios are handled separately.
+
+Thus the finite representative classes plus this tail argument cover the
+normal-scale magnitude domain for each reported parameter pair. This reduction
+is a written mathematical argument, not a proof-assistant-checked theorem.
+
+2. Subnormal F32 scales
+
+All positive amax raw codes 1..447 produce subnormal F32 scales. At code 448,
+a/6 equals exactly 2^-126, the smallest normal F32 number. Monotonicity separates
+these cases. Every x raw code 0..amax was enumerated: 100,575 pairs per b.
+The all-zero group adds one trivial case with the unchanged 2^-42 fallback.
+No normal-scale significand identity was substituted into this branch.
+
+3. Working exponent range
+
+The finite BF16/derived-F32 ratio is greater than 2^-259 when nonzero and
+below 8 before saturation. With p<=64 its normal rounding quantum is above
+2^-322. There is no binary64-range underflow or overflow in this scalar ratio
+study. This does not establish that a native binary32 calculation is safe:
+binary32 has a different significand and exponent range.
+
+4. Precision monotonicity and the tested lower limit
+
+At p>=b+3, every relevant lattice boundary has an even representable
+significand. A nonzero remainder crosses upward exactly for
+p <= E+S+floor(log2(d/j)). For each fixed b this gives a monotone boundary
+in the tested region; the scan retains the maximum failing p and every case
+attaining it. The direct validator does not use that formula: it rounds the
+integer ratio to p bits and performs the full grid interpolation.
+No global minimum for p<b+3 is claimed.
+
+5. Why 37 is the arithmetic limit at fixed p53
+
+The b37 finite classes pass at p53. Within each unchanged exact interval,
+equality of floors on a finer probability lattice implies equality on all
+coarser lattices. The b38 witness below persists on all finer lattices.
+Consequently, under the stated reduction argument, 37 is the largest safe
+probability-lattice bit width for the full magnitude/scale domain at p53.
+This is an arithmetic statement; no >32-bit Philox consumer was implemented.
+
+Boundary witnesses, all within the same input/scale contract
+
+A. Original b32, lowered working p48
+
+amax BF16 code = 0x00f2 (242), x BF16 code = 0x00dd (221)
+derived scale F32 bits = 0x00285555 (2643285), a subnormal scale
+r = 14483456/2643285, exact interval [4,6], E=2, S=31
+gap j=47
+At p48: j*2^15=1540096 <= 2643285, so the rounded threshold increments.
+At p49: j*2^16=3080192 > 2643285, so this crossing disappears.
+Ideal threshold = 3,176,857,458; RN48 threshold = 3,176,857,459.
+At logical U32 word 3,176,857,458 the selected FP4 magnitudes differ.
+This is the first p48 failure in the predeclared subnormal-scale raw-code
+ordering. The normal representative branch is safe even at p45. In keeping
+with the preregistration, no global raw-code minimality label is assigned.
+
+B. Fixed working p53, extended probability lattice b38
+
+amax BF16 code = 0x0010 (16), x BF16 code = 0x0004 (4)
+derived scale F32 bits = 0x0002aaab (174763), a subnormal scale
+a=2^-129, x=2^-131, s=174763*2^-149
+r=262144/174763, exact interval [1,1.5], E=0, S=39
+gap j=1
+At p53: 2^(53-39)=16384 <= 174763.
+Ideal threshold = 274,876,334,082; RN53 threshold = 274,876,334,083.
+An abstract 38-bit word equal to the ideal threshold distinguishes the outputs.
+No physical RNG word sequence or runtime extension was executed.
+
+Within the predeclared subnormal-scale enumeration ordered by nonnegative
+(amax BF16 raw code,x raw code), this is the first b38,p53 failure. All amax<16
+and all x<4 for amax=16 were checked. No unqualified global raw-code minimality
+or minimality under another size measure is claimed. The parameter boundary
+is minimal above the original b32 setting: b33..37 pass and b38 fails.
+
+The small witness also explains the jump. D=174763=(2^19+1)/3, hence
+2^19 == -1 (mod D). For x code 4, the scaled numerator at b38 is 2^57,
+so its remainder is D-1 and its upward gap is exactly one. At b37 the
+scaled numerator is 2^56, leaving gap (D+1)/2 instead of one. This is a
+specific scale-lattice resonance, not evidence of a hardware effect.
+
+Scope and novelty
+
+These finite precision boundaries and legal counterexamples were not present
+in the supplied paper's b32,p53 certificate. They strengthen the empirical
+arithmetic characterization, especially the normal/subnormal distinction.
+The gap inequality, enumeration, and modular reasoning are established tools.
+An analytic explanation of the universal p45/p49 bounds remains to be written
+and checked; this finite certificate does not prove a new general method.
+All GPU timing, machine-code behavior, model quality and A-double-prime
+competitiveness remain inherited from the paper and were not remeasured.

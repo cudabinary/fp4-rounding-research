@@ -1,0 +1,15 @@
+{
+  "round": "FP4 arithmetic boundary round 1",
+  "registered_date_kst": "2026-10-21",
+  "scope": "CPU exact arithmetic and theorem mapping only; no optimization implementation, GPU, compiler, install, remote allocation, upload, or paper edits",
+  "input": "Finite BF16 magnitudes x<=a; group-derived F32 scale RN-even(a/6); gradual underflow; zero fallback 2^-42; E2M1 grid unchanged",
+  "probability_bits": [16,24,32,33,34,35,36,37,38,39,40],
+  "working_significand_precision": "virtual RNE-p with binary64 exponent range; p from b+3 through 64; p=53,b=32 is the historical contract",
+  "rng_scope": "Arithmetic threshold study only. No Philox execution or new word-address policy. b>32 is a mathematical sensitivity family, not an implemented RNG contract.",
+  "normal_scale_coverage": "For each b, A and X in 128..255, relative BF16 exponent t in [-(b+6),0], with X<=A at t=0. Representative a=A*2^-7 and x=X*2^(t-7). Ratios for other normal scales are power-of-two equivalent. Smaller t are below the first threshold and bounded analytically.",
+  "subnormal_scale_coverage": "All amax raw codes 1..447 and x raw codes 0..amax; for the new b/p boundary questions. This is not a rerun of the historical 532701120-pair certificate.",
+  "primary_measure": "Maximum working precision still permitting an upward threshold-lattice crossing, inferred by an exact integer gap inequality; retain all extremal witnesses and every p=53 counterexample",
+  "independent_checks": "Independent Fraction nearest-neighbor RNE and full grid interpolation validate every extremal witness, every p=53 counterexample, and deterministic stratified controls. Scale bits checked by independent F32-encoding binary search.",
+  "failure_rules": ["Any independent-oracle disagreement invalidates the affected result and stops finalization", "Do not call absence of a direct theorem instantiation a proof of novelty", "Do not infer runtime gain or A-double-prime superiority from a precision boundary", "Do not claim globally minimal BF16 raw codes; minimality refers to the predeclared parameter boundary and reduced representative ordering"],
+  "raw_retention": "Per-b per-amax/significand coverage rows, crossing histograms, all p=53 counterexamples, all maximum-crossing-precision cases, exact input fractions and scale bits, independent-check receipts, source hashes before and after"
+}
