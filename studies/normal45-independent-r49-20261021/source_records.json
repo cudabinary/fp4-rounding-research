@@ -1,0 +1,32 @@
+{
+  "sources": [
+    {
+      "logical_file": "roux_2014.pdf",
+      "url": "https://jfr.unibo.it/article/download/4359/4017/12373",
+      "bytes": 353156,
+      "sha256": "5dda94218f64445a17ab9131d2be7a229d0997d57070de8c06df35d6b4bd7ea0",
+      "read_status": "REUSED_PRESERVED_PRIMARY_TEXT",
+      "new_download": false
+    },
+    {
+      "logical_file": "roux_2014.pdf.txt",
+      "url": "https://jfr.unibo.it/article/download/4359/4017/12373",
+      "bytes": 31434,
+      "sha256": "f90fb57b24b197323fed76ae907c2a294f132853348d2c9f1206e9a23cc2f0e0",
+      "read_status": "REUSED_PRESERVED_PRIMARY_TEXT",
+      "new_download": false
+    },
+    {
+      "logical_file": "saiki_2026_v1.html",
+      "url": "https://arxiv.org/html/2610.09005v1",
+      "bytes": 932727,
+      "sha256": "a24010003cf1b29fd374d47606b371ce6b458ef2cfa0274c8dca5b09e640ae70",
+      "read_status": "REUSED_PRESERVED_PRIMARY_TEXT",
+      "new_download": false
+    }
+  ],
+  "rump_exact_lemma": "UNAVAILABLE_NOT_USED_AS_A_PROOF_PREMISE",
+  "new_permission_or_tls_workaround": false,
+  "exact_final_limits_report": "UNIDENTIFIED_NOT_SUBSTITUTED",
+  "current_step_read_status": "Re-read preserved Roux Theorem29 and Saiki v1 section5.2; hashes verified; no download"
+}

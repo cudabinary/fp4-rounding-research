@@ -1,0 +1,13 @@
+{
+  "schema": "normal45-independent-r49-protocol-v1",
+  "date_kst": "2026-10-21",
+  "base_commit": "07ac3e0c932e54fcd96b310e0990ab8513e0e84a",
+  "primary_objective": "Attempt analytic normal p45 sufficiency; preserve any exact remaining lemma or counterexample",
+  "contract": "Finite nonnegative BF16 x<=a, normal positive F32 RN-even(a/6), gradual underflow, E2M1 b32, virtual RNE-p with binary64 exponent range, 35<=p<=64",
+  "normal_reduction": "For q18 A128..191 and q17 A192..255, derive 3D=A*2^q+epsilon; N=X*2^L, L+J=61+eta, eta=1[X*2^16<D], 128<=X<=255. Refine Q bound using J, then investigate bounded A,t,J,eta conditions rather than raw pairs.",
+  "normal_bounded_check": "At most 1600 A,t branches from t<=9/16, each with at most 12 J values and 2 eta values. Use full equation to reconstruct X and retain all failures; do not assert a target candidate count. Any such complete finite check is labelled computer-assisted, not a pure symbolic proof.",
+  "independent_r49": "Separate internal reviewer derives ranges and directly enumerates j for every implied A,t without importing or copying previous residue code, table or candidates. Freeze independent outputs before root compares the complete branch data against prior sealed evidence. Do not force 4656 or any expected conclusion.",
+  "failure_rule": "Stop the affected claim on contradictory arithmetic; preserve mismatch and distinguish nonphysical necessary-condition solutions from actual quantizer failures",
+  "forbidden": "No old raw-pair/prefix rerun, GPU, compiler/install, new kernel, paid resources, B2, Library upload, other-paper work, permission bypass or external human messages",
+  "preservation": "New English files only; prior commits and original files stay byte-identical; scan completed staged bytes before the authorized private-main push; verify actual remote HEAD; verify a new local ZIP"
+}

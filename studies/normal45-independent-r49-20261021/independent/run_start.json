@@ -1,0 +1,13 @@
+{
+  "started_utc": "2026-10-21T05:32:40.560226+00:00",
+  "source_base": "07ac3e0c932e54fcd96b310e0990ab8513e0e84a",
+  "protocol_sha256": "6c45e547bf7bc406bd0c9bda5f4fde5bfc6aef5be3edcc2c7afc516818410e51",
+  "implementation_sha256": "616d9abd26d9e81b31edb1926ae21456399094607e7862ed4963aee2b00129b2",
+  "environment": {
+    "python_version": "3.12.14",
+    "implementation": "cpython",
+    "operating_system": "Windows-11-10.0.26200-SP0",
+    "integer_arithmetic": "arbitrary precision",
+    "dependencies": "Python standard library only"
+  }
+}

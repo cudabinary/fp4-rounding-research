@@ -1,0 +1,53 @@
+{
+  "schema": "independent-r49-direct-j-protocol-v1",
+  "registered_utc": "2026-10-21T05:28:14Z",
+  "verified_start_head": "07ac3e0c932e54fcd96b310e0990ab8513e0e84a",
+  "objective": "Independently enumerate the complete reduced R49 coefficient/t/j conditions with direct integer congruence tests, then reconstruct all resulting candidates.",
+  "prior_exposure": "The auditor previously reviewed the old residue kernel and was told its survivor result. This follow-up does not claim blind review. The new implementation is constructed from the contract and class equations; the old kernel, ledger, candidates, and verifier will not be reread, imported, copied, or executed. The root agent compares old and new artifacts only after this result freezes.",
+  "contract": {
+    "inputs": "Nonnegative finite BF16 magnitudes 0<=x<=a; positive subnormal derived F32 scales only for this enumeration",
+    "scale": "s=RN32(a/6), round nearest ties even, gradual underflow; unnormalized D=s*2^149",
+    "grid": ["0", "1/2", "1", "3/2", "2", "3", "4", "6"],
+    "b": 32,
+    "working_precision": 49,
+    "classes": [
+      {"q": 15, "A_min": 1, "A_max": 255, "v": [0]},
+      {"q": 16, "A_min": 128, "A_max": 255, "v": [0, 1]},
+      {"q": 17, "A_min": 128, "A_max": 191, "v": [0, 1, 2]}
+    ],
+    "S_values": [31, 32, 33],
+    "equations": [
+      "D=nearest(A*2^q/3); epsilon=3D-A*2^q",
+      "J=49-E-S>=16; 1<=j<=floor(D/65536)",
+      "0<t<2^(34-2q)+A^2/65536",
+      "u=16+v+S-2q; m=min(u,q)",
+      "3*j*A^2 = epsilon*t (mod 2^m)",
+      "3*X*2^u=t*(A*2^q+epsilon)-3*j*A^2"
+    ]
+  },
+  "derivation": {
+    "t_range": "For each A, compute the largest positive integer strictly below the exact rational upper bound; do not hard-code class t maxima.",
+    "safe_modulus": "For each class enumerate its legal v and all S31..33, compute every m=min(16+v+S-2q,q), then use the smallest m as the necessary fixed-modulus filter.",
+    "j_range": "For each rounded D use every integer 1..floor(D/65536), including a possibly empty range; do not use a modular inverse or gcd generator.",
+    "epsilon_zero": "The t lemma requires epsilon=+/-1. Epsilon-zero scales are analytically excluded because a carry j must be a positive multiple of 2^q. Nevertheless every relaxed A,t,j branch is recorded and its congruence evaluated; epsilon-zero divisibility is separately tested and those branches are never mislabeled as t-lemma survivors.",
+    "reconstruction": "For every retained epsilon=+/-1 congruence survivor reconstruct X for every legal class v and every S31..33. Test positivity, integer divisibility, the full physical BF16 input bounds, actual interval width, exact remainder, and carry. If a legal candidate survives, compare exact canonical output against independently implemented rational nearest-even p49 output."
+  },
+  "outputs": [
+    "Independent standard-library Python source",
+    "Complete per-A/t branch ledger, including empty ranges and epsilon-zero dispositions",
+    "Complete per-A/t/j congruence check ledger",
+    "All coarse survivors and all reconstruction dispositions",
+    "Derived t ranges, safe moduli, exact counters, environment, failures, and source/protocol hashes",
+    "Complete command output, review report, and frozen SHA256 manifest"
+  ],
+  "counted_check_units": {
+    "congruence_checks": "One direct integer congruence evaluation per enumerated A,t,j, including diagnostic epsilon-zero rows.",
+    "epsilon_zero_divisibility_checks": "One j modulo 2^q evaluation per epsilon-zero A,t,j row.",
+    "reconstruction_checks": "One full-equation X reconstruction per retained candidate,v,S branch.",
+    "canonical_comparisons": "One exact-versus-RNE49 canonical comparison per legal physical and selected-interval candidate.",
+    "note": "These are exact counts of declared predicate checks, not counts of every low-level Python arithmetic operation."
+  },
+  "result_policy": "Do not assert an expected coefficient/t count, survivor count, survivor identity, or absence of a counterexample. Preserve every observed survivor and any mismatch or internal failure.",
+  "allowed": "Local standard-library integer/rational reduced-condition enumeration and read-only source-head verification.",
+  "prohibited": "Raw BF16 (a,x) enumeration, GPU, install/compiler, network, external messaging, Git mutation, other-paper work, old kernel/ledger/candidate/verifier reads, or writes outside this independent directory."
+}

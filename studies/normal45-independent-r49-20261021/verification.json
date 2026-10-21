@@ -1,0 +1,87 @@
+{
+  "utc": "2026-10-21T05:40:04.091034+00:00",
+  "base_commit": "07ac3e0c932e54fcd96b310e0990ab8513e0e84a",
+  "environment": {
+    "python": "3.12.14",
+    "platform": "Windows",
+    "dependencies": "Standard library only"
+  },
+  "initial_snapshot": "PASS: 34 curated files match their SHA256 values.",
+  "prior_tracked_bytes_unchanged": true,
+  "previous_study_manifests": [
+    {
+      "path": "studies/precision-boundaries-20261021/payload_manifest.json",
+      "entries_checked": 15
+    },
+    {
+      "path": "studies/boundary-propositions-20261021/payload_manifest.json",
+      "entries_checked": 11
+    },
+    {
+      "path": "studies/boundary-propositions-20261021/scientific_manifest.json",
+      "entries_checked": 9
+    },
+    {
+      "path": "studies/analytic-denominator-20261021/payload_manifest.json",
+      "entries_checked": 8
+    },
+    {
+      "path": "studies/r49-audit-20261021/payload_manifest.json",
+      "entries_checked": 21
+    }
+  ],
+  "pre_run_normal_protocol_and_source_hashes_unchanged": true,
+  "normal_certificate": {
+    "status": "PASS_COMPLETE_NORMAL45_REDUCED_CERTIFICATE",
+    "branch_count": 2814,
+    "coarse_candidates": 236,
+    "counts": {
+      "gcd_exclusions": 1290,
+      "X_range_exclusions": 234,
+      "eta_exclusions": 2
+    },
+    "eta_exceptions": [
+      {
+        "q": 18,
+        "A": 142,
+        "D": 12408149,
+        "epsilon": -1,
+        "t": 4,
+        "J": 12,
+        "eta": 1,
+        "L": 50,
+        "u": 14,
+        "j": 2277,
+        "X": 227,
+        "status": "ETA_CONSISTENCY_EXCLUSION"
+      },
+      {
+        "q": 17,
+        "A": 239,
+        "D": 10442069,
+        "epsilon": -1,
+        "t": 5,
+        "J": 12,
+        "eta": 1,
+        "L": 50,
+        "u": 16,
+        "j": 649,
+        "X": 231,
+        "status": "ETA_CONSISTENCY_EXCLUSION"
+      }
+    ],
+    "inversion_used": false,
+    "raw_pairs_enumerated": false,
+    "proof_kind": "Algebraic reduction plus a complete finite certificate; pure symbolic exclusion remains open"
+  },
+  "independent_r49_runs": 1,
+  "independent_r49_freeze_sha256": "1cee1dbff5b570a9c11621aa1e601d9354dd0bd7df00198248c86dbefcf106fd",
+  "r49_comparison_status": "PASS_COMPLETE_BRANCH_AND_RECONSTRUCTION_AGREEMENT",
+  "r49_comparison_branches": 4656,
+  "raw_archive_copy_verified": true,
+  "raw_archive_bytes": 5219160,
+  "pure_symbolic_normal45": "OPEN",
+  "proof_assistant_executed": false,
+  "native_or_paid_or_upload_work_performed": false,
+  "diagnostic_view_errors": "PowerShell case-insensitive JSON rejected J/j, corrected using AsHashtable; initial Roux text suffix corrected from .txt to .pdf.txt; no scientific run or result changed"
+}

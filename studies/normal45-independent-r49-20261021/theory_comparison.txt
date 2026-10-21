@@ -1,0 +1,44 @@
+Primary-source comparison and limits
+2026-10-21
+
+Roux 2014, Theorem 29, printed p140 / preserved PDF text lines478..496:
+even radix, p2>=2*p1, both operands in FLX_p1, nonzero denominator, and
+both rounds nearest (any tie rule). The conclusion is nearest-p1 of
+nearest-p2(x/y) equals nearest-p1(x/y). This source was actually obtained.
+Its direct use with operands admitted at p1=24 would require p2>=48 and
+would conclude nearest-24 equality, not fixed b32 floor equality. p45 does
+not meet that precision premise. Treating FP4 value bits as the target
+ignores the probability lattice. This direct mismatch says nothing about
+derivability using other lemmas in the entire framework.
+Source: https://jfr.unibo.it/article/download/4359/4017/12373
+
+Saiki et al., arXiv2610.09005v1, section5.2 / Figure8:
+the obtained primary HTML gives format-containment sufficient rules for
+intermediate->final chains RTZ->RTZ, RAZ->RAZ, RTO->RTO, RTO->RTZ,
+RTO->RAZ, and RTO->RNE, with the displayed format/padding conditions and
+no final overflow. The unrestricted RNE->RTZ chain is not a safe generic
+rule. The present positive-domain floor target has that mode direction,
+so format containment alone does not discharge this result. Changing
+the intermediate mode would require a separate legacy-equivalence proof.
+The authors' rewriting methodology is prior work. Whether their richer
+invariants derive this coupled operand-domain result remains OPEN.
+Source: https://arxiv.org/html/2610.09005v1
+
+Rump, DOI10.1145/2785965: exact Lemma4.6 text remains unavailable and is
+not used as a premise. A prior access failure is not proof of novelty.
+No new access attempt, TLS bypass, or authorization bypass was performed.
+The exact missing historical final-limits report also remains unidentified;
+no neighboring report has been substituted.
+
+The midpoint crossing lemma, tiny-ratio separation, Sterbenz interpolation,
+precision monotonicity, gcd/residue methods and finite certificate logic
+are standard tools or direct specializations. The RN32(a/6) divisor identity
+is inherited. This round adds an explicit J-dependent t bound, a smaller
+complete normal proof certificate, and independent subnormal enumeration.
+The additional proof obligations depend on the coupled BF16 coefficient,
+scale-generation and b32 lattice constraints. Their independence from all
+closest theory, necessity of every assumption, maximal domain, publication
+novelty, and runtime value are not established.
+
+source_records.json records the obtained source hashes. Public source bytes
+remain in the preserved archive; they were not fetched again or modified.

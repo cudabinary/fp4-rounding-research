@@ -1,0 +1,5 @@
+{
+  "verification": "Structural record count of the first-run CSV files; no arithmetic predicates rerun",
+  "coefficient_t_data_rows": 4656,
+  "direct_j_data_rows": 124640
+}

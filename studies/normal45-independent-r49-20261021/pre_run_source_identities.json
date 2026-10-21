@@ -1,0 +1,16 @@
+{
+  "base_commit": "07ac3e0c932e54fcd96b310e0990ab8513e0e84a",
+  "files": [
+    {
+      "path": "protocol.json",
+      "bytes": 1883,
+      "sha256": "88e90698bcd49a44272bfbc984332b5649b88c1ae02286bf12bbbd616785988e"
+    },
+    {
+      "path": "normal45_reduction.py",
+      "bytes": 4696,
+      "sha256": "34f155573cf99e873d00997c2788995a10a2b80e5d90c2426c85f34534f77c53"
+    }
+  ],
+  "record": "Protocol and initial normal reduction hashes recorded before first execution; machine paths omitted"
+}

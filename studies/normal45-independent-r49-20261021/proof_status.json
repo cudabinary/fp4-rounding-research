@@ -1,0 +1,42 @@
+{
+  "schema":"normal45-independent-r49-status-v1",
+  "base_commit":"07ac3e0c932e54fcd96b310e0990ab8513e0e84a",
+  "contract":"Finite nonnegative BF16 x<=a, RN32(a/6) ties-even gradual underflow, E2M1 b32, virtual p35..64 binary64 exponent range",
+  "normal45":{
+    "verdict":"TRUE_WITH_COMPLETE_SMALL_FINITE_CERTIFICATE",
+    "sharp_uniform_minimum_within_p35_to_p64":45,
+    "new_analytic_reduction":"t<(A^2+2^(46-2q))*2^-J, q18 J12..15, q17 J12..16, L+J=61+eta",
+    "A_t_branches":1600,
+    "certificate_J_eta_branches":2814,
+    "coarse_j_candidates":236,
+    "normalized_X_range_exclusions":234,
+    "eta_exclusions":2,
+    "old_large_normal_certificate_required":false,
+    "pure_symbolic_sufficiency":"OPEN_CERTIFICATE_FREE_DERIVATION",
+    "necessity":"Inherited legal a492,x199 witness fails every p35..44; new fixed integer identity and p44 negative control checked",
+    "raw_code_minimality":"Inherited separate ordering result; not rerun or used to prove the uniform precision minimum",
+    "independent_review_scope":"Refined inequality, cutoffs and supplied eta exceptions reviewed; no independent normal236 enumeration"
+  },
+  "R49":{
+    "independent_enumeration_runs":1,
+    "coefficient_t_branches":4656,
+    "direct_congruence_checks":124640,
+    "nonzero_epsilon_checks":82510,
+    "epsilon_zero_diagnostic_checks":42130,
+    "coarse_survivors":1,
+    "reconstructions":6,
+    "physical_candidates":0,
+    "comparison":"Every branch, parameter, survivor and reconstruction agrees; no mismatch",
+    "prior_exposure_disclosed":true,
+    "blind_replication":false,
+    "old_kernel_table_import_or_copy":false
+  },
+  "full49":"Computer-assisted composition of the new small normal45 certificate and the independently re-enumerated subnormal49 certificate, plus zero/saturation; no old large raw-pair sufficiency dependency",
+  "prior_theory":"Rounding separation, Sterbenz, monotonicity and integer certificate tools are established; divisor coupling is inherited; no new generic theorem claimed",
+  "OPEN":["Certificate-free normal45 exclusion","Certificate-free subnormal49 exclusion","Universal b37 without old certificates","Proof-assistant development","Complete closest-theory derivability including unavailable exact Rump Lemma4.6","Publication novelty and runtime value","Exact missing historical final-limits report"],
+  "forbidden_actions_performed":{
+    "GPU":0,"compiler_install":0,"new_kernel":0,"old_large_or_prefix_reruns":0,
+    "paid_resources":0,"B2_transfers":0,"Library_uploads":0,"other_paper_work":0
+  },
+  "next_scientific_step":"Replace the explicitly stated normal45 residue lemma by a short symbolic argument, retaining eta; do not relabel finite checking as symbolic proof"
+}

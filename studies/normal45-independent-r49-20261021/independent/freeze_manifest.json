@@ -1,0 +1,63 @@
+{
+  "schema": "independent-r49-first-run-freeze-v1",
+  "frozen_utc": "2026-10-21T05:34:36.7172004Z",
+  "source_base": "07ac3e0c932e54fcd96b310e0990ab8513e0e84a",
+  "enumeration_runs": 1,
+  "comparison_against_old_results_performed": false,
+  "files": [
+    {
+      "logical_filename": "all_coefficient_t_branches.csv",
+      "bytes": 273429,
+      "sha256": "4e28135d795e13c99b17f40ff9c6c156e991f297603512f2249317b5d5083e49",
+      "retention": "SMALL_REPOSITORY_ARTIFACT"
+    },
+    {
+      "logical_filename": "all_congruence_checks.csv",
+      "bytes": 5219160,
+      "sha256": "f2cbdc83e343b98f0d94c05bf6246d6ed395d74d32def5b416ae0506c34cc20f",
+      "retention": "ARCHIVE_ONLY"
+    },
+    {
+      "logical_filename": "direct_j_conditions.py",
+      "bytes": 15922,
+      "sha256": "616d9abd26d9e81b31edb1926ae21456399094607e7862ed4963aee2b00129b2",
+      "retention": "SMALL_REPOSITORY_ARTIFACT"
+    },
+    {
+      "logical_filename": "independent_results.json",
+      "bytes": 10489,
+      "sha256": "031c1bbc12b2413f4f7db2902cdd9f216dee685fdbf241b5a79f328a0efc6dc3",
+      "retention": "SMALL_REPOSITORY_ARTIFACT"
+    },
+    {
+      "logical_filename": "independent_review.txt",
+      "bytes": 6566,
+      "sha256": "90c783fd977509ba6f6235365a587488d381a2c4b9b7b7ecf90052ef37c791fc",
+      "retention": "SMALL_REPOSITORY_ARTIFACT"
+    },
+    {
+      "logical_filename": "ledger_record_counts.json",
+      "bytes": 179,
+      "sha256": "8748a26e979722331f24540278be5bbcbc4b6ff1a249569566391cf5441bcb47",
+      "retention": "SMALL_REPOSITORY_ARTIFACT"
+    },
+    {
+      "logical_filename": "pre_run_protocol.json",
+      "bytes": 4446,
+      "sha256": "6c45e547bf7bc406bd0c9bda5f4fde5bfc6aef5be3edcc2c7afc516818410e51",
+      "retention": "SMALL_REPOSITORY_ARTIFACT"
+    },
+    {
+      "logical_filename": "run_start.json",
+      "bytes": 557,
+      "sha256": "1e52545b08a0ac3cfdbc1bc05e4e08ad29fecf74498d06324abac65fdff8a820",
+      "retention": "SMALL_REPOSITORY_ARTIFACT"
+    },
+    {
+      "logical_filename": "run_stdout.txt",
+      "bytes": 8824,
+      "sha256": "81305b4aa3940c707b8637f13c3f5a250dcea516d5539774292a5432cc5fc3fa",
+      "retention": "SMALL_REPOSITORY_ARTIFACT"
+    }
+  ]
+}

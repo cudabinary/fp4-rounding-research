@@ -1,0 +1,35 @@
+{
+  "base_commit": "07ac3e0c932e54fcd96b310e0990ab8513e0e84a",
+  "files": [
+    {
+      "path": "studies/r49-audit-20261021/coefficient_ledger.csv",
+      "bytes": 289808,
+      "sha256": "5d041bcea13007f96229163a804e222c65ed5b5223f330f35373c1e1953c418a"
+    },
+    {
+      "path": "studies/r49-audit-20261021/kernel_results.json",
+      "bytes": 3717,
+      "sha256": "9a23cf7df15569118b5da5031bb4619a2ca579e0ad00767dfaa751e0b57267ee"
+    },
+    {
+      "path": "studies/r49-audit-20261021/r49_proof.txt",
+      "bytes": 9094,
+      "sha256": "b0b5607bdd868cd57ef92ffcaeea83856bc3da78789f96bd9d42520e286d67f3"
+    },
+    {
+      "path": "studies/r49-audit-20261021/certificate_verifier.py",
+      "bytes": 3189,
+      "sha256": "4c79ed6e1aa8b82277906a13d402c73758d53a49960e01c2e69c33855d0c072f"
+    },
+    {
+      "path": "studies/analytic-denominator-20261021/analytic_proof.txt",
+      "bytes": 14434,
+      "sha256": "c6c998fbea906aa5ebf388ad27ba7d7e291bdca503d3d186c4476a2ecf54f3b4"
+    },
+    {
+      "path": "studies/boundary-propositions-20261021/propositions_and_proof.txt",
+      "bytes": 13231,
+      "sha256": "ee088bd396ac581daf2e9ee783ac6f2ffa4d8d0b0e3e08724379ad8f7b8e9b0d"
+    }
+  ]
+}

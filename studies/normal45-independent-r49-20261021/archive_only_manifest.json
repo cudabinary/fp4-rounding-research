@@ -1,0 +1,10 @@
+{
+  "files": [
+    {
+      "path": "independent/all_congruence_checks.csv",
+      "bytes": 5219160,
+      "sha256": "f2cbdc83e343b98f0d94c05bf6246d6ed395d74d32def5b416ae0506c34cc20f",
+      "retention": "Ignored local file plus verified local archive copy and delivery ZIP; not Git"
+    }
+  ]
+}
