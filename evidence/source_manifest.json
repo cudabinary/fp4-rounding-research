@@ -1,0 +1,742 @@
+{
+  "schema": "paper-source-manifest-v1",
+  "paper": "fp4",
+  "scope": "HISTORICAL_SEALED_SELECTED_FILES",
+  "global_archive_index_commit": "d9d9fea32ef0d9cf2de38210596470d4c6c3f1f5",
+  "bucket": "cudabinary-research-archive-20261021",
+  "paper_prefix": "research-archive/papers/fp4-rounding/",
+  "admitted": [
+    {
+      "path": "code/cuda/A_double_prime.cu",
+      "bytes": 12512,
+      "sha256": "e2949bd7ea739dd9a855c001d96d982b7258721e5bae20e92a17fb4bbb2a7c3e",
+      "source_id": "WIN_PAPER/R4_FINAL_GPU_VALIDATION_AND_PAPER_FREEZE_20261017/bundle/sources/A_double_prime.cu",
+      "archive_extents": [
+        {
+          "file_offset": 0,
+          "pack_offset": 44212507,
+          "bytes": 12512,
+          "pack_index": 698,
+          "pack_sha256": "d4af699f30c5a4585d1983608bba0d77e624b38df7040fdededcb6f2a43a8e08",
+          "remote": {
+            "action": "upload",
+            "bucketId": "172529a471525cb5aa1e0f12",
+            "contentLength": 67108864,
+            "contentSha1": "75d3e9604b09627b6050ab68a9134e1684a74196",
+            "fileId": "4_z172529a471525cb5aa1e0f12_f1016ad82827fcfca_d20261021_m011608_c005_v0501048_t0032_u01792545368907",
+            "fileName": "research-archive/packs/sha256/d4/d4af699f30c5a4585d1983608bba0d77e624b38df7040fdededcb6f2a43a8e08.pack",
+            "serverSideEncryption": {
+              "algorithm": "AES256",
+              "mode": "SSE-B2"
+            },
+            "uploadTimestamp": 1792545368907
+          }
+        }
+      ]
+    },
+    {
+      "path": "code/cuda/B.cu",
+      "bytes": 11843,
+      "sha256": "9b79b826eda8635391f0ca637405c50460c4cb6c13a3dd0e6e6de21b0fb9b005",
+      "source_id": "WIN_PAPER/R4_FINAL_GPU_VALIDATION_AND_PAPER_FREEZE_20261017/bundle/sources/B.cu",
+      "archive_extents": [
+        {
+          "file_offset": 0,
+          "pack_offset": 63122869,
+          "bytes": 11843,
+          "pack_index": 480,
+          "pack_sha256": "180705f5f44d55ef1f81eea39671fd3a846e92c609cfa9bf7c0b93460025401b",
+          "remote": {
+            "action": "upload",
+            "bucketId": "172529a471525cb5aa1e0f12",
+            "contentLength": 67108864,
+            "contentSha1": "ce1d1ea3f01370e01dbc9ca02e39ae6992f8c0ae",
+            "fileId": "4_z172529a471525cb5aa1e0f12_f10618bad06670b8f_d20261021_m004732_c005_v0501031_t0031_u01792543652788",
+            "fileName": "research-archive/packs/sha256/18/180705f5f44d55ef1f81eea39671fd3a846e92c609cfa9bf7c0b93460025401b.pack",
+            "serverSideEncryption": {
+              "algorithm": "AES256",
+              "mode": "SSE-B2"
+            },
+            "uploadTimestamp": 1792543652788
+          }
+        }
+      ]
+    },
+    {
+      "path": "code/cuda/D1.cu",
+      "bytes": 11619,
+      "sha256": "757f6f456055be5a3f832f53ba20b68374801f4dc273204122a26ae896fd4bee",
+      "source_id": "WIN_PAPER/R4_FINAL_GPU_VALIDATION_AND_PAPER_FREEZE_20261017/bundle/sources/D1.cu",
+      "archive_extents": [
+        {
+          "file_offset": 0,
+          "pack_offset": 43683618,
+          "bytes": 11619,
+          "pack_index": 383,
+          "pack_sha256": "4809da6e67075fc4a96014eefcdbe728e87a34530ed11a60536c4a6ec5a8f338",
+          "remote": {
+            "action": "upload",
+            "bucketId": "172529a471525cb5aa1e0f12",
+            "contentLength": 67108864,
+            "contentSha1": "aded6f00b6e9d92e997e3f7754b1bd445246c739",
+            "fileId": "4_z172529a471525cb5aa1e0f12_f10618bad0666abfe_d20261021_m003351_c005_v0501031_t0043_u01792542831263",
+            "fileName": "research-archive/packs/sha256/48/4809da6e67075fc4a96014eefcdbe728e87a34530ed11a60536c4a6ec5a8f338.pack",
+            "serverSideEncryption": {
+              "algorithm": "AES256",
+              "mode": "SSE-B2"
+            },
+            "uploadTimestamp": 1792542831263
+          }
+        }
+      ]
+    },
+    {
+      "path": "code/cuda/decode_add.cu",
+      "bytes": 790,
+      "sha256": "9c806ae5f8cbef137271c18a9afcb7ca4fff903c04e7a9bc131b6bc8492e0d5f",
+      "source_id": "WIN_PAPER/R4_FINAL_GPU_VALIDATION_AND_PAPER_FREEZE_20261017/bundle/sources/decode_add.cu",
+      "archive_extents": [
+        {
+          "file_offset": 0,
+          "pack_offset": 7608440,
+          "bytes": 790,
+          "pack_index": 483,
+          "pack_sha256": "54221852ac96bddec8a9020391d41f1e8acbe5f695f683ddd933aca82b7b3f4a",
+          "remote": {
+            "action": "upload",
+            "bucketId": "172529a471525cb5aa1e0f12",
+            "contentLength": 67108864,
+            "contentSha1": "380d3c04bdbdff0cbf930e7532b814215c5a0f6f",
+            "fileId": "4_z172529a471525cb5aa1e0f12_f1016ad82827dee08_d20261021_m004753_c005_v0501048_t0041_u01792543673233",
+            "fileName": "research-archive/packs/sha256/54/54221852ac96bddec8a9020391d41f1e8acbe5f695f683ddd933aca82b7b3f4a.pack",
+            "serverSideEncryption": {
+              "algorithm": "AES256",
+              "mode": "SSE-B2"
+            },
+            "uploadTimestamp": 1792543673233
+          }
+        }
+      ]
+    },
+    {
+      "path": "code/cuda/consumer_support.cu",
+      "bytes": 1221,
+      "sha256": "c71b9f755b9470a57bb29b63986c02cb25d67f53260d55caa5ffe005b94d78fb",
+      "source_id": "WIN_PAPER/R4_FINAL_GPU_VALIDATION_AND_PAPER_FREEZE_20261017/bundle/sources/consumer_support.cu",
+      "archive_extents": [
+        {
+          "file_offset": 0,
+          "pack_offset": 51767913,
+          "bytes": 1221,
+          "pack_index": 600,
+          "pack_sha256": "d891557c3ece1870802945dc49bb615d2c07d9f84ad4c633cd5c760fcec97fba",
+          "remote": {
+            "action": "upload",
+            "bucketId": "172529a471525cb5aa1e0f12",
+            "contentLength": 67108864,
+            "contentSha1": "e9f83e0b34877810ce3ee8695ac42c362859a3a2",
+            "fileId": "4_z172529a471525cb5aa1e0f12_f1016ad82827edeca_d20261021_m010348_c005_v0501048_t0046_u01792544628612",
+            "fileName": "research-archive/packs/sha256/d8/d891557c3ece1870802945dc49bb615d2c07d9f84ad4c633cd5c760fcec97fba.pack",
+            "serverSideEncryption": {
+              "algorithm": "AES256",
+              "mode": "SSE-B2"
+            },
+            "uploadTimestamp": 1792544628612
+          }
+        }
+      ]
+    },
+    {
+      "path": "code/cpu/cpu_model.py",
+      "bytes": 5562,
+      "sha256": "ee0b713c94de7958f3b1a16a51df60f99bbca6b33461dcc7f9f8cd85e73753a6",
+      "source_id": "WIN_PAPER/r4_amax6_integer_threshold_cpu_20261017/cpu_model.py",
+      "archive_extents": [
+        {
+          "file_offset": 0,
+          "pack_offset": 54938191,
+          "bytes": 5562,
+          "pack_index": 725,
+          "pack_sha256": "e3e141dac46a13121cc0f6c18283cbbf46853319cc16d504e8303fd9a7a3b674",
+          "remote": {
+            "action": "upload",
+            "bucketId": "172529a471525cb5aa1e0f12",
+            "contentLength": 67108864,
+            "contentSha1": "480b2750bf520f01c92d64734d511b85a7df4b94",
+            "fileId": "4_z172529a471525cb5aa1e0f12_f10618bad0667ef3d_d20261021_m011926_c005_v0501031_t0021_u01792545566988",
+            "fileName": "research-archive/packs/sha256/e3/e3e141dac46a13121cc0f6c18283cbbf46853319cc16d504e8303fd9a7a3b674.pack",
+            "serverSideEncryption": {
+              "algorithm": "AES256",
+              "mode": "SSE-B2"
+            },
+            "uploadTimestamp": 1792545566988
+          }
+        }
+      ]
+    },
+    {
+      "path": "code/cpu/scale_policies.py",
+      "bytes": 3658,
+      "sha256": "ed8ec4ac34331fc7edb2d5a850918a9fe4aaeed2f1e753568e28232caf1e1683",
+      "source_id": "WIN_PAPER/r4_amax6_integer_threshold_cpu_20261017/scale_policies.py",
+      "archive_extents": [
+        {
+          "file_offset": 0,
+          "pack_offset": 22523617,
+          "bytes": 3658,
+          "pack_index": 725,
+          "pack_sha256": "e3e141dac46a13121cc0f6c18283cbbf46853319cc16d504e8303fd9a7a3b674",
+          "remote": {
+            "action": "upload",
+            "bucketId": "172529a471525cb5aa1e0f12",
+            "contentLength": 67108864,
+            "contentSha1": "480b2750bf520f01c92d64734d511b85a7df4b94",
+            "fileId": "4_z172529a471525cb5aa1e0f12_f10618bad0667ef3d_d20261021_m011926_c005_v0501031_t0021_u01792545566988",
+            "fileName": "research-archive/packs/sha256/e3/e3e141dac46a13121cc0f6c18283cbbf46853319cc16d504e8303fd9a7a3b674.pack",
+            "serverSideEncryption": {
+              "algorithm": "AES256",
+              "mode": "SSE-B2"
+            },
+            "uploadTimestamp": 1792545566988
+          }
+        }
+      ]
+    },
+    {
+      "path": "code/cpu/legacy_reference.hpp",
+      "bytes": 518,
+      "sha256": "e1996f19be4c0532c2db3be65a9a37f1daae026bbfef799cc1c6be46a596ad3a",
+      "source_id": "WIN_PAPER/r4_amax6_integer_threshold_cpu_20261017/legacy_reference.hpp",
+      "archive_extents": [
+        {
+          "file_offset": 0,
+          "pack_offset": 56532046,
+          "bytes": 518,
+          "pack_index": 696,
+          "pack_sha256": "e1e32f1b7661e152ccd9509b11a53c6cf0ef99bfc661b909a628b0fa48a13fdc",
+          "remote": {
+            "action": "upload",
+            "bucketId": "172529a471525cb5aa1e0f12",
+            "contentLength": 67108864,
+            "contentSha1": "0e9d27c50e12e8e5b87d954f7336feb30b3676d7",
+            "fileId": "4_z172529a471525cb5aa1e0f12_f1016ad82827fcb7c_d20261021_m011554_c005_v0501048_t0043_u01792545354901",
+            "fileName": "research-archive/packs/sha256/e1/e1e32f1b7661e152ccd9509b11a53c6cf0ef99bfc661b909a628b0fa48a13fdc.pack",
+            "serverSideEncryption": {
+              "algorithm": "AES256",
+              "mode": "SSE-B2"
+            },
+            "uploadTimestamp": 1792545354901
+          }
+        }
+      ]
+    },
+    {
+      "path": "code/cpu/exact_fp4_threshold.cuh",
+      "bytes": 2690,
+      "sha256": "a3cb42372375c6b09b53e086fb703595dcee32f0a586b07dba30f09c5b731cca",
+      "source_id": "WIN_PAPER/r4_amax6_integer_threshold_cpu_20261017/exact_fp4_threshold.cuh",
+      "archive_extents": [
+        {
+          "file_offset": 0,
+          "pack_offset": 19360246,
+          "bytes": 2690,
+          "pack_index": 508,
+          "pack_sha256": "d8b586f6b337d5f1efee5d63f58049d17013d2cd3de105832edd2cf4376d17b0",
+          "remote": {
+            "action": "upload",
+            "bucketId": "172529a471525cb5aa1e0f12",
+            "contentLength": 67108864,
+            "contentSha1": "02d26e08b524933ad2f663aefb5cbc8f126bfc9a",
+            "fileId": "4_z172529a471525cb5aa1e0f12_f1016ad82827e1de3_d20261021_m005056_c005_v0501048_t0040_u01792543856453",
+            "fileName": "research-archive/packs/sha256/d8/d8b586f6b337d5f1efee5d63f58049d17013d2cd3de105832edd2cf4376d17b0.pack",
+            "serverSideEncryption": {
+              "algorithm": "AES256",
+              "mode": "SSE-B2"
+            },
+            "uploadTimestamp": 1792543856453
+          }
+        }
+      ]
+    },
+    {
+      "path": "code/cpu/threshold_host.cpp",
+      "bytes": 3531,
+      "sha256": "542aa16e5795225cd53b39e53f93e23b9a611f69c7181772b8f18eb6ef9e5554",
+      "source_id": "WIN_PAPER/r4_amax6_integer_threshold_cpu_20261017/threshold_host.cpp",
+      "archive_extents": [
+        {
+          "file_offset": 0,
+          "pack_offset": 66425217,
+          "bytes": 3531,
+          "pack_index": 295,
+          "pack_sha256": "c2f10de52724409db1a7f8b9cda5b365f374a39718996e035586f51dec7b2b6d",
+          "remote": {
+            "action": "upload",
+            "bucketId": "172529a471525cb5aa1e0f12",
+            "contentLength": 67108864,
+            "contentSha1": "c133b57776948e5b4bf1a03b812297145cdc7fef",
+            "fileId": "4_z172529a471525cb5aa1e0f12_f1016ad82827c0266_d20261021_m002005_c005_v0501048_t0039_u01792542005619",
+            "fileName": "research-archive/packs/sha256/c2/c2f10de52724409db1a7f8b9cda5b365f374a39718996e035586f51dec7b2b6d.pack",
+            "serverSideEncryption": {
+              "algorithm": "AES256",
+              "mode": "SSE-B2"
+            },
+            "uploadTimestamp": 1792542005619
+          }
+        }
+      ]
+    },
+    {
+      "path": "docs/historical_03_domain_exactness_results.md",
+      "bytes": 9807,
+      "sha256": "25aa4a8aae964e58257036ab6bf274c17fd17e4a1a409d3ae4c9617350e8cf53",
+      "source_id": "WIN_PAPER/R4_DOMAIN_AND_APPLICATION_CPU_RESEARCH_20261017/03_DOMAIN_EXACTNESS_RESULTS.md",
+      "archive_extents": [
+        {
+          "file_offset": 0,
+          "pack_offset": 18811504,
+          "bytes": 9807,
+          "pack_index": 151,
+          "pack_sha256": "c040b1b8e45641fefc911419b85b9d2d6a1046b5045fd0bd5d3b50a15023a2c5",
+          "remote": {
+            "action": "upload",
+            "bucketId": "172529a471525cb5aa1e0f12",
+            "contentLength": 67108864,
+            "contentSha1": "73b35752791e70c390e643c21d50367bf78ddd00",
+            "fileId": "4_z172529a471525cb5aa1e0f12_f1016ad82827ab681_d20261021_m000135_c005_v0501048_t0045_u01792540895642",
+            "fileName": "research-archive/packs/sha256/c0/c040b1b8e45641fefc911419b85b9d2d6a1046b5045fd0bd5d3b50a15023a2c5.pack",
+            "serverSideEncryption": {
+              "algorithm": "AES256",
+              "mode": "SSE-B2"
+            },
+            "uploadTimestamp": 1792540895642
+          }
+        }
+      ]
+    },
+    {
+      "path": "docs/historical_01_actual_input_domain.md",
+      "bytes": 3128,
+      "sha256": "c0548fdd9699c49c2f6b04e017298c5254f68f4b03f8a3d98d0c72031f18c459",
+      "source_id": "WIN_PAPER/R4_DOMAIN_AND_APPLICATION_CPU_RESEARCH_20261017/01_ACTUAL_INPUT_DOMAIN.md",
+      "archive_extents": [
+        {
+          "file_offset": 0,
+          "pack_offset": 43150330,
+          "bytes": 3128,
+          "pack_index": 584,
+          "pack_sha256": "f5b3db6675009e5d9cdf456a727ce74bda01a241bdedf707f45ccca531cd2027",
+          "remote": {
+            "action": "upload",
+            "bucketId": "172529a471525cb5aa1e0f12",
+            "contentLength": 67108864,
+            "contentSha1": "b99ef955851b33a1b0a0eff6af3205a6666efd99",
+            "fileId": "4_z172529a471525cb5aa1e0f12_f1016ad82827ebf3e_d20261021_m010150_c005_v0501048_t0040_u01792544510388",
+            "fileName": "research-archive/packs/sha256/f5/f5b3db6675009e5d9cdf456a727ce74bda01a241bdedf707f45ccca531cd2027.pack",
+            "serverSideEncryption": {
+              "algorithm": "AES256",
+              "mode": "SSE-B2"
+            },
+            "uploadTimestamp": 1792544510388
+          }
+        }
+      ]
+    },
+    {
+      "path": "docs/historical_02_preregistered_questions_and_failure_rules.md",
+      "bytes": 3159,
+      "sha256": "cb8c6b07b349a540c8ee8a60bf1919abea71deaa83f742c3842f3fa6f57cf28d",
+      "source_id": "WIN_PAPER/R4_DOMAIN_AND_APPLICATION_CPU_RESEARCH_20261017/02_PREREGISTERED_QUESTIONS_AND_FAILURE_RULES.md",
+      "archive_extents": [
+        {
+          "file_offset": 0,
+          "pack_offset": 59822094,
+          "bytes": 3159,
+          "pack_index": 612,
+          "pack_sha256": "8eebadcab48350edfb8378e6b8840a5f29be5c58cfa7b662e514524948942bfd",
+          "remote": {
+            "action": "upload",
+            "bucketId": "172529a471525cb5aa1e0f12",
+            "contentLength": 67108864,
+            "contentSha1": "c6c641ac2ea2430d02b4fc029efad320eab295ce",
+            "fileId": "4_z172529a471525cb5aa1e0f12_f10618bad06678097_d20261021_m010546_c005_v0501031_t0051_u01792544746084",
+            "fileName": "research-archive/packs/sha256/8e/8eebadcab48350edfb8378e6b8840a5f29be5c58cfa7b662e514524948942bfd.pack",
+            "serverSideEncryption": {
+              "algorithm": "AES256",
+              "mode": "SSE-B2"
+            },
+            "uploadTimestamp": 1792544746084
+          }
+        }
+      ]
+    },
+    {
+      "path": "docs/historical_04_prior_art_delta.md",
+      "bytes": 9715,
+      "sha256": "86b5ddf6f58b7df47f698517f610c963e33d5b43aa8ced790ca3e03a1af2dcae",
+      "source_id": "WIN_PAPER/R4_DOMAIN_AND_APPLICATION_CPU_RESEARCH_20261017/04_PRIOR_ART_DELTA.md",
+      "archive_extents": [
+        {
+          "file_offset": 0,
+          "pack_offset": 30210010,
+          "bytes": 9715,
+          "pack_index": 426,
+          "pack_sha256": "b8b5a2cd95f38cbb96f24f34ea65c6f284e6cfe8c290e1e0c11ee85326025135",
+          "remote": {
+            "action": "upload",
+            "bucketId": "172529a471525cb5aa1e0f12",
+            "contentLength": 67108864,
+            "contentSha1": "e00c948e96cd3469f2ca9949b2be888445639667",
+            "fileId": "4_z172529a471525cb5aa1e0f12_f10618bad0666d334_d20261021_m003912_c005_v0501031_t0011_u01792543152095",
+            "fileName": "research-archive/packs/sha256/b8/b8b5a2cd95f38cbb96f24f34ea65c6f284e6cfe8c290e1e0c11ee85326025135.pack",
+            "serverSideEncryption": {
+              "algorithm": "AES256",
+              "mode": "SSE-B2"
+            },
+            "uploadTimestamp": 1792543152095
+          }
+        }
+      ]
+    },
+    {
+      "path": "results/domain/main_result.json",
+      "bytes": 251,
+      "sha256": "03f76ce064dce07f837bd5f87698c6082dddd8f713c7f7c241346cb07705f48f",
+      "source_id": "WIN_PAPER/R4_DOMAIN_AND_APPLICATION_CPU_RESEARCH_20261017/REPRO/MAIN_RESULT.json",
+      "archive_extents": [
+        {
+          "file_offset": 0,
+          "pack_offset": 6456630,
+          "bytes": 251,
+          "pack_index": 12,
+          "pack_sha256": "46fdcdc57de017867a8cbb9e333a72069bb298b4fea3ca46702e1857093bb95f",
+          "remote": {
+            "action": "upload",
+            "bucketId": "172529a471525cb5aa1e0f12",
+            "contentLength": 67108864,
+            "contentSha1": "fd0823cdc7426e735bb019260476b37036483a18",
+            "fileId": "4_z172529a471525cb5aa1e0f12_f10157c5c3741e93f_d20261020_m232611_c005_v0501026_t0023_u01792538771906",
+            "fileName": "research-archive/packs/sha256/46/46fdcdc57de017867a8cbb9e333a72069bb298b4fea3ca46702e1857093bb95f.pack",
+            "serverSideEncryption": {
+              "algorithm": "AES256",
+              "mode": "SSE-B2"
+            },
+            "uploadTimestamp": 1792538771906
+          }
+        }
+      ]
+    },
+    {
+      "path": "results/domain/coverage_receipt.json",
+      "bytes": 308,
+      "sha256": "9f1fe4aa5c0e3682be8788d0c04aef3e14d7ac3f9d3cea6f4cf26c0268c8ebca",
+      "source_id": "WIN_PAPER/R4_DOMAIN_AND_APPLICATION_CPU_RESEARCH_20261017/REPRO/COVERAGE_RECEIPT.json",
+      "archive_extents": [
+        {
+          "file_offset": 0,
+          "pack_offset": 65030115,
+          "bytes": 308,
+          "pack_index": 496,
+          "pack_sha256": "9b81725cb023c3a12a2040afa10d3f01f73a97181ea9e57dae96dc484a2e0801",
+          "remote": {
+            "action": "upload",
+            "bucketId": "172529a471525cb5aa1e0f12",
+            "contentLength": 67108864,
+            "contentSha1": "5f31c7a5313af274993be6971d715965e0e3e148",
+            "fileId": "4_z172529a471525cb5aa1e0f12_f10618bad066717cc_d20261021_m004921_c005_v0501031_t0048_u01792543761056",
+            "fileName": "research-archive/packs/sha256/9b/9b81725cb023c3a12a2040afa10d3f01f73a97181ea9e57dae96dc484a2e0801.pack",
+            "serverSideEncryption": {
+              "algorithm": "AES256",
+              "mode": "SSE-B2"
+            },
+            "uploadTimestamp": 1792543761056
+          }
+        }
+      ]
+    },
+    {
+      "path": "results/domain/preregistered_protocol.json",
+      "bytes": 3638,
+      "sha256": "d577e1107441ac6e8278143ec3226d29d27425224d8f900cfbdf3020f28c69ee",
+      "source_id": "WIN_PAPER/R4_DOMAIN_AND_APPLICATION_CPU_RESEARCH_20261017/REPRO/PREREGISTERED_PROTOCOL.json",
+      "archive_extents": [
+        {
+          "file_offset": 0,
+          "pack_offset": 65026452,
+          "bytes": 3638,
+          "pack_index": 629,
+          "pack_sha256": "1c015aad0d3e5933dd657b0dbe5682e7aae189d9e8629de589643da43ef4d6b0",
+          "remote": {
+            "action": "upload",
+            "bucketId": "172529a471525cb5aa1e0f12",
+            "contentLength": 67108864,
+            "contentSha1": "66b634d93aed0c6e7aae8e6f4851f1c9f6567166",
+            "fileId": "4_z172529a471525cb5aa1e0f12_f1016ad82827f2c04_d20261021_m010751_c005_v0501048_t0041_u01792544871687",
+            "fileName": "research-archive/packs/sha256/1c/1c015aad0d3e5933dd657b0dbe5682e7aae189d9e8629de589643da43ef4d6b0.pack",
+            "serverSideEncryption": {
+              "algorithm": "AES256",
+              "mode": "SSE-B2"
+            },
+            "uploadTimestamp": 1792544871687
+          }
+        }
+      ]
+    },
+    {
+      "path": "results/domain/analytic_lemma_draft.md",
+      "bytes": 6229,
+      "sha256": "cb3140b4e663f7b7b4fa65f65025f3799120bd46e67545233a9cdd2be7bf2067",
+      "source_id": "WIN_PAPER/R4_DOMAIN_AND_APPLICATION_CPU_RESEARCH_20261017/REPRO/ANALYTIC_LEMMA_DRAFT.md",
+      "archive_extents": [
+        {
+          "file_offset": 0,
+          "pack_offset": 30611115,
+          "bytes": 6229,
+          "pack_index": 612,
+          "pack_sha256": "8eebadcab48350edfb8378e6b8840a5f29be5c58cfa7b662e514524948942bfd",
+          "remote": {
+            "action": "upload",
+            "bucketId": "172529a471525cb5aa1e0f12",
+            "contentLength": 67108864,
+            "contentSha1": "c6c641ac2ea2430d02b4fc029efad320eab295ce",
+            "fileId": "4_z172529a471525cb5aa1e0f12_f10618bad06678097_d20261021_m010546_c005_v0501031_t0051_u01792544746084",
+            "fileName": "research-archive/packs/sha256/8e/8eebadcab48350edfb8378e6b8840a5f29be5c58cfa7b662e514524948942bfd.pack",
+            "serverSideEncryption": {
+              "algorithm": "AES256",
+              "mode": "SSE-B2"
+            },
+            "uploadTimestamp": 1792544746084
+          }
+        }
+      ]
+    },
+    {
+      "path": "code/cpu/domain_audit.cpp",
+      "bytes": 12245,
+      "sha256": "15a9ecbc2bff426a01a2814d4497400fc23fcedea2e92f529c3af1e239cbad02",
+      "source_id": "WIN_PAPER/R4_DOMAIN_AND_APPLICATION_CPU_RESEARCH_20261017/REPRO/domain_audit.cpp",
+      "archive_extents": [
+        {
+          "file_offset": 0,
+          "pack_offset": 13062007,
+          "bytes": 12245,
+          "pack_index": 64,
+          "pack_sha256": "ce6dd3e1917fb0ad4ce289952636532b2e26c7f8e94c9053554d5ddcf65938b8",
+          "remote": {
+            "action": "upload",
+            "bucketId": "172529a471525cb5aa1e0f12",
+            "contentLength": 67108864,
+            "contentSha1": "6158d4d851d595efc8f14cfc5a37eefaf0b795bf",
+            "fileId": "4_z172529a471525cb5aa1e0f12_f10157c5c3742233c_d20261020_m233451_c005_v0501026_t0010_u01792539291555",
+            "fileName": "research-archive/packs/sha256/ce/ce6dd3e1917fb0ad4ce289952636532b2e26c7f8e94c9053554d5ddcf65938b8.pack",
+            "serverSideEncryption": {
+              "algorithm": "AES256",
+              "mode": "SSE-B2"
+            },
+            "uploadTimestamp": 1792539291555
+          }
+        }
+      ]
+    },
+    {
+      "path": "results/gpu/independent_performance.csv",
+      "bytes": 11067,
+      "sha256": "079a158c90c34730f57a86fdcb884fb61f9e8296a91d26ec8ce840545e5db25d",
+      "source_id": "WIN_PAPER/R4_FINAL_GPU_VALIDATION_AND_PAPER_FREEZE_20261017/REPRO/INDEPENDENT_PERFORMANCE.csv",
+      "archive_extents": [
+        {
+          "file_offset": 0,
+          "pack_offset": 4416204,
+          "bytes": 11067,
+          "pack_index": 25,
+          "pack_sha256": "4d11b846a2aa6371399df43c93c3e3cd3d1ed420f5c47e5ea4e11ecdaff8d90c",
+          "remote": {
+            "action": "upload",
+            "bucketId": "172529a471525cb5aa1e0f12",
+            "contentLength": 67108864,
+            "contentSha1": "cfc320f518d413fa1d3c8e8fef0847999fadd962",
+            "fileId": "4_z172529a471525cb5aa1e0f12_f10157c5c3741fa61_d20261020_m232842_c005_v0501026_t0019_u01792538922979",
+            "fileName": "research-archive/packs/sha256/4d/4d11b846a2aa6371399df43c93c3e3cd3d1ed420f5c47e5ea4e11ecdaff8d90c.pack",
+            "serverSideEncryption": {
+              "algorithm": "AES256",
+              "mode": "SSE-B2"
+            },
+            "uploadTimestamp": 1792538922979
+          }
+        }
+      ]
+    },
+    {
+      "path": "results/gpu/preregistered_final_protocol.json",
+      "bytes": 2852,
+      "sha256": "19d5fea05687ad0937cd612eff89678aeefb510724f73e1863363ab3eacbff1b",
+      "source_id": "WIN_PAPER/R4_FINAL_GPU_VALIDATION_AND_PAPER_FREEZE_20261017/REPRO/PREREGISTERED_FINAL_PROTOCOL.json",
+      "archive_extents": [
+        {
+          "file_offset": 0,
+          "pack_offset": 18964459,
+          "bytes": 2852,
+          "pack_index": 124,
+          "pack_sha256": "e7065e7f6fa4514e12f728f0c5d6fb03608991bb4764c7b9b23cbce0a747f34f",
+          "remote": {
+            "action": "upload",
+            "bucketId": "172529a471525cb5aa1e0f12",
+            "contentLength": 67108864,
+            "contentSha1": "7f9727fd339d4f8d3215de004b6ce9fbd4a31dcf",
+            "fileId": "4_z172529a471525cb5aa1e0f12_f10157c5c3742614b_d20261020_m234349_c005_v0501026_t0050_u01792539829530",
+            "fileName": "research-archive/packs/sha256/e7/e7065e7f6fa4514e12f728f0c5d6fb03608991bb4764c7b9b23cbce0a747f34f.pack",
+            "serverSideEncryption": {
+              "algorithm": "AES256",
+              "mode": "SSE-B2"
+            },
+            "uploadTimestamp": 1792539829530
+          }
+        }
+      ]
+    },
+    {
+      "path": "code/cpu/decode_add.cu",
+      "bytes": 790,
+      "sha256": "9c806ae5f8cbef137271c18a9afcb7ca4fff903c04e7a9bc131b6bc8492e0d5f",
+      "source_id": "WIN_PAPER/R4_FINAL_GPU_VALIDATION_AND_PAPER_FREEZE_20261017/bundle/sources/decode_add.cu",
+      "archive_extents": [
+        {
+          "file_offset": 0,
+          "pack_offset": 7608440,
+          "bytes": 790,
+          "pack_index": 483,
+          "pack_sha256": "54221852ac96bddec8a9020391d41f1e8acbe5f695f683ddd933aca82b7b3f4a",
+          "remote": {
+            "action": "upload",
+            "bucketId": "172529a471525cb5aa1e0f12",
+            "contentLength": 67108864,
+            "contentSha1": "380d3c04bdbdff0cbf930e7532b814215c5a0f6f",
+            "fileId": "4_z172529a471525cb5aa1e0f12_f1016ad82827dee08_d20261021_m004753_c005_v0501048_t0041_u01792543673233",
+            "fileName": "research-archive/packs/sha256/54/54221852ac96bddec8a9020391d41f1e8acbe5f695f683ddd933aca82b7b3f4a.pack",
+            "serverSideEncryption": {
+              "algorithm": "AES256",
+              "mode": "SSE-B2"
+            },
+            "uploadTimestamp": 1792543673233
+          }
+        }
+      ]
+    }
+  ],
+  "archive_only": [
+    {
+      "path": "code/cpu/independent_reference.py",
+      "bytes": 4165,
+      "sha256": "a4450983357c56ca24cd35771685c08cad3589665dd002b67f8b085213a78ab2",
+      "source_id": "WIN_PAPER/r4_amax6_integer_threshold_cpu_20261017/independent_reference.py",
+      "archive_extents": [
+        {
+          "file_offset": 0,
+          "pack_offset": 65724592,
+          "bytes": 4165,
+          "pack_index": 509,
+          "pack_sha256": "dc2a521873dfe2bfbba270468c02379aad1456976c1aaad8a6a6519b8e697d3c",
+          "remote": {
+            "action": "upload",
+            "bucketId": "172529a471525cb5aa1e0f12",
+            "contentLength": 67108864,
+            "contentSha1": "cf3e5b1de7321e5acda9fa28291a2a9338ba4faa",
+            "fileId": "4_z172529a471525cb5aa1e0f12_f10618bad0667230e_d20261021_m005102_c005_v0501031_t0023_u01792543862004",
+            "fileName": "research-archive/packs/sha256/dc/dc2a521873dfe2bfbba270468c02379aad1456976c1aaad8a6a6519b8e697d3c.pack",
+            "serverSideEncryption": {
+              "algorithm": "AES256",
+              "mode": "SSE-B2"
+            },
+            "uploadTimestamp": 1792543862004
+          }
+        }
+      ],
+      "reasons": [
+        "KOREAN_ORIGINAL_RETAINED_IN_GLOBAL_ARCHIVE",
+        "PERSONAL_PATH_RETAINED_ONLY_IN_GLOBAL_ARCHIVE"
+      ]
+    },
+    {
+      "path": "manuscript/fp4_stochastic_rounding.pdf",
+      "bytes": 503449,
+      "sha256": "dc9426e3aebdf38fe9c9c092fedd659687fe87311fbf207b0570c410efe6cf04",
+      "source_id": "WIN_PAPER/R4_IEIE_SUBMISSION_PAIR_20261018/R4_IEIE_PROCEEDINGS_5P_EN.pdf",
+      "archive_extents": [
+        {
+          "file_offset": 0,
+          "pack_offset": 10480482,
+          "bytes": 503449,
+          "pack_index": 664,
+          "pack_sha256": "0022db3d030d998b7cc780cfd26815d4ad09013ca0ce2e7e0f1253a5d2d72911",
+          "remote": {
+            "action": "upload",
+            "bucketId": "172529a471525cb5aa1e0f12",
+            "contentLength": 67108864,
+            "contentSha1": "95d3b9a0ae918246c3297d4d10c1438b4ff3a062",
+            "fileId": "4_z172529a471525cb5aa1e0f12_f10618bad0667b537_d20261021_m011147_c005_v0501031_t0005_u01792545107800",
+            "fileName": "research-archive/packs/sha256/00/0022db3d030d998b7cc780cfd26815d4ad09013ca0ce2e7e0f1253a5d2d72911.pack",
+            "serverSideEncryption": {
+              "algorithm": "AES256",
+              "mode": "SSE-B2"
+            },
+            "uploadTimestamp": 1792545107800
+          }
+        }
+      ],
+      "reasons": [
+        "KOREAN_DOCUMENT_METADATA_ONLY; ENGLISH_SCIENTIFIC_BODY"
+      ]
+    },
+    {
+      "path": "manuscript/fp4_stochastic_rounding.docx",
+      "bytes": 111198,
+      "sha256": "a36ab4562a9d91ab577bb83edd9766d9ffbbe3e62f155d5f5b7a9761081239d7",
+      "source_id": "WIN_PAPER/R4_IEIE_SUBMISSION_PAIR_20261018/R4_IEIE_PROCEEDINGS_5P_EN.docx",
+      "archive_extents": [
+        {
+          "file_offset": 0,
+          "pack_offset": 62079839,
+          "bytes": 111198,
+          "pack_index": 507,
+          "pack_sha256": "206d031ae6f03a5599c6845a2ff4077dd9e7e783723b2e485f5aeecb84d97a45",
+          "remote": {
+            "action": "upload",
+            "bucketId": "172529a471525cb5aa1e0f12",
+            "contentLength": 67108864,
+            "contentSha1": "3dd998f70665ab4763b707dee563bba8c130c2ae",
+            "fileId": "4_z172529a471525cb5aa1e0f12_f10618bad06672181_d20261021_m005048_c005_v0501031_t0013_u01792543848434",
+            "fileName": "research-archive/packs/sha256/20/206d031ae6f03a5599c6845a2ff4077dd9e7e783723b2e485f5aeecb84d97a45.pack",
+            "serverSideEncryption": {
+              "algorithm": "AES256",
+              "mode": "SSE-B2"
+            },
+            "uploadTimestamp": 1792543848434
+          }
+        }
+      ],
+      "reasons": [
+        "KOREAN_XML_METADATA_OR_FONT_NAMES; ORIGINAL_RETAINED_IN_ARCHIVE"
+      ]
+    }
+  ],
+  "original_modifications": 0,
+  "original_deletions": 0,
+  "new_research_results_imported": false,
+  "derived_files": [
+    {
+      "path": "manuscript/fp4_stochastic_rounding_english_metadata.pdf",
+      "bytes": 663543,
+      "sha256": "c2b78d27c16707045857188f71d245512e4364c22b96104414372bc5288c3d37",
+      "original_sha256": "dc9426e3aebdf38fe9c9c092fedd659687fe87311fbf207b0570c410efe6cf04",
+      "transformation": "Removed document/XMP metadata and wrote English title/author/subject. Scientific page content streams and extracted text are unchanged.",
+      "page_content_stream_sha256": [
+        "80b5cd7855567656cfb1c391fc230d7c711a6845769615ad3176b99c80aeeea0",
+        "049da79d11fc8d0f1489389eca64eb3329682af1617277fb504e014e99db43d2",
+        "5288e479ff1adea1c688706aa44b647f85fdeb9909db38c2ef462b70ad2ec206",
+        "e662837b27d3de7f0a8d50744b45600692189fc442ba0a2ba6fd2bb37a8fef16",
+        "6ad7fa6a872dd24f8aa0886a29dac57e163ee1dd60d70cec1b998ab59eee4838"
+      ],
+      "verification": "SAME_PAGE_COUNT_CONTENT_STREAM_BYTES_AND_EXTRACTED_TEXT"
+    }
+  ]
+}
