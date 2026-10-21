@@ -1,0 +1,78 @@
+{
+  "status": "CONTENT_COMMIT_PRIVATE_REMOTE_AND_B2_RESTORE_VERIFIED",
+  "verified_utc": "2026-10-21T03:11:56.678853+00:00",
+  "content_git_commit": "ff9f7be8edf5763423f4a302a7218795427bbaf7",
+  "private_repository": "https://github.com/cudabinary/fp4-rounding-research",
+  "bucket": "cudabinary-research-archive-20261021",
+  "paper_prefix": "research-archive/papers/fp4-rounding/",
+  "manifest": {
+    "sha256": "da4582e875f0144ff01778bd7a69ec62e6ea7f02e35f6dcb95f8ca495241d3b3",
+    "remote": {
+      "fileId": "4_z172529a471525cb5aa1e0f12_f109eeb3855172f39_d20261021_m031157_c005_v0501036_t0045_u01792552317729",
+      "fileName": "research-archive/papers/fp4-rounding/manifests/content-ff9f7be8edf5763423f4a302a7218795427bbaf7.json",
+      "bucketId": "172529a471525cb5aa1e0f12",
+      "contentLength": 2808,
+      "contentSha1": "79537bf4e3bdbc99e195e41220e7297f99bb163a",
+      "uploadTimestamp": 1792552317729,
+      "serverSideEncryption": {
+        "algorithm": "AES256",
+        "mode": "SSE-B2"
+      },
+      "action": "upload"
+    }
+  },
+  "git_bundle": {
+    "sha256": "e5123505094a60c5658b397ff301f3b582eb156bb64e0caa7bea5a19169981f0",
+    "remote": {
+      "fileId": "4_z172529a471525cb5aa1e0f12_f109eeb3855172cda_d20261021_m031147_c005_v0501036_t0016_u01792552307162",
+      "fileName": "research-archive/papers/fp4-rounding/git/ff9f7be8edf5763423f4a302a7218795427bbaf7.bundle",
+      "bucketId": "172529a471525cb5aa1e0f12",
+      "contentLength": 460610,
+      "contentSha1": "bfa75c7c38173fda47340529379a28ecfae30bcc",
+      "uploadTimestamp": 1792552307162,
+      "serverSideEncryption": {
+        "algorithm": "AES256",
+        "mode": "SSE-B2"
+      },
+      "action": "upload"
+    }
+  },
+  "raw_catalogue": {
+    "sha256": "24a32e6d153f63a13781b16d52840be55bf075f14be1b27c8824513562c2c7b2",
+    "remote": {
+      "fileId": "4_z172529a471525cb5aa1e0f12_f109eeb3855172bee_d20261021_m031142_c005_v0501036_t0035_u01792552302945",
+      "fileName": "research-archive/papers/fp4-rounding/catalogues/raw-24a32e6d153f63a13781b16d52840be55bf075f14be1b27c8824513562c2c7b2.jsonl.gz",
+      "bucketId": "172529a471525cb5aa1e0f12",
+      "contentLength": 821911,
+      "contentSha1": "ed371d09afab0020a5b6a594ccdab829fd59f622",
+      "uploadTimestamp": 1792552302945,
+      "serverSideEncryption": {
+        "algorithm": "AES256",
+        "mode": "SSE-B2"
+      },
+      "action": "upload"
+    }
+  },
+  "raw_catalogue_entries": 5161,
+  "curated_checkout_recovery": {
+    "status": "PASS",
+    "commit": "ff9f7be8edf5763423f4a302a7218795427bbaf7",
+    "tracked_files_compared": 35,
+    "git_fsck": "PASS",
+    "initial_file_manifest": "PASS",
+    "bundle_sha256": "e5123505094a60c5658b397ff301f3b582eb156bb64e0caa7bea5a19169981f0"
+  },
+  "historical_representative_restore": {
+    "status": "PASS",
+    "source_id": "WIN_PAPER/R4_FINAL_GPU_VALIDATION_AND_PAPER_FREEZE_20261017/bundle/sources/D1.cu",
+    "sha256": "757f6f456055be5a3f832f53ba20b68374801f4dc273204122a26ae896fd4bee",
+    "bytes": 11619,
+    "remote_pack_file_ids": [
+      "4_z172529a471525cb5aa1e0f12_f10618bad0666abfe_d20261021_m003351_c005_v0501031_t0043_u01792542831263"
+    ],
+    "method": "Fresh full-pack remote read, pack SHA256, exact extent reconstruction, complete logical-file SHA256"
+  },
+  "original_deletions": 0,
+  "new_research_results_imported": false,
+  "scope": "Historical selected files and referenced global raw objects. Actual invoice/account charges are unverified because the existing browser session expired."
+}
