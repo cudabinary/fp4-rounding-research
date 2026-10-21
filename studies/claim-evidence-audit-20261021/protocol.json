@@ -1,0 +1,13 @@
+{
+  "schema":"fp4-claim-evidence-review-v1",
+  "date_kst":"2026-10-21",
+  "base_commit":"10580d6638ad82f74667d8d6616baeecfe85c12b",
+  "objective":"Decide which manuscript claims the existing certificates strengthen and whether further symbolic proof has incremental value",
+  "method":"Read preserved manuscript, proof documents, source text, frozen results and receipts; classify claims and source availability; verify identities and document references only",
+  "new_arithmetic_evaluations":0,
+  "new_enumerations":0,
+  "old_checkers_or_scans_to_execute":[],
+  "source_policy":"Use exact obtained theorem statements only; identify historical secondary inspection claims separately from currently available primary text; do not infer novelty from access failures or failed direct substitutions",
+  "output":"New English claim-to-evidence document, theorem/source matrix, symbolic-proof value decision, source/file hashes and an identity-only checker",
+  "forbidden":"No scientific reruns, GPU, CUDA, kernel, compiler/install, paid work, Library or B2 transfer, new publication destination, external human messages, source overwrite or permission/certificate bypass"
+}

@@ -1,0 +1,100 @@
+Incremental value of a certificate-free symbolic proof
+2026-10-21
+
+Decision: DEFER_AS_PRIMARY_RESEARCH_OBJECTIVE.
+Use the existing small complete certificates for the fixed-contract claims.
+The symbolic exclusion remains mathematically interesting, but no demonstrated
+incremental publication contribution justifies further same-domain computation
+as the default next step. This is a priority decision, not a claim that the
+open proof is impossible or worthless, and not a permanent project stop.
+
+Current baseline
+
+Normal45 has a complete2814-row branch certificate and236 candidate exclusions
+after the1600 A,t reduction. The inverse-free verifier checks complete residue
+classes and supplied identities, so the generator's modular-inverse routine
+is not a trusted numerical oracle. Subnormal49 has a4656-branch certificate
+and one impossible reconstruction, with a separately implemented direct-j
+run agreeing across all branches. The full49 consequence is already true
+with those finite proof components. No further input search is needed to
+decide that fixed finite predicate.
+
+The old630848 normal representative evaluations,100575 subnormal pairs and
+532701120-pair historical sweep have different units and roles. Removing a
+large-sweep proof dependency is a structural improvement, not a measured
+checker speedup equal to a ratio of those counts. The smaller proof route
+does not erase the historical evidence. No checker timing was measured here.
+
+1. Generality
+
+A symbolic proof with exactly the same BF16, RN32(a/6), b32 and p35..64
+assumptions proves the same statement. It does not automatically cover
+arbitrary F32 scales, FTZ, other input significand widths, probability bits,
+scale divisors, exponent contracts or RNG policies.
+Potential additional value: a parameterized separation theorem predicting a
+precision boundary for a predeclared family of coefficient widths/lattices or
+scale rules. Current status: NOT DEMONSTRATED. A new family must be stated
+and compared with existing theory before experiments; changing proof notation
+or calling a finite table a theorem is not such an extension.
+
+2. Assumption reduction
+
+Potential additional value: prove a strict superset or remove a specific
+assumption with a complete implication argument. Merely not using x<=a at
+the final residue-filter stage does not prove a larger complete quantizer
+contract; earlier bin, exponent, clipping and scale assumptions still matter.
+Current status: no maximal-domain result and no proof that every current
+assumption is necessary. A broader theorem remains OPEN, not a consequence
+of these certificates' zero mismatches.
+
+3. Proof/checking cost and trust
+
+Potential additional value: fewer independently checkable arithmetic cases,
+a shorter proof artifact, or a formal proof with a clearly specified trusted
+base. Measure bytes, proof cases and checker work on the same statement and
+environment before claiming a cost reduction. No such new reduction is
+measured here. A proof assistant could also verify the existing finite
+certificate, so "symbolic" alone does not uniquely provide formal assurance.
+Current status: structural reduction from historical sweeps is established;
+additional savings from a future symbolic closure are NOT ESTABLISHED.
+
+4. Explanation and readability
+
+Existing explanations already identify 3D=A*2^q+epsilon, the J-dependent t
+bound, and eta as the guard excluding the two normalized-X survivors. A
+short nonenumerative exclusion could make the last236-case closure easier
+to inspect and teach. That would be a real expository improvement, plausibly
+useful as a proof appendix, but it is not automatically a new research result.
+Current status: PLAUSIBLE_MODEST_BENEFIT; no concise closure is available.
+
+5. Original correction-removal claim and performance
+
+For p53 the correction-removal property was already supported by an analytic
+normal argument and complete CPU evidence. New boundary theorems and compact
+subnormal proofs improve characterization and transparency; they do not turn
+the old p53 result into a newly discovered fact. Nor does a symbolic proof
+change the captured CUDA binary, remove integer division, improve the D1 vs
+strong A-double-prime ranking, or establish model quality. Further runtime
+claims would need separately authorized implementation/evaluation work.
+
+Conditions for resuming symbolic work as the primary objective
+
+Before more search, select at least one concrete deliverable:
+G1: a genuinely broader, explicitly parameterized domain/theorem;
+G2: a specific removed assumption and a proven strict-superset inclusion;
+G3: a quantified reduction of proof/checking work or a formal assurance target;
+G4: a short explanatory closure whose editorial value justifies the effort,
+    while explicitly retaining a non-novel-exposition label if appropriate.
+Also state the strongest existing theorem that might subsume that deliverable.
+The unrecovered exact Rump lemma prevents closing this comparison; lack of
+access cannot be converted into a favorable answer.
+
+Current recommendation and one next step
+
+Do not rerun the completed certificates or chase more residues in this phase.
+Prepare a proposed theory/limitations manuscript revision centered on the
+computer-assisted45/49 characterization, with an explicit evidence dependency
+diagram/table and corrected source-status qualifications. That is immediately
+useful, reviewable work even if Rump remains unavailable. Reassess symbolic
+work only against a chosen gate, rather than treating it as required to
+establish a fixed-domain truth already settled by complete certificates.

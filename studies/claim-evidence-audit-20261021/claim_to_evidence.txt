@@ -1,0 +1,274 @@
+FP4 claim-to-evidence audit and manuscript wording
+2026-10-21; evidence frozen at commit 10580d6638ad82f74667d8d6616baeecfe85c12b
+
+Decision
+
+The strongest upgrade is a sharp, contract-specific precision characterization
+with small complete computer-assisted proofs. The original p53 correction
+elimination claim was already established; its truth is not newly discovered
+by replacing a large certificate with a smaller one. The p45 normal and p49
+full-domain boundaries add information beyond the original single-p53 claim.
+The smaller certificates improve proof dependencies and inspection, but do not
+by themselves establish a new general rounding theorem, publication novelty,
+runtime gain or a hardware precision requirement.
+
+No arithmetic, certificate checker, direct-j enumerator, prefix, representative
+set or historical sweep was rerun in this audit. Existing result counts below
+are evidence descriptions, not new observations. evidence_index.json records
+the bytes/SHA256 of the referenced files. Source theorem premises and current
+availability are in theorem_source_matrix.json. The symbolic-proof decision
+is in symbolic_proof_value.txt.
+
+Common contract B
+
+B means finite nonnegative BF16 magnitudes 0<=x<=a, s=RN32(a/6) with ties
+to even and gradual underflow, zero fallback2^-42, E2M1 grid
+(0,1/2,1,3/2,2,3,4,6), and the unchanged b32 probability lattice. C(y) is
+the canonical interval/base plus floor(2^32 times interval probability),
+after clipping the magnitude ratio at6. Virtual RNE-p uses binary64 exponent
+range and integer35<=p<=64. N and S restrict B to normal and positive
+subnormal derived scales. Zero is handled separately. No independent F32
+scale, FTZ, changed random-word policy, NaN/infinity domain, native p45/p49
+instruction, or arbitrary real-valued SR contract is admitted.
+
+Evidence IDs resolve to repository-relative paths and hashes in the index.
+Reference to an earlier result is not a claim that it ran in this audit.
+
+C01. The final compatibility correction is redundant at p53
+
+Manuscript location: p1 Abstract/Contributions; p2 arithmetic and domain
+argument; p5 conclusion. Domain: B at b32,p53, for the specified scalar
+arithmetic and unchanged surrounding semantics.
+Proof/evidence: E_HISTORY_DOMAIN and E_HISTORY_RESULT preserve the complete
+532701120-pair CPU result; E_HISTORY_LEMMA gives the normal analytic mechanism.
+E_NORMAL_PROOF/E_NORMAL_CERT/E_NORMAL_RESULTS and E_S49_PROOF/E_R49_INDEPENDENT
+now supply smaller sufficient proof dependencies via p45/p49 and monotonicity.
+E_S53_PROOF/E_S53_REVIEW separately provide the conservative subnormal p53
+elementary argument and informal review. These are alternatives, not new
+independent workloads to add to the old pair count.
+Standard part: exact interpolation, midpoint separation, precision monotonicity
+and composition from equal canonical base/threshold.
+Additional obligation: coupled divisor/input/lattice separation, discharged
+by the stated domain proofs/certificates. Native execution equivalence needs
+the separately preserved source/binary/output evidence; scalar mathematics
+is not a CUDA concurrency or compiler proof.
+Allowed: "Under the specified BF16/derived-scale contract, the final RN64
+compatibility correction is unnecessary; the scalar result has analytic and
+complete finite proof components."
+Exclude: "The correction is unnecessary for arbitrary F32 inputs/scales";
+"a new universal stochastic-rounding algorithm"; "formally verified CUDA".
+OPEN: maximal valid domain, necessity of every assumption, formal development.
+
+C02. Normal-scale sufficiency for p45..64
+
+Proposed extension to the original manuscript's p53-only statement. Domain:
+N, b32, virtual RNE-p35..64. Proof form: algebraic reduction plus a complete
+small finite certificate, not a certificate-free symbolic theorem.
+Evidence: E_NORMAL_PROOF sections2..5, E_NORMAL_CERT, E_NORMAL_RESULTS,
+E_NORMAL_VERIFIER and E_NORMAL_RECEIPT. The bound
+t<(A^2+2^(46-2q))*2^-J restricts q18 to J12..15 and q17 to J12..16.
+There are1600 A,t branches,2814 retained J/eta branches,236 residue solutions:
+234 violate X128..255 and two violate eta=1[X*65536<D]. The proof no longer
+depends on the old630848 normal representative evaluations.
+Standard part: quotient/remainder algebra, gcd and complete residue classes.
+Additional part: q/A divisor classes from RN32(a/6), the b32 lattice and exact
+binade relation L+J=61+eta. E_NORMAL_ALGEBRA_REVIEW reviews the stronger bound
+and two supplied eta cases; it does NOT independently enumerate all236.
+Allowed: "Normal-scale threshold preservation holds for p>=45 within the
+declared virtual-precision range, by analytic reduction and a complete small
+certificate."
+Exclude: "A purely analytic p45 theorem"; "45-bit GPU division is available
+or faster"; "all FP4 algorithms need at least45 arithmetic bits".
+OPEN: short symbolic replacement of the coefficient enumeration; formal proof.
+
+C03. Sharp normal lower bound from a p44 failure
+
+Domain: the same normal virtual quotient-rounding family and p35..64, not
+all possible exact quantizer implementations. Evidence: E_FIXED_ARITHMETIC,
+E_NORMAL_PROOF section6, E_OLD_PROPOSITIONS. Legal a code492,x code199 has
+D10310997,j2845; j*2^11<=D<j*2^12. The p44 canonical thresholds differ by1,
+and the same carry argument refutes p35..44. The witness was known before
+the latest proof, not prospectively discovered by the new reduction.
+Standard part: one legal counterexample plus monotonic crossing and C02.
+Additional obligation: verify legality and exact arithmetic; covered by the
+preserved identity and direct negative control. No prefix scan was rerun.
+Allowed: "Within p35..64,45 is the uniform minimum for this normal-scale
+quotient-rounding predicate."
+Exclude: "A universal lower bound for FP4 hardware/algorithms"; "the first
+counterexample in every ordering". Raw-code lexicographic minimality is a
+separate inherited ordering result, not the reason the precision minimum is45.
+OPEN: no assertion for p<35 or alternative arithmetic algorithms.
+
+C04. Subnormal p49 and the independently implemented reduced certificate
+
+Domain: S under B. Proof/evidence: E_S49_PROOF, E_R49_OLD_LEDGER,
+E_R49_INDEPENDENT, E_R49_BRANCHES, E_R49_FREEZE and E_R49_COMPARISON.
+The independently written direct-j implementation ran once:4656 A,t branches,
+124640 direct congruence checks, one coarse survivor and six reconstructions.
+The survivor requires X=531 at u15 and noninteger X for u>15; no legal input
+remains. Every branch parameter, survivor and reconstruction agrees with the
+older inverse-based certificate. The99 epsilon-zero diagnostic congruence hits
+are excluded by exact-scale divisibility, not suppressed counterexamples.
+Standard part: integer congruence, divisibility and full-equation reconstruction.
+Additional part: unnormalized subnormal units, legal coefficient/v classes,
+j caps42/85/127, t caps16/4/1 and safe modulus exponents15/15/13.
+Allowed: "A separately implemented complete reduced-condition enumeration
+agrees with the subnormal p49 certificate."
+Exclude: "blind independent replication"; "proof-assistant verification";
+"4656 physical input pairs tested"; "the congruence has no solutions".
+OPEN: a certificate-free general exclusion and common-specification risk.
+The prior conclusion was known to the auditor and disclosed before the run.
+
+C05. Full-domain p49 boundary and the original p53 corollary
+
+Domain: B and virtual p35..64. Proof form: computer-assisted composition of
+C02 for normal scales, C04 for subnormal scales, exact zero/saturation cases,
+and the inherited legal subnormal p48 witness a242,x221. Evidence:
+E_NORMAL_PROOF sections6..8, E_S49_PROOF sections6..7, E_OLD_PROPOSITIONS and
+E_STATUS. Necessity uses the witness; sufficiency uses the complete reductions.
+The old large normal/subnormal safety certificates are no longer required by
+this proof route, although they remain preserved corroboration.
+Standard part: subset composition and precision monotonicity. The additional
+contract-specific work is exactly C02/C04, not an extra generic theorem.
+Allowed: "For the fixed b32 contract and p35..64, the full-domain uniform
+threshold-preservation boundary is49; the proof is computer-assisted."
+Exclude: "p45 is safe for the entire BF16 domain"; "49 is required by every
+correct FP4 implementation"; "all-input pure symbolic proof".
+OPEN: certificate-free proofs, other scale policies, formats or p ranges.
+
+C06. Probability-lattice boundary at fixed p53
+
+Possible supplemental extension, not a native RNG result. Domain: the same
+coupled magnitudes/scales and p53, with abstract integer lattice b1..40.
+Evidence: E_OLD_PROPOSITIONS Proposition3 and E_PRECISION_VALIDATION. The b37
+positive clause still uses712768 normal representatives and100575 subnormal
+pairs; coarsening handles smaller b. The known b38 witness refutes b38..40.
+Standard part: floor coarsening and preservation of a positive finer-lattice
+difference. Additional part: the domain safety certificate and witness.
+Allowed: "The abstract probability-lattice boundary at p53 is37 within the
+examined b1..40 region, using finite certificates."
+Exclude: "A38-bit Philox policy was implemented"; "universal symbolic b37
+theorem"; "new model-quality evidence". No new b37 check occurred here.
+OPEN: analytic/formal coverage without those older certificates and any actual
+random-word extension. Do not let C02's smaller certificate status spill over.
+
+C07. Every-word scalar equivalence and observed native outputs
+
+Manuscript location: p2 composition, p3..4 correctness/evaluation. Domain:
+equal scale/base/T with unchanged sign, packet addresses, prefix/lazy policy,
+packing and consumer semantics. Evidence: E_HISTORY_DOMAIN composition,
+E_MANUSCRIPT p3..4 and E_GPU_PROTOCOL. Equal thresholds give equal U<T for
+every fixed logical U32 word; this is a standard deterministic corollary.
+The preserved105 native cases before/after timing support observed equality
+for their captured arrays; they do not enumerate every CUDA execution.
+Allowed: "Canonical equality preserves every logical-word scalar decision
+under unchanged surrounding semantics; archived native tests corroborate the
+specified implementation."
+Exclude: "The scalar theorem proves GPU race freedom, all compiler outputs,
+or every end-to-end model execution". No native output was collected here.
+OPEN: formal composition with implementation/concurrency semantics.
+
+C08. Exact threshold compatibility versus unbiased real SR
+
+Domain: unsaturated scalar FP4 interval and a uniform U32 word. Evidence:
+E_HISTORY_DOMAIN, section 'Composition and a limited corollary'. An exact
+floor at32 probability bits has the familiar downward limited-random-bit
+expectation bound; equal legacy thresholds are not exact real-probability SR.
+Standard part: elementary finite-lattice probability arithmetic. This is not
+new bias theory. Saturation, BF16 reconstruction, residual addition, stream
+correlation and model quality require separate treatment.
+Allowed: "Bit-exact compatibility concerns canonical finite-word thresholds."
+Exclude: "Exactly unbiased real stochastic rounding"; "quality or statistical
+independence follows from seedwise equality".
+OPEN: application/statistical properties outside this finite-word predicate.
+
+C09. Modest implementation gain and the stronger baseline
+
+Manuscript location: p1 Abstract; p4 Tables3/4 and Fig1; p5 limitations.
+Evidence: E_MANUSCRIPT, E_GPU_TABLE, E_GPU_PROTOCOL. These are historical
+sessions, not new measurements. The manuscript reports producer reductions
+over corrected B of3.15% on SXM and3.65% on NVL; D1 remains slower than
+strong FP64 A-double-prime on ordinary/model-derived and Gaussian inputs.
+The NVL core producer comparison reports D1 taking16.81% longer than that
+strong baseline. Synthetic repeated edges are a distinct fixed condition.
+Standard part: numerical correctness permits deletion of work but gives no
+latency bound. Additional runtime evidence is empirical and session-specific.
+Allowed: "The archived implementation removes redundant work and shows a
+modest gain over corrected B in the specified sessions; stronger-baseline
+rankings remain input-dependent."
+Exclude: "The precision proof produces a new speedup"; "universally faster
+quantizer"; "public-library or end-to-end LLM superiority"; "hardware need".
+OPEN: runtime value of any new implementation, mechanism attribution and
+workload-family generality. No comparison is recomputed or pooled here.
+
+C10. Novelty and closest-theory relationship
+
+Manuscript location: p5 sectionVI. Evidence: E_THEORY_COMPARISON,
+E_SOURCE_RECORDS, E_THEOREM_MAPPING, E_HISTORY_PRIOR_ART and primary sources
+S_ROUX/S_SAIKI identified in theorem_source_matrix.json.
+Standard/direct part: midpoint separation, interpolation, monotonicity,
+divisibility and the valid nearest24 double-rounding corollary of Roux29
+for p>=48. That corollary is not the b32 floor result. Saiki's obtained
+format-containment rules establish the displayed safe mode chains, not an
+unrestricted RNE->RTZ chain.
+Contract-specific part: the operand coupling and exclusion certificates
+discharge this particular side condition; they may still be routine
+specializations or expressible in a more general existing framework.
+Allowed: "We provide a reproducible, contract-specific computer-assisted
+precision characterization; derivability from all closest theory and
+publication novelty are not established."
+Exclude: "Roux/Saiki/Rump cannot derive this result"; "worldwide first";
+"a new general double-rounding framework"; access failure as originality.
+OPEN: exact Rump Lemma4.6 premises/conclusion/version and applicability;
+full-framework derivability and broader literature priority.
+
+Source-status corrections required before a manuscript revision
+
+E_HISTORY_PRIOR_ART records Roux's PDF body as not inspected at that older
+review. A later study actually obtained the publisher PDF and text, whose
+hashes and Theorem29 location are now available. Those are different reading
+times. The older report is preserved; its old access status is not promoted
+to a current gap, nor silently rewritten as a historical successful reading.
+
+The preserved p5 manuscript and E_HISTORY_PRIOR_ART say that a Rump author
+draft/Lemma4.6 was inspected historically. Current preserved exact-source
+coverage does not reproduce that inspection: there is no checked lemma body,
+source-file hash, exact premises/conclusion or verified draft/final match in
+the current study. This is an unresolved provenance gap, not proof that the
+old reviewer was wrong or that the lemma is inapplicable.
+
+Do not carry the manuscript's combined claim about Roux AND Rump's inspected
+premises forward as if both were currently verified. Separate the verified
+Roux29 mapping from the pending Rump comparison. Suggested wording:
+"Roux's named nearest-rounding theorem does not directly instantiate our
+fixed-lattice floor target. A premise-level comparison with Rump's exact
+Lemma4.6 remains pending recovery of the relevant primary text."
+
+The manuscript also cites historically inspected Lean source revision8bd80452.
+This audit uses the actually preserved Saiki v1 HTML/Figure8; it does not have
+newly checked named Lean lemma bodies or a current file identity for that
+code. Qualify the Lean inspection as historical, or restore the exact pinned
+files before retaining precise code-level premise assertions. Do not convert
+HTML inspection into a claim that Lean was executed.
+
+The exact historical04_FINAL_NOVELTY_AND_LIMITATIONS.md remains unavailable.
+E_HISTORY_PRIOR_ART is a different, available report and is not its substitute.
+Fasi/Mikaitis, CPFloat, KBench and other historical sources remain relevant
+antecedents, but their theorem bodies were not freshly obtained in this audit;
+the historical review is a secondary pointer, not a newly verified exclusion.
+
+Recommended paper change and next step
+
+Retain the original implementation evidence and unfavorable strong-baseline
+comparisons. Add a clearly labelled computer-assisted theorem describing the
+normal45 and full49 boundaries in the specified virtual-precision family,
+with the p44/p48 witnesses and exact certificate dependencies. Update proof
+status in the limitations, and qualify unreproduced Rump/Lean source assertions.
+Do not advertise a new native lower-precision kernel or merge b37 into the
+new small-certificate claim.
+
+The next bounded step is a proposed theory/limitations section using these
+allowed sentences and proof dependencies. Do that before prioritizing more
+symbolic search. A symbolic proof under identical fixed assumptions changes
+proof form, not the truth or generality already supplied by the complete
+certificates; its further value must meet the gates in symbolic_proof_value.txt.

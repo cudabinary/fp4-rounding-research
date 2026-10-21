@@ -1,0 +1,45 @@
+{
+  "schema": "claim-evidence-review-payload-v1",
+  "files": [
+    {
+      "path": "claim_to_evidence.txt",
+      "bytes": 16772,
+      "sha256": "57bb840e3b482fa5d69b843b60a9a066fed085322ca7cf676d52dd1ad5c9573d"
+    },
+    {
+      "path": "evidence_index.json",
+      "bytes": 11251,
+      "sha256": "ed46ca5484de0ab5ea762c55ae93b2d51664e85274e5f725c081197392f19db0"
+    },
+    {
+      "path": "protocol.json",
+      "bytes": 1169,
+      "sha256": "57ab74f1e2a79b85b4256764172f2934153fa5dbfc3fa00476f41f3c4efa34b4"
+    },
+    {
+      "path": "README.txt",
+      "bytes": 1873,
+      "sha256": "0cf26c033325c4d7808dcae69b86c4542835bb3768a7f25a5f2958161f0e5b3b"
+    },
+    {
+      "path": "symbolic_proof_value.txt",
+      "bytes": 5603,
+      "sha256": "26e898b8bca84194c1f9dfda45d07d1090f9f1b3f2175fb1a0f0c685c70e94cf"
+    },
+    {
+      "path": "theorem_source_matrix.json",
+      "bytes": 7224,
+      "sha256": "0f75d30c0011227b9e395f04c3e328b1bd30a6a20d1b4663e6df901f4090c0b7"
+    },
+    {
+      "path": "verification.json",
+      "bytes": 1944,
+      "sha256": "fb22f125715c90ef54b7631250ba5300a82a253b9e13a3197e8ae8270f5ba855"
+    },
+    {
+      "path": "verify_review.py",
+      "bytes": 2734,
+      "sha256": "f2aebd8225682c7a1a7d00d2d208edb1b8a78540da27e2c1e558e7d76b12ed5f"
+    }
+  ]
+}

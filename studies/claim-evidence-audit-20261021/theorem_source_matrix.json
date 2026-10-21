@@ -1,0 +1,88 @@
+{
+  "schema":"fp4-theorem-premise-audit-v1",
+  "base_commit":"10580d6638ad82f74667d8d6616baeecfe85c12b",
+  "sources":[
+    {
+      "id":"S_ROUX",
+      "identity":"Pierre Roux, Innocuous Double Rounding of Basic Arithmetic Operations, JFR7(1),2014",
+      "url":"https://jfr.unibo.it/article/download/4359/4017/12373",
+      "status":"OBTAINED_PRIMARY_BODY_RE_READ",
+      "location":"Theorem29, printed p140 / PDF page10; preserved extracted text lines478..496",
+      "pdf":{"logical_file":"roux_2014.pdf","bytes":353156,"sha256":"5dda94218f64445a17ab9131d2be7a229d0997d57070de8c06df35d6b4bd7ea0"},
+      "text":{"logical_file":"roux_2014.pdf.txt","bytes":31434,"sha256":"f90fb57b24b197323fed76ae907c2a294f132853348d2c9f1206e9a23cc2f0e0"},
+      "premises":["Even radix beta","Integer precisions with p2>=2*p1","x,y in FLX_p1 and y nonzero","Both final and intermediate modes are nearest, with any tie rule"],
+      "conclusion":"nearest_p1(nearest_p2(x/y))=nearest_p1(x/y)",
+      "direct_current_corollary":"At radix2, admit the BF16-expanded numerator and F32 divisor to FLX24. For p>=48, including49 and53, the named theorem gives nearest24(nearest_p(x/s))=nearest24(x/s) in its arithmetic setting.",
+      "why_not_the_current_floor_theorem":"The required target is a fixed b32 interval floor with canonical-base composition, not nearest24. p45 also fails the p2>=48 premise of this direct p1=24 substitution.",
+      "classification":"DIRECT_NEAREST24_COROLLARY_ONLY; CURRENT_FIXED_FLOOR_REQUIRES_ADDITIONAL_DOMAIN_ARGUMENT",
+      "remaining":"No exhaustive derivability audit of all Roux/Flocq/mixed-format lemmas; no proof assistant executed"
+    },
+    {
+      "id":"S_SAIKI",
+      "identity":"Saiki et al., When Double Rounding is Correct, arXiv2610.09005v1",
+      "url":"https://arxiv.org/html/2610.09005v1",
+      "status":"OBTAINED_PRIMARY_HTML_RE_READ",
+      "location":"Section5.2 Correct Double Rounding, Figure8; HTML ids S5.SS2 and S5.F8; named rules right=rnd-*",
+      "html":{"logical_file":"saiki_2026_v1.html","bytes":932727,"sha256":"a24010003cf1b29fd374d47606b371ce6b458ef2cfa0274c8dca5b09e640ae70"},
+      "notation":"A(p,exp,b), exp and next are exactly the format notation defined by the source; final format is A(p1,exp1,b1), intermediate format A(p2,exp2,b2). Arrows below are intermediate->final.",
+      "common_premise":"Both formats are well-formed instances of the source's A number-format definition; the final rounding does not overflow; the displayed containment/padding condition holds",
+      "rules":[
+        {"chain":"RTZ->RTZ","label":"right=rnd-RTZ-RTZ","premise":"A(p1,exp1,next_(p1,exp1)(b1)) subset A(p2,exp2,b2)"},
+        {"chain":"RAZ->RAZ","label":"right=rnd-RAZ-RAZ","premise":"A(p1,exp1,b1) subset A(p2,exp2,b2)"},
+        {"chain":"RTO->RTO","label":"right=rnd-RTO-RTO","premise":"A(p1,exp1,next_(p1,exp1)(b1)) subset A(p2,exp2,b2), and p2>=2"},
+        {"chain":"RTO->RTZ","label":"right=rnd-RTO-RTZ","premise":"A(p1+1,exp1-1,next_(p1,exp1)(b1)) subset A(p2,exp2,b2)"},
+        {"chain":"RTO->RAZ","label":"right=rnd-RTO-RAZ","premise":"A(p1+1,exp1-1,next_(p1,exp1)(b1)) subset A(p2,exp2,b2)"},
+        {"chain":"RTO->RNE","label":"right=rnd-RTO-RNE","premise":"A(p1+2,exp1-2,next_(p1+1,exp1-1)(b1)) subset A(p2,exp2,b2)"}
+      ],
+      "conclusion":"Under each rule's premises, final_round(intermediate_round(z))=final_round(z) for the stated modes and admissible real z",
+      "current_mode_mapping":"On the nonnegative scaled probability, the target floor has RTZ direction after an RNE intermediate. RNE->RTZ is not one of these six generic safe chains.",
+      "classification":"ESTABLISHED_GENERIC_MODE_RULES; NO_DIRECT_MATCHING_RULE_USED_FOR_CURRENT_RNE_TO_FLOOR_CLAIM",
+      "remaining":"A coupled-operand invariant may be expressible in this or another framework. No full-framework non-derivability or novelty conclusion follows. Historically cited pinned Lean bodies are not currently reverified here."
+    },
+    {
+      "id":"S_RUMP_PENDING",
+      "identity":"Rump article DOI10.1145/2785965 and historically cited Ru13b author draft",
+      "urls":["https://doi.org/10.1145/2785965","https://www.tuhh.de/ti3/paper/rump/Ru13b.pdf"],
+      "status":"EXACT_LEMMA_BODY_NOT_CURRENTLY_AVAILABLE",
+      "location":"Historically named Section4 / Lemma4.6; exact draft/final page and statement correspondence unverified",
+      "source_file_sha256":null,
+      "exact_premises":null,
+      "exact_conclusion":null,
+      "direct_substitution_applicability":"UNKNOWN",
+      "historical_attestations":["Preserved manuscript p5 sectionVI and reference6","docs/historical_04_prior_art_delta.md says an author draft and Lemma4.6 were inspected historically"],
+      "current_evidence_limit":"The historical narrative is available, but it does not supply the exact lemma body and checked primary-file identity needed for a fresh premise-level comparison.",
+      "classification":"UNRESOLVED_SOURCE_AND_DERIVABILITY_GAP; NOT_AN_EXCLUSION_OR_NOVELTY_RESULT",
+      "allowed_wording":"A premise-level comparison with Rump's exact Lemma4.6 remains pending recovery of the relevant primary text.",
+      "forbidden_inference":"Do not assert exact same-format/mode premises, inapplicability, equivalence, or independence from the unavailable lemma. Earlier TLS/403/timeout failures do not favor novelty.",
+      "new_access_attempts":0,
+      "permission_or_certificate_bypass":false
+    },
+    {
+      "id":"S_LEAN_HISTORICAL",
+      "identity":"mpfx-lean revision8bd80452 as cited by the preserved manuscript",
+      "status":"HISTORICAL_INSPECTION_REFERENCE_ONLY_IN_THIS_AUDIT",
+      "location":"Preserved manuscript p5 sectionVI and reference7",
+      "checked_primary_file_sha256":null,
+      "named_lemma_premises_currently_verified":false,
+      "classification":"DO_NOT_PROMOTE_HTML_OR_HISTORICAL_PROSE_TO_CURRENT_CODE_LEVEL_VERIFICATION",
+      "execution_performed":false
+    }
+  ],
+  "standard_fact_specializations":[
+    "Exact dyadic interpolation and Sterbenz where its ratio premise holds",
+    "Tiny-ratio separation before the next-boundary binade argument",
+    "Even representability and half-ULP crossing test with correct endpoint/tie treatment",
+    "Precision monotonicity on the declared representability/exponent range",
+    "gcd divisibility, residue-class completeness and exact integer reconstruction",
+    "Equal canonical thresholds imply equal decisions for each unchanged logical random word"
+  ],
+  "contract_specific_additions":[
+    "BF16 coefficient classes and inherited normal RN32(a/6) restricted-divisor identity",
+    "Unnormalized subnormal D units and their q15/16/17 legal coefficient classes",
+    "b32 grid/lattice scaling coupled with eta's exact binade relationship",
+    "Normal J-dependent t bound and complete small p45 exclusion certificate",
+    "Complete subnormal p49 certificate, separate direct-j implementation, and full49 composition"
+  ],
+  "missing_report":{"logical_reference":"R4_FINAL_GPU_VALIDATION_AND_PAPER_FREEZE_20261017/04_FINAL_NOVELTY_AND_LIMITATIONS.md","status":"NOT_IDENTIFIED_OR_SUBSTITUTED","not_a_substitute":"docs/historical_04_prior_art_delta.md"},
+  "publication_novelty":"OPEN"
+}

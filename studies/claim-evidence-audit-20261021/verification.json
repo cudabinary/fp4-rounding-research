@@ -1,0 +1,47 @@
+{
+  "utc": "2026-10-21T06:11:03.008792+00:00",
+  "base_commit": "10580d6638ad82f74667d8d6616baeecfe85c12b",
+  "operation": "READ_ONLY_EVIDENCE_AND_WORDING_AUDIT",
+  "prior_tracked_files_unchanged": true,
+  "verification": {
+    "status": "PASS_REVIEW_IDENTITIES_AND_REFERENCE_COVERAGE",
+    "evidence_files": 29,
+    "claims": 10,
+    "theorem_source_records": 4,
+    "new_arithmetic_evaluations": 0,
+    "new_enumerations": 0,
+    "research_modules_imported": 0,
+    "limitation": "Identity/reference checks are not a new verification of the mathematical proofs or publication novelty"
+  },
+  "primary_sources_identity_checked": [
+    {
+      "path": "roux_2014.pdf",
+      "bytes": 353156,
+      "sha256": "5dda94218f64445a17ab9131d2be7a229d0997d57070de8c06df35d6b4bd7ea0"
+    },
+    {
+      "path": "roux_2014.pdf.txt",
+      "bytes": 31434,
+      "sha256": "f90fb57b24b197323fed76ae907c2a294f132853348d2c9f1206e9a23cc2f0e0"
+    },
+    {
+      "path": "saiki_2026_v1.html",
+      "bytes": 932727,
+      "sha256": "a24010003cf1b29fd374d47606b371ce6b458ef2cfa0274c8dca5b09e640ae70"
+    }
+  ],
+  "manuscript_extraction": {
+    "pages": 5,
+    "library": "Bundled pypdf; read only",
+    "raw_extracted_text_retention": "Local-only; not committed as a new manuscript"
+  },
+  "arithmetic_rechecks": 0,
+  "research_scripts_executed": [],
+  "GPU_CUDA_kernel_install_paid_or_remote_compute_actions": 0,
+  "Library_upload_calls": 0,
+  "B2_transfers": 0,
+  "external_human_messages": 0,
+  "new_scientific_result_claimed": false,
+  "draft_manifest_reseal": "A source-matrix wording edit made the draft manifest stale and verification correctly rejected it; regenerated only the new draft manifest, preserving the former draft locally. No old evidence or scientific result changed.",
+  "decision": "Prioritize a theory/limitations draft; require explicit incremental-value gate before more symbolic search"
+}
