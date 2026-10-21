@@ -1,0 +1,36 @@
+Independent review scope and resolution
+2026-10-21
+
+The separate internal reviewer did not assume the S53 draft was correct.
+It rederived BF16 classes, unnormalized D units, crossing, the positive t
+transform, every parity exclusion, ten square brackets, and five nonsquares.
+Its independently written checker used 21 fixed scale codes and 143 selected
+pairs, plus the constant arithmetic cases and a failing p48 negative control.
+These selected pairs are checks, not universal coverage. The review found no
+invalid S53 inference or counterexample under the stated contract.
+
+The review requested explicit justification of the next threshold's left-hand
+binade before using the midpoint distance. Section 3 of r49_proof.txt supplies
+it for E_S using r>2^-7. The prior analytic proof remains immutable. This is
+a self-containment clarification on the audited subnormal domain, not a claim
+that the same exponent formula can be used without conditions on every tiny
+ratio in an arbitrary domain.
+
+For R49 the reviewer independently rederived the j/t bounds, safe modulus,
+legality ranges, gcd/inverse coverage, and the supplied survivor's exclusion.
+It also read the main kernel source, but did not execute it or independently
+enumerate all 4656 coefficient/t branches. Consequently exactly one survivor
+is established by the main complete ledger and the separate no-inversion
+certificate checker; it is not described as two independent enumerations.
+The reviewer independently checked the survivor and all six reconstructions.
+
+No normal-scale full-domain review, proof assistant, independent human
+replication, closest-theory novelty audit, or performance experiment is claimed.
+Prior p53 full-domain sufficiency combines S53 with an inherited normal argument.
+Full-domain p49 combines this certificate with the inherited normal finite
+result. These dependencies remain visible in proof_status.json.
+
+The next useful research obligation is the normal R45 symbolic exclusion and
+premise-level comparison with closest rounding theory. A purely symbolic
+replacement of the 4656-row S49 table is also open. These are mathematical
+questions; the present result does not authorize a new GPU campaign.

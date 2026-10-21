@@ -1,0 +1,14 @@
+{
+  "schema":"r49-proof-kernel-round-v1",
+  "date_kst":"2026-10-21",
+  "base_commit":"2e7c2dae61ac9da85e889168694a459bfed13cd1",
+  "objective":"Decide R49 or isolate exact unresolved conditions without presupposing the answer",
+  "contract":"Finite nonnegative BF16 magnitudes x<=amax, F32 RN-even(amax/6), gradual underflow, b32, virtual RNE-p with binary64 exponent range; target p49 within p35..64",
+  "independent_review":"A separate internal agent audits the p53 proof from definitions and may use its own limited integer checks; it does not accept the draft by assumption",
+  "main_check":"Enumerate scale coefficient A and the analytically bounded t only: q15 A1..255 t1..16, q16 A128..255 t1..4, q17 A128..191 t1. At most 4656 coefficient/t branches, not raw input pairs.",
+  "reduction":"Solve 3*A^2*j == epsilon*t modulo 2^m with m15/15/13, use gcd divisibility and the p49 carry upper bound floor(D/2^16); retain every survivor, including nonphysical ones",
+  "full_consistency":"For every surviving A,t,j, test the finite v,S combinations algebraically to reconstruct X; retain the full equation, BF16 input legality, exact interval/binade and exact J=49-E-S",
+  "status_rule":"A complete finite residue certificate is labelled computer-assisted, not a pure symbolic theorem or a sample PASS. A relaxed congruence counterexample is not an actual quantizer counterexample.",
+  "failure_rule":"Any inconsistency between independent references, coefficient classes, or prior declared bounds stops the corresponding conclusion; preserve all failures",
+  "forbidden":"No raw-code sweep, prior 78552-pair rerun, GPU, compiler/install, optimized kernel, other-paper work, Library duplicate upload, B2 transfer or external human messages"
+}

@@ -1,0 +1,91 @@
+{
+  "status": "PASS_SINGLE_SURVIVOR_AND_BOUND_CHECKS",
+  "scope": "Three class-bound constants and the supplied single survivor only; the full residue kernel was not executed or independently enumerated.",
+  "source_commit": "2e7c2dae61ac9da85e889168694a459bfed13cd1",
+  "reviewed_kernel_sha256": "f8ba177d3ec4ac55aaa710e866fa5fb145b9120900af406d580ddbd981de2917",
+  "checker_sha256": "bcf3a6768d406f4ad321b8ea6975b34ecd3aa97ed1545dc0656a9ad4738b1865",
+  "bounds": [
+    {
+      "q": 15,
+      "maximum_D": 2785280,
+      "j_cap": 42,
+      "t_upper_bound": "1113601/65536",
+      "t_max": 16,
+      "minimum_u": 17,
+      "safe_modulus_exp": 15
+    },
+    {
+      "q": 16,
+      "maximum_D": 5570560,
+      "j_cap": 85,
+      "t_upper_bound": "327169/65536",
+      "t_max": 4,
+      "minimum_u": 15,
+      "safe_modulus_exp": 15
+    },
+    {
+      "q": 17,
+      "maximum_D": 8344917,
+      "j_cap": 127,
+      "t_upper_bound": "102017/65536",
+      "t_max": 1,
+      "minimum_u": 13,
+      "safe_modulus_exp": 13
+    }
+  ],
+  "survivor": {
+    "q": 16,
+    "A": 230,
+    "D": 5024427,
+    "epsilon": 1,
+    "t": 4,
+    "j": 51,
+    "reconstructed_numerator": 52199424,
+    "factorization": "3 * 531 * 2^15"
+  },
+  "reconstructions": [
+    {
+      "v": 0,
+      "S": 31,
+      "u": 15,
+      "reconstructed_X": "531",
+      "exclusion": "X_EXCEEDS_255"
+    },
+    {
+      "v": 0,
+      "S": 32,
+      "u": 16,
+      "reconstructed_X": "531/2",
+      "exclusion": "X_NOT_INTEGER"
+    },
+    {
+      "v": 0,
+      "S": 33,
+      "u": 17,
+      "reconstructed_X": "531/4",
+      "exclusion": "X_NOT_INTEGER"
+    },
+    {
+      "v": 1,
+      "S": 31,
+      "u": 16,
+      "reconstructed_X": "531/2",
+      "exclusion": "X_NOT_INTEGER"
+    },
+    {
+      "v": 1,
+      "S": 32,
+      "u": 17,
+      "reconstructed_X": "531/4",
+      "exclusion": "X_NOT_INTEGER"
+    },
+    {
+      "v": 1,
+      "S": 33,
+      "u": 18,
+      "reconstructed_X": "531/8",
+      "exclusion": "X_NOT_INTEGER"
+    }
+  ],
+  "failures": []
+}

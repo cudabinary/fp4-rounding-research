@@ -1,0 +1,59 @@
+{
+  "schema": "r49-verification-v1",
+  "utc": "2026-10-21T04:42:10.209703+00:00",
+  "base_commit": "2e7c2dae61ac9da85e889168694a459bfed13cd1",
+  "environment": {
+    "python": "3.12.14",
+    "platform": "Windows",
+    "dependencies": "Standard library only"
+  },
+  "pre_run_protocol_and_kernel_hashes_unchanged": true,
+  "previous_tracked_files_byte_identical": true,
+  "initial_manifest_stdout": "PASS: 34 curated files match their SHA256 values.",
+  "previous_study_manifests": [
+    {
+      "path": "studies/precision-boundaries-20261021/payload_manifest.json",
+      "entries_checked": 15,
+      "sha256": "1c4ecf9d76038e38ecf8d7afccde30d83b5b97979e057f24975a2e6b2d10f953"
+    },
+    {
+      "path": "studies/boundary-propositions-20261021/payload_manifest.json",
+      "entries_checked": 11,
+      "sha256": "1be10fdca8103b79f6c1589afc8b60fd9c6e2674ab85d5d0c6740b4dcd071e70"
+    },
+    {
+      "path": "studies/boundary-propositions-20261021/scientific_manifest.json",
+      "entries_checked": 9,
+      "sha256": "f96bb822cd597fe2a3c99f83b8746ec8659f3961cac35b27afc35e701a57aa1f"
+    },
+    {
+      "path": "studies/analytic-denominator-20261021/payload_manifest.json",
+      "entries_checked": 8,
+      "sha256": "941075e143c51cee5400b917a3ae14121a640c9d0fd038bc8a041dff96852a9f"
+    }
+  ],
+  "certificate_verifier": {
+    "status": "PASS_COMPLETE_REDUCED_CERTIFICATE",
+    "coefficient_t_branches": 4656,
+    "counts": {
+      "UNIQUE_RESIDUE_OUTSIDE_CARRY_RANGE": 1763,
+      "GCD_EXCLUSION": 1339,
+      "EXACT_SCALE_DIVISIBILITY_EXCLUSION": 1553,
+      "COARSE_CONGRUENCE_SURVIVOR": 1
+    },
+    "coarse_survivors": 1,
+    "physical_candidates": 0,
+    "method": "Residue identity and uniqueness checks; no modular inversion",
+    "raw_pair_sweep": false,
+    "gpu_execution": false
+  },
+  "independent_audit_manifest_sha256": "671bb562daec265c8368098759d205a9a5cf8736223b901942915623bf7fd429",
+  "independent_review_limits": "No independent second 4656-branch enumeration or normal-scale review",
+  "validation_repair": "Initial sealing attempt used the wrong base for independent manifest paths; corrected to study-relative paths. No scientific result changed.",
+  "gpu_runs": 0,
+  "compiler_install_runs": 0,
+  "large_or_prefix_scans": 0,
+  "b2_transfers": 0,
+  "library_upload_calls": 0,
+  "scope": "Hashes check identity; arithmetic review and the reduced certificate support the theorem"
+}

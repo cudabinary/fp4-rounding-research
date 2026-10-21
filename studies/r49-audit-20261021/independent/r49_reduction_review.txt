@@ -1,0 +1,104 @@
+Independent review of the R49 reduction and supplied coarse survivor
+2026-10-21
+
+Disposition and independence limits
+
+I reviewed residue_kernel.py by inspection after independently deriving the
+coefficient bounds and safe moduli from the scalar definitions. I found no
+missing R49 branch or unsound exclusion in the reduction or the supplied
+single-survivor reconstruction. The supplied survivor cannot represent a
+legal BF16 input. This verdict is separate from p53_review.txt.
+
+I did not execute residue_kernel.py or independently enumerate all of its
+4656 coefficient/t branches. The statement that it has exactly one coarse
+survivor remains the root agent's finite-kernel result, supported here by
+source review rather than an independent complete executable enumeration.
+The standalone r49_survivor_check.py checks the three class-bound constants
+and the supplied survivor with exact integers/Fraction, and records the
+SHA256 of the reviewed kernel version. It does not import the kernel.
+
+1. Bounds and coverage, derived before considering the survivor
+
+The subnormal encoding classes are q15/A1..255, q16/A128..255, and
+q17/A128..191. Their physical input forms are respectively:
+  q15: v=0, 1<=X<=A;
+  q16: v=0, 1<=X<=255; or v=1, 128<=X<=A;
+  q17: v=0, 1<=X<=255; v=1, 128<=X<=255;
+       or v=2, 128<=X<=A.
+These agree with range(q-14) and input_range in the reviewed kernel.
+There is no positive-x representation omitted at a BF16 exponent boundary.
+
+For a nonsaturated ratio, E+S<=33. At p49, J=49-E-S>=16. Therefore
+j<=floor(D/2^16). The largest D values in the three classes are 2785280,
+5570560,8344917, giving global caps 42,85,127. The code uses the tighter
+per-A cap D//2^16, which remains a necessary condition for every carry.
+
+The common strict bound t<2^(34-2q)+A^2*2^-J gives
+  q15: t<16+255^2/65536<17, hence t<=16;
+  q16: t<4+255^2/65536<5, hence t<=4;
+  q17: t<1+191^2/65536<2, hence t<=1.
+Since t is a strictly positive integer, the ranges 1..16,1..4,1 are
+complete. Their total is 255*16+128*4+64=4656 coefficient/t branches.
+
+L=16+v+S>=47 gives u=L-2q>=17,15,13. Thus the guaranteed exponents
+min(u,q) are 15,15,13. Fixed moduli 2^15,2^15,2^13 are necessary for
+every physical branch; no invalid use of the larger 2^u occurs.
+
+If epsilon=0, j is a positive multiple of 2^q>=32768. The global j cap
+127 excludes it. If epsilon=+/-1, D is odd and gcd(A,D)=1, so the t
+lemma applies. The kernel computes D by rounding denominator-three
+fractions; remainder 1 rounds down and remainder 2 up. There is no tie.
+
+2. Inspection of the modular exclusion
+
+Write c=3*A^2, M=2^m, and g=gcd(c,M). The congruence
+c*j=epsilon*t modulo M has no solution unless g divides epsilon*t.
+When divisible, reducing by g yields one residue class modulo M/g,
+because c/g is invertible there. This justifies the inverse step.
+
+The assertion M/g>global_cap is valid on every divisible branch:
+g<=t<=16,4,1, respectively, so M/g>=2048,8192,8192, respectively.
+All exceed 42,85,127. Hence there is at most one j in the positive carry
+range, and it must be the computed least nonnegative residue. A residue
+zero cannot hide a positive multiple in the carry range. The range and
+gcd exclusions are therefore sound and exhaustive for each coefficient/t
+branch. This reasoning establishes coverage of the reduction; it does
+not independently recompute the root agent's complete survivor list.
+
+3. Independent check of the supplied survivor
+
+For q=16,A=230,epsilon=+1,D=5024427,t=4,j=51:
+  3D=230*65536+1=15073281;
+  3*j*A^2=8093700=247*32768+4;
+  1<=j<=floor(D/65536)=76.
+So this is a genuine candidate for the coarse necessary congruence.
+Equation (5) reconstructs
+  3X*2^u=t*(A*2^q+epsilon)-3*j*A^2
+          =60293124-8093700
+          =52199424=3*531*2^15.
+For q16 every legal v/S has u>=15. If u=15, X=531, exceeding every
+BF16 significand bound X<=255. If u>15, X=531/2^(u-15) is nonintegral
+because 531 is odd. Thus no legal v/S, ratio binade, interval selection,
+or x<=a guard can rescue this candidate. Excluding it before those later
+guards is valid.
+
+The standalone check verified all six relaxed q16 choices v in {0,1},
+S in {31,32,33}; they give u=15..18 and the exclusions above. It also
+recomputed all three class maxima and strict t bounds. All passed.
+
+4. Later code paths and scope
+
+The surviving-candidate reconstruction includes every v allowed by its
+scale class and every possible S. It is an overapproximation: interval
+selection and the ratio exponent are checked only after integrality and
+input legality, which is safe. The x-code reconstruction agrees with
+the physical v/X ranges. The S selection r<2 ->33, r<4 ->32, r<6 ->31
+matches the grid widths. Those later paths have no legal candidate in
+the reported run and are not needed for the supplied survivor's rejection.
+
+Subject to the complete-kernel result being correctly executed and sealed,
+this is a complete reduced finite certificate for R49, not a pure symbolic
+exclusion and not a new raw BF16-pair sweep. The coefficient enumeration
+should remain described explicitly in the paper and artifact. This audit
+does not close proof-assistant checking, full normal-scale sharp sufficiency,
+closest-theory derivability, novelty, hardware semantics, or performance.

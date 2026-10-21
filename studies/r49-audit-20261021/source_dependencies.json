@@ -1,0 +1,31 @@
+{
+  "base_commit": "2e7c2dae61ac9da85e889168694a459bfed13cd1",
+  "files": [
+    {
+      "path": "studies/analytic-denominator-20261021/analytic_proof.txt",
+      "bytes": 14434,
+      "sha256": "c6c998fbea906aa5ebf388ad27ba7d7e291bdca503d3d186c4476a2ecf54f3b4"
+    },
+    {
+      "path": "studies/analytic-denominator-20261021/source_comparison.txt",
+      "bytes": 3104,
+      "sha256": "508b49dd5f62ea93baef63c3ba10fd9e7b707ca5bdb983a77c8ddf10492c19b1"
+    },
+    {
+      "path": "studies/analytic-denominator-20261021/proof_status.json",
+      "bytes": 2852,
+      "sha256": "91affc7f256f299df1e0f27a53362c5d75aa0daf22cf9dd6fc40347882f88bb8"
+    },
+    {
+      "path": "studies/boundary-propositions-20261021/propositions_and_proof.txt",
+      "bytes": 13231,
+      "sha256": "ee088bd396ac581daf2e9ee783ac6f2ffa4d8d0b0e3e08724379ad8f7b8e9b0d"
+    },
+    {
+      "path": "studies/precision-boundaries-20261021/direct_validation.json",
+      "bytes": 6794,
+      "sha256": "38a70e8094ff34097dae5252c1776f995b85c081c57e898fcc7c835dd366f544"
+    }
+  ],
+  "purpose": "Inherited proof and finite normal evidence; not rerun"
+}

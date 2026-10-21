@@ -1,0 +1,16 @@
+{
+  "utc": "2026-10-21T04:35:08.303230+00:00",
+  "base_commit": "2e7c2dae61ac9da85e889168694a459bfed13cd1",
+  "files": [
+    {
+      "path": "protocol.json",
+      "bytes": 1745,
+      "sha256": "674a30ee1a90e5edddd55d6a4f04753c83c006a272b0ee0153687129a3d91fb1"
+    },
+    {
+      "path": "residue_kernel.py",
+      "bytes": 7169,
+      "sha256": "f8ba177d3ec4ac55aaa710e866fa5fb145b9120900af406d580ddbd981de2917"
+    }
+  ]
+}

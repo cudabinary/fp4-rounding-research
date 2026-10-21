@@ -1,0 +1,1 @@
+{"status": "PASS_LIMITED_CHECKS", "scale_count": 21, "sampled_pair_count": 143, "bracket_count": 10, "nonsquare_count": 5, "failures": []}

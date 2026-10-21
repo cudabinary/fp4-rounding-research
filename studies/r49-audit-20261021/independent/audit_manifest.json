@@ -1,0 +1,46 @@
+{
+  "source_commit": "2e7c2dae61ac9da85e889168694a459bfed13cd1",
+  "scope": "Independent informal S53 proof review; limited exact checks; R49 reduction source review and one-survivor exclusion",
+  "files": [
+    {
+      "path": "independent/p53_check_stdout.txt",
+      "bytes": 140,
+      "sha256": "05797140100030aba606e9258bb287bdf8011bb6287f00dae84434e4b2c751e3"
+    },
+    {
+      "path": "independent/p53_integer_check_results.json",
+      "bytes": 26565,
+      "sha256": "eafea95513dd81549121136710e35c12a35451df0ec73c01477d8971346e1826"
+    },
+    {
+      "path": "independent/p53_integer_checks.py",
+      "bytes": 7809,
+      "sha256": "d428a5a5793bb16bdab9a22f65eb66b85b23e4c8154ab48efb1b605956e9222a"
+    },
+    {
+      "path": "independent/p53_review.txt",
+      "bytes": 10976,
+      "sha256": "26bd9e9419df5bebd6197e46e68a04a36d03533df1147d4c91c1ecb7c2c3c13f"
+    },
+    {
+      "path": "independent/r49_check_stdout.txt",
+      "bytes": 96,
+      "sha256": "ceb65a74cfaec27569f6b9b45ff6ff145fea57c98e1cce1fc19dcedffc034c4d"
+    },
+    {
+      "path": "independent/r49_reduction_review.txt",
+      "bytes": 5243,
+      "sha256": "00f1ed0f203ed875ceba6ed56fb7798a2ea8d59b5b5d9cba2e8284600c3d6dc3"
+    },
+    {
+      "path": "independent/r49_survivor_check_results.json",
+      "bytes": 2105,
+      "sha256": "e95299369703cdd0bad81f669b70e6db6b2fefa56a7816cfc921e5efe6bec42a"
+    },
+    {
+      "path": "independent/r49_survivor_check.py",
+      "bytes": 2993,
+      "sha256": "bcf3a6768d406f4ad321b8ea6975b34ecd3aa97ed1545dc0656a9ad4738b1865"
+    }
+  ]
+}

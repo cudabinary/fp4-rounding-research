@@ -1,0 +1,68 @@
+{
+  "schema": "r49-audit-status-v1",
+  "date_kst": "2026-10-21",
+  "base_commit": "2e7c2dae61ac9da85e889168694a459bfed13cd1",
+  "contract": "Finite nonnegative BF16 x<=a; F32 RN-even(a/6); gradual underflow; E2M1; b32; virtual RNE-p with binary64 exponent range, p35..64",
+  "proof_units": [
+    {
+      "id": "S53",
+      "result": "Subnormal-scale p53 no-carry",
+      "status": "PREVIOUS_ELEMENTARY_PROOF_DRAFT_INDEPENDENTLY_REVIEWED",
+      "qualification": "Separate internal informal review plus independently constructed limited integer checks; not proof-assistant verification"
+    },
+    {
+      "id": "S49_REDUCTION",
+      "result": "Every subnormal p49 failure maps to one of 4656 coefficient/t branches",
+      "status": "ALGEBRAIC_COVERAGE_DERIVATION",
+      "j_caps": [42,85,127],
+      "t_caps": [16,4,1],
+      "safe_modulus_exponents": [15,15,13]
+    },
+    {
+      "id": "R49_RELAXED",
+      "result": "Necessary coarse congruence admits exactly one candidate",
+      "status": "COMPLETE_SMALL_RESIDUE_CERTIFICATE",
+      "candidate": {"q":16,"A":230,"D":5024427,"epsilon":1,"t":4,"j":51},
+      "not_a_physical_counterexample": true
+    },
+    {
+      "id": "S49",
+      "result": "Subnormal-scale p49..64 no-carry; sharp minimum 49 within p35..64",
+      "status": "COMPUTER_ASSISTED_PROOF_FROM_COMPLETE_REDUCED_CERTIFICATE",
+      "physical_candidate_exclusion": "Equation forces X=531*2^(15-u), u>=15: X>255 at u15 and nonintegral thereafter",
+      "necessity": "Prior analytic a242,x221 witness fails p35..48",
+      "prior_subnormal_raw_pair_certificate_required": false,
+      "pure_symbolic_residue_exclusion": false
+    },
+    {
+      "id": "FULL49",
+      "result": "Full-domain sharp uniform minimum 49 within p35..64",
+      "status": "COMPUTER_ASSISTED_COMPOSITION_WITH_INHERITED_NORMAL_CERTIFICATE",
+      "normal_dependency": "Prior normal p45 finite certificate and precision monotonicity",
+      "new_universal_normal_proof_claimed": false
+    },
+    {
+      "id": "PRIOR_THEORY",
+      "result": "Threshold separation, exact dyadic interpolation, monotonicity, gcd/congruence and finite certificate tools",
+      "status": "ESTABLISHED_TOOLS_OR_DOMAIN_SPECIALIZATION",
+      "new_generic_rounding_theorem_claimed": false
+    }
+  ],
+  "open": [
+    "Pure symbolic exclusion replacing the 4656-row residue certificate",
+    "Normal-scale sharp p45 symbolic sufficiency",
+    "Universal b37 sufficiency without prior finite certificates",
+    "Proof-assistant development and complete normal-argument independent review",
+    "Exact Rump Lemma 4.6 and complete closest-theory derivability",
+    "Publication novelty and practical performance value",
+    "Exact missing historical final-limits report"
+  ],
+  "new_gpu_executions": 0,
+  "new_compiler_or_install_runs": 0,
+  "old_large_sweeps_rerun": 0,
+  "old_prefix_pairs_rerun": 0,
+  "b2_transfers": 0,
+  "library_upload_calls": 0,
+  "original_scientific_files_modified": false,
+  "next_scientific_step": "Review the compact S49 certificate as a paper theorem, then attack the explicitly remaining normal R45 symbolic obligation and closest-theory derivability before any new performance campaign"
+}

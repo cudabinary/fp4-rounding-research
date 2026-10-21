@@ -1,0 +1,209 @@
+Independent informal audit of the p53 subnormal-scale argument
+2026-10-21
+
+Disposition
+
+No counterexample or invalid inference was found in Theorem S53 under its
+stated scalar contract. I independently rederived the scale classification,
+the carry condition on this domain, the t transform, and every q15/q16/q17
+case exclusion. The ten square brackets and five nonsquares are correct.
+This is a complete informal review of those cases, not proof-assistant
+verification and not a fresh full-input enumeration.
+
+The normal-scale proof, precision monotonicity, sharp p49 sufficiency,
+publication novelty, execution semantics, and performance are outside this
+audit. In particular, this review does not certify the document's complete
+full-domain p53 consequence independently of its normal-scale argument.
+
+Inputs, independence, and reproducibility
+
+Reviewed source commit: 2e7c2dae61ac9da85e889168694a459bfed13cd1.
+Read AGENTS.md and studies/analytic-denominator-20261021/analytic_proof.txt.
+No historical checker was read, imported, or executed for this audit.
+The independently written p53_integer_checks.py uses exact Fraction and
+integer operations from the Python standard library. Its JSON records the
+source and checker SHA256 values, environment, all selected samples, all
+derived brackets, all retained parity cases, and all nonsquare candidates.
+The complete successful command output is in p53_check_stdout.txt.
+No GPU, compiler/install, network, remote service, Git mutation, or raw-pair
+sweep was used. New files are confined to this independent/ directory.
+
+1. BF16 encoding and subnormal-scale classification
+
+Let e and f be the unsigned BF16 exponent and fraction fields. In units
+delta=2^-133, a BF16 magnitude is f for e=0, and (128+f)*2^(e-1) for e>0.
+It follows directly, including the exponent-zero/exponent-one transition,
+that raw codes 1..255 are exactly A*delta with A=code in 1..255. Codes
+256..383 are 2A*delta with A=code-128 in 128..255. Codes 384..447 are
+4A*delta with A=code-256 in 128..191. Thus no representation is lost at
+codes 127/128, 255/256, or 383/384.
+
+F32 subnormal spacing is 2^-149, and delta/2^-149=2^16. Dividing each
+class by six gives A*2^q/3 F32 subnormal units, with q=15,16,17. Rounding
+this rational to the nearest integer gives D with 3D=A*2^q+epsilon,
+epsilon in {-1,0,+1}. The possible fractional parts are 0,1/3,2/3, so
+there is no tie. epsilon=0 iff 3 divides A, because 2^q is invertible
+modulo three.
+
+Code 447 gives D=8344917<2^23; code 448 is 768*delta and its division by
+six is exactly 2^-126, or 2^23 subnormal units. Monotonicity of RN32 and
+these endpoints show that the positive subnormal-scale codes are exactly
+1..447. There is no zero rounded scale: code 1 already gives D=10923.
+For these a, any positive x<=a has x=X*2^v*delta, 1<=X<=255, v in {0,1,2},
+with the usual physical BF16 restrictions. The S53 proof safely relaxes
+those restrictions after obtaining this representation.
+
+Consequently r=X*2^(16+v)/D. For interval scaling S in {31,32,33},
+N=X*2^L with L=16+v+S>=47. This is an integer in the unnormalized
+subnormal units used throughout the proof. Normalizing D to 24 bits would
+change epsilon; the reviewed argument does not make that substitution.
+
+2. Threshold crossing and its hypotheses on this domain
+
+Within a grid interval, its lower endpoint times 2^S is an integer, so the
+next threshold is B=ceil(r*2^S)*2^-S. With a nonzero remainder of N/D,
+write j=D-(N mod D), Q=ceil(N/D), and N+j=QD. Then B-r=j/(D*2^S).
+Exact threshold inputs have zero remainder and are exactly representable.
+
+On E_S, N/D>2^24 follows from L>=47, X>=1, and D<2^23. Thus E+S>=24,
+where E=floor(log2 r). Both bounding binade endpoints are on this threshold
+lattice, and B has left-hand binade E, including B=2^(E+1). Its distance
+to the immediately preceding p-bit value is 2^(E-p+1). Therefore its
+lower midpoint is 2^(E-p) below B. The bound E+S<=33 makes B an even
+representable value for p>=35, including a possible binade endpoint.
+The midpoint tie selects B. This proves the necessary and sufficient
+upward carry condition j*2^(p-E-S)<=D on the audited domain, including
+the inclusive equality in that condition.
+
+Each exact lower threshold is representable; monotonicity of nearest
+rounding therefore prevents a downward floor loss. Grid endpoints are
+thresholds too, so a canonical-interval change cannot evade this test.
+For r>=6, monotonicity and exact representability of 6 preserve saturation;
+zero is exact. These facts cover the zero, exact-threshold, endpoint, and
+saturation cases omitted by the positive-remainder argument.
+
+For r<6, the grid gives E+S<=33 and Q<=2^34. At p=53, J=53-E-S>=20.
+Hence j<=floor(D/2^20). These are bounds on a hypothetical carry, not a
+claim that every interval attains them.
+
+3. The positive-integer t transform
+
+For epsilon=+/-1, D is odd since 3D is even plus or minus one. Also
+gcd(A,D)=1: a common divisor would divide 3D-A*2^q=epsilon. The relation
+A*2^q=-epsilon modulo D implies A^2*2^(2q)=1 modulo D.
+Because L>=47>=2q, put u=L-2q>=0. Multiplying N+j=0 modulo D by A^2
+then gives X*2^u+j*A^2=0 modulo D. Its quotient t is a strictly positive
+integer. Conversely this divisibility and gcd(A,D)=1 restore D|(N+j).
+No sign, integrality, or invertibility hypothesis is missing.
+
+Multiplying tD=j*A^2+X*2^u by three gives equation (5). Substitution of
+X*2^u=(QD-j)/2^(2q), followed by
+((A*2^q)^2-1)/D=3*(A*2^q-epsilon), gives equation (6). The same
+substitution gives
+  t=Q/2^(2q)+j*A^2/D-j/(D*2^(2q)).
+The last term is strictly positive. Together with Q<=2^34 and
+j/D<=2^-J, this proves the strict upper bound (7).
+
+Reducing (5) modulo 2^min(u,q) correctly eliminates both power-of-two
+terms and gives (8). Using 2^u instead when u>q would be invalid. The
+reviewed q15 argument uses 2^15, and no such invalid strengthening occurs.
+
+For epsilon=0, both D and N are divisible by 2^q. Their complementary
+remainder j would then be a positive multiple of 2^q. Since a p53 carry
+has j<=7 and q>=15, this branch is impossible.
+
+4. Bounds entering the three cases
+
+For q15, D<=2785280<3*2^20, so j<=2; bound (7) gives
+t<16+255^2/2^20<17, hence 1<=t<=16; u>=47-30=17.
+For q16, D<=5570560<6*2^20, so j<=5; similarly t<5 and u>=15.
+For q17, D<=8344917<8*2^20, so j<=7; similarly t<2 and u>=13.
+The published table is valid; its relaxed bounds favor possible carries.
+
+5. q15: completeness of the ten brackets
+
+The congruence is 3j*A^2=epsilon*t+k*32768, |epsilon*t|<=16.
+For j=1, D>=2^20 and 3D=A*32768+epsilon imply A>=96.
+Using 96<=A<=255 and the residual bound forces integer 1<=k<=5:
+  (3*96^2-16)/32768 <= k <= (3*255^2+16)/32768.
+For j=2, D>=2^21 similarly implies A>=192, and
+  (6*192^2-16)/32768 <= k <= (6*255^2+16)/32768
+forces 7<=k<=11. Thus there are exactly the ten displayed k cases;
+neither a k=0 case nor a negative k case has been omitted.
+
+The standalone checker constructed each lower root as
+isqrt(floor(k*32768/(3j))) and the upper root as lower+1. It reproduced
+all ten displayed brackets and signed residuals. In every case the lower
+residual is below -16 and the upper residual above +16. Strict monotonicity
+of 3j*A^2 for positive integer A excludes every other A. This proves the
+case without inspecting any x or any collection of raw input pairs.
+
+6. q16: all parity cases and reductions
+
+The valid modulus is 2^15. If A is even, four divides t and 1<=t<=4
+forces t=4. If four divides A, reduction modulo 16 gives 0=+/-4,
+impossible. Otherwise A=2B with B odd in 64..127. Dividing by four
+leaves 3j*B^2=epsilon modulo 8192. Odd squares are one modulo eight;
+with j=1..5 only (j,epsilon)=(3,+1),(5,-1) survive.
+
+For j3, (3B-1)(3B+1) is divisible by 2^13. Both factors are positive
+even integers with gcd two. One therefore has valuation at least 12 and
+must be at least 4096, contradicting their upper bound 382.
+For j5, 15B^2+1=m*8192, and the safe range 8<=m<=29 with reduction
+modulo 15 gives m=8 or 23. The resulting values 4369 and 12561 are
+strictly between 66^2/67^2 and 112^2/113^2, respectively.
+
+If A is odd, 3j=epsilon*t modulo eight gives exactly the six cases
+listed in the source. The independent 40-combination check confirms this
+tiny parity table. Their exclusions are algebraically valid:
+  (1,3,+): invert three modulo 32768 to get A^2=1;
+  (2,2,-): divide by two to get 3A^2=-1 modulo 16384;
+  (3,1,+): get (3A)^2=1 modulo 32768;
+  (4,4,+/-): divide by four to get 3A^2=+/-1 modulo 8192;
+  (5,1,-): get 15A^2+1=m*32768.
+The j2 and j4 equations fail modulo eight. The j1 and j3 products have
+positive even gcd-two factors and would need a factor at least 16384;
+their maxima are 256 and 766. The j5 range 8..29 leaves m=17 modulo
+15, giving 37137, strictly between 192^2 and 193^2. All are excluded.
+
+7. q17: all remaining cases
+
+Here t=1 and the valid modulus is 8192. Parity forces A and j odd.
+Modulo eight with j<=7 leaves precisely (j,epsilon)=(3,+1),(5,-1).
+For j3 the positive gcd-two factors 3A-1 and 3A+1 would require a
+factor at least 4096, contradicting the upper bound 574.
+For j5, 15A^2+1=m*8192. The loose published range 30..67 is safe
+(the tighter integer range is 31..66). Reduction modulo 15 leaves
+m=38 or 53. Their values 20753 and 28945 lie strictly between
+144^2/145^2 and 170^2/171^2. Both fail. The loose endpoints do not
+omit any case or create a false exclusion.
+
+8. Limited executable checks and limits
+
+The successful independent run checked 21 fixed scale codes near encoding
+and proof boundaries, and 143 explicitly recorded selected (a,x) pairs at
+p53. These include zero x, x=a, nearby codes, exponent-field boundaries,
+and the known p48 witness. The witness fails at p48 and passes at p53,
+providing a nontrivial negative control for the exact rounding helper.
+The ten brackets, five nonsquares, 40 q16 odd-A parity combinations,
+and 24 other parity combinations were also checked exactly.
+
+These 143 pairs do not establish universal p53 sufficiency. Universal
+coverage in this audit comes from the independently reviewed mathematical
+classification and complete case exclusions, not from the selected pairs.
+No proof assistant was used. This is an independent construction within
+the same language-model/team workflow, not independent human replication.
+
+9. Recommended presentation clarification
+
+Make the next threshold's left-hand binade explicit in the crossing lemma.
+The sentence giving midpoint distance 2^(E-p) is valid on E_S because
+N/D>2^24 makes E+S>=24 and the next threshold cannot skip a binade
+boundary. For much smaller ratios in a more general domain, a separate
+separation argument is needed before using r's exponent for that distance.
+This is a self-containment improvement to the reviewed S53 argument,
+not an identified S53 counterexample or a missing case in its proof.
+
+The proof should continue to label p53 as conservative. Nothing here
+closes sharp p49 sufficiency, the complete normal-scale review, formal
+verification, closest-theory derivability, or novelty.
