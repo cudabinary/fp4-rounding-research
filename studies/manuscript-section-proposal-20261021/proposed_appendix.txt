@@ -1,0 +1,109 @@
+Proposed Appendix A: proof and artifact dependencies
+PROPOSAL ONLY. All statements below restate frozen evidence; no new check ran.
+
+A.1 Contract and standard proof components
+
+The definitions and precision interval are those of proposed Section II.
+Canonical equality includes interval/base and integer probability threshold.
+Zero, exact threshold and saturation cases are handled separately. Tiny
+ratios are separated before using the next boundary's left-binade spacing.
+Dyadic interpolation, nearest-rounding monotonicity, the even-boundary tie
+case and precision monotonicity are standard ingredients. The specific
+remaining obligation is to exclude j*2^(p-E-S)<=D on the coupled domain.
+
+A.2 Normal p45 certificate
+
+Artifact references N1..N5 identify the normal proof, branch certificate,
+candidate list, inverse-free verifier and prior verification receipt.
+N1 sections 2..5 derive the normal q=18/A=128..191 and q=17/A=192..255 classes,
+3D=A*2^q+epsilon, and eta=1[X*2^16<D]. The relation L+J=61+eta at p45
+and Q<=2^(46-J) give the stated t bound. Thus q18 uses J12..15 and q17
+J12..16. Epsilon-zero scales are excluded by exact divisibility.
+
+For epsilon=+/-1, u=L-2q gives the full reconstruction equation
+
+  3X*2^u=t*(A*2^q+epsilon)-3j*A^2.
+
+The complete certificate records 2814 retained J/eta branches from 1600 A,t
+branches. Every admissible j in the supplied residue class is accounted for;
+236 coarse solutions remain. The two with 128<=X<=255 are
+
+ q  A    D          epsilon  t  J   eta  u   j     X
+ 18 142  12408149      -1    4 12    1  14 2277  227
+ 17 239  10442069      -1    5 12    1  16  649  231
+
+Both have actual eta=0, contradicting the required eta=1 branch. The other
+234 solutions violate the normalized-X range. N4 checks coverage and
+residue identities without modular inversion; N5 records its completed
+run. This proposal does not execute N4. I6 is a separate algebra review of
+the bound and supplied eta cases, not an independent enumeration of 236.
+The short certificate-free exclusion remains open.
+
+A.3 Subnormal p49 and implementation independence
+
+S1 sections2..6 use unnormalized D=s*2^149. Its classes are q15/A1..255,
+q16/A128..255 and q17/A128..191, with the appropriate legal BF16 X/v
+ranges. Necessary carry bounds are j<=42/85/127, t<=16/4/1 and safe
+modulus exponents 15/15/13. The complete 4656-branch certificate has one
+coarse survivor q16,A230,D5024427,epsilon+1,t4,j51. Full reconstruction
+forces X=531*2^(15-u), u>=15: X=531 is illegal at u=15 and all later values
+are noninteger. Thus no physical candidate remains. The congruence itself
+does have that solution; a claim of congruence nonexistence would be false.
+
+I1..I5 preserve a separately written direct-j implementation, its first-run
+result, complete small branch summary, freeze identities and comparison.
+It enumerated 4656 coefficient/t branches with 124640 direct congruence
+checks. It independently derived its bounds and reconstructed the same
+survivor in six v/S cases. All old/new branch parameters, survivors and
+reconstructions agree. Prior exposure to the old conclusion was disclosed;
+the new code did not import/copy the prior generator or its output table.
+The 99 epsilon-zero diagnostic congruence hits are separately excluded by
+exact-scale divisibility. They are not physical counterexamples.
+
+The archive-only every-j CSV is 5219160 bytes, with SHA256
+f2cbdc83e343b98f0d94c05bf6246d6ed395d74d32def5b416ae0506c34cc20f.
+It is identified by I4 and remains in the existing v4 delivery; it is not
+copied into this proposal, Git commit or a new upload. I6 concerns normal
+algebra only and must not be described as another normal certificate run.
+
+A.4 Sharpness and composition
+
+W1 and W2 contain the preserved necessity arguments and witness receipts.
+The normal p44 witness a492,x199 has D10310997,j2845 and the identity
+199*2^49+2845=10864811689*10310997. Its gap satisfies
+2845*2^11<=D<2845*2^12. The subnormal p48 witness a242,x221 has
+D2643285,j47 and 221*2^47+47=11766792051*2643285, with
+47*2^15<=D<47*2^16. These existing identities give failure throughout
+p35..44 and p35..48. No identity was recomputed for this document.
+
+Normal p45 sufficiency covers normal p49 by precision monotonicity. Together
+with subnormal p49 sufficiency and exact zero/saturation cases, it proves
+P_B(49), and then p50..64. The p48 witness establishes the declared-range
+uniform lower bound. The larger historical normal/subnormal safety scans
+are preserved corroboration, not dependencies needed by this smaller proof
+route. The earlier p53 correctness claim is not a newly discovered result.
+
+The archived raw-code lexicographic ordering result is distinct from this
+precision minimum: one legal witness suffices for a precision lower bound.
+Neither proves a lower bound for every possible integer/exact FP4 algorithm.
+
+A.5 Provenance and source limitations
+
+evidence_links.json records every referenced file's repository-relative path,
+bytes, SHA256 and proposition/section location, anchored at private-repository
+commit 61cbb3c5bd2d9296e27ef1f91e56971dfbe84d06. T1 is the claim-to-evidence
+audit; T2 records exact obtained Roux/Saiki premises and source identities.
+Roux Theorem 29's direct nearest24 conclusion is not the required b32 floor result.
+Saiki Figure 8's displayed safe chains do not provide a generic RNE->RTZ rule.
+These are direct mapping observations, not whole-framework impossibility
+or publication-novelty results. No proof assistant was executed.
+
+Rump's exact Lemma 4.6 body, assumptions, conclusion and draft/final match
+remain unverified in the current artifact. Historical inspection narratives
+are retained as such. The pinned Lean code's precise named lemmas have not
+been freshly reverified here. The exact missing final-limits report remains
+R4_FINAL_GPU_VALIDATION_AND_PAPER_FREEZE_20261017/04_FINAL_NOVELTY_AND_LIMITATIONS.md;
+the available prior-art delta report is not a substitute.
+
+No new arithmetic, enumeration, native output, performance, statistical or
+model-quality result is introduced by this proposed appendix.

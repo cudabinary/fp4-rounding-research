@@ -1,0 +1,212 @@
+Proposed replacement and insertion text for the FP4 manuscript
+2026-10-21
+PROPOSAL ONLY. No original manuscript or submission file is changed.
+
+Use the placement instructions in revision_guide.txt. Labels P1..P7 are
+editorial identifiers, not final manuscript numbering. Equations and artifact
+references require integration with the eventual venue style. The proposed
+appendix and evidence_links.json supply the proof/artifact dependencies.
+
+[P1] Add to the end of Section II: analytical scope
+
+We retain the executable b32, RN64 reference contract above. To characterize
+its arithmetic margin, we separately consider virtual binary round-to-nearest,
+ties-to-even with p significant bits, denoted R_p, for integer 35<=p<=64 and
+the binary64 exponent range. This family is defined for analysis; native GPU
+kernels with p=45 or p=49 are outside this extension. Its domain consists of
+finite nonnegative BF16
+magnitudes 0<=x<=a, where a is the BF16 group maximum and s=RN32(a/6)
+uses ties-to-even and gradual underflow. The zero group retains the fallback
+2^-42. Sign, Philox addressing, prefix policy, packing and consumer semantics
+are unchanged. Unrelated F32 scales, FTZ, NaNs/infinities and arbitrary F32
+inputs are outside this domain.
+
+For the E2M1 magnitude grid G=(0,1/2,1,3/2,2,3,4,6), define C(y), 0<=y<6,
+as the canonical interval index k together with
+floor(2^32*(y-G[k])/(G[k+1]-G[k])), where G[k]<=y<G[k+1]. Set C(6)=(6,2^32).
+Let C_p(a,x)=C(min(R_p(x/s),6)) and C_exact(a,x)=C(min(x/s,6)). Write
+P_N(p) for C_p=C_exact on all positive normal derived scales, and P_B(p)
+for equality on the full stated domain, including positive subnormal scales
+and the zero case. These predicates concern canonical thresholds and bases,
+not exact real-probability unbiasedness or arbitrary quantizer algorithms.
+
+[P2] Replace the crossing-criterion paragraph in Section III.1
+
+For a nonsaturated ratio r=x/s, let S=33,32,31 for interval widths 1/2,1,2.
+Dyadic interpolation separates a common integer endpoint offset. If
+r*2^S<1/2, monotonic nearest rounding fixes the half-threshold value and
+keeps the result below the first threshold; both thresholds are zero.
+Handle this tiny-ratio case before using r's exponent for midpoint spacing.
+Exact threshold inputs require no correction. For a non-boundary input on
+the remaining path, the next threshold has the same binade immediately to
+its left as r, including an upper power-of-two endpoint. In the stated precision
+range, it is exactly representable with an even significand.
+
+Write r*2^S=N/D with integer N,D>0 on the remaining path. For a positive remainder define
+j=D-(N mod D), Q=ceil(N/D) and E=floor(log2(r)); thus N+j=QD. Upward
+threshold crossing occurs exactly when
+
+  j*2^J<=D,  J=p-E-S.                                      (Draft A)
+
+Equality selects the even boundary. Lower thresholds are fixed by monotonic
+nearest rounding, and crossing an FP4 endpoint would also cross its threshold
+lattice. Exact dyadic interpolation therefore preserves the canonical base
+when crossings are excluded. These are standard separation and rounding
+arguments. At p53, Draft A specializes to the compatibility test used by B;
+its exclusion still requires the actual coupled operand domain.
+
+[P3] Replace only the closing scope paragraph of Section III.2
+
+The preceding normal-scale p53 argument is a restricted-divisor specialization
+of established integer and rounding reasoning; it does not establish a
+maximal valid domain. For derived subnormal scales, D must instead be taken
+in unnormalized F32-subnormal units. Reusing the normal 24-bit significand
+identity unchanged would be invalid. The separate subnormal certificate
+used in the precision-boundary result below accounts for those units and
+all legal coefficient classes. The historical full CPU certificate remains
+preserved corroboration, rather than a new experiment in this extension.
+
+[P4] Insert Section III.4 after the existing complete-certificate discussion
+
+3.4 Sharp boundaries in the virtual quotient-rounding family
+
+Proposition 2 (computer-assisted precision boundaries). Under the contract
+of Section II, for integer 35<=p<=64,
+
+  P_N(p) holds if and only if p>=45;
+  P_B(p) holds if and only if p>=49.
+
+These are uniform precision minima for the specified R_p quotient followed
+by the fixed b32 threshold construction. They are not precision lower bounds
+for every exact FP4 algorithm, and no assertion is made for p<35.
+
+Sufficiency combines analytic reduction with complete small finite
+certificates. For normal scales, write a=A*2^(ea-7), 128<=A<=255. The
+derived normal F32 significand satisfies the inherited relation
+3D=A*2^q+epsilon, where epsilon is in {-1,0,1}, q=18 for A<192 and q=17
+otherwise. Normalizing x gives 128<=X<=255 and the exact binade indicator
+eta=1[X*2^16<D]. At p45, a hypothetical crossing has L+J=61+eta and a
+positive integer t satisfying
+
+  t<(A^2+2^(46-2q))*2^-J.                                  (Draft B)
+
+The resulting normal certificate covers 1600 coefficient/t branches and 2814
+retained J/eta branches. Its 236 residue solutions all fail: 234 reconstruct
+X outside 128..255, and two contradict their assumed eta. The checker
+accounts for every member of each candidate residue class without trusting
+the generator's modular-inverse routine. This replaces the old normal
+representative-set certificate as a necessary dependency of this proof;
+the earlier result itself is retained.
+
+The subnormal p49 argument uses D=s*2^149 and distinct q=15,16,17 classes.
+Its complete 4656-branch certificate leaves one relaxed congruence solution,
+which has no legal BF16 reconstruction. A separately constructed direct-j
+implementation ran once and agreed on every branch and all six
+reconstructions, after 124640 direct congruence checks. The auditor's prior
+knowledge of the earlier conclusion was disclosed: this is implementation
+independence, not a blind replication or proof-assistant verification.
+Normal p45 sufficiency, subnormal p49 sufficiency, zero/saturation handling
+and precision monotonicity give the full p49 statement. The proposed
+Appendix A identifies these separate proof dependencies and their hashes.
+
+Necessity follows from legal counterexamples in the same domain. The normal
+pair with BF16 magnitude codes a=0x01ec,x=0x00c7 fails at p44: its ideal
+and rounded thresholds are 2274877096 and 2274877097. The subnormal pair
+a=0x00f2,x=0x00dd fails at p48, with thresholds 3176857458 and 3176857459.
+The preserved exact identities and crossing criterion extend the failures
+to p35..44 and p35..48 respectively. Their raw-code lexicographic
+minimality is a separate inherited ordering result; a single legal failure,
+not that ordering result, supplies each precision lower bound.
+
+The original correction-removal result at p53 was already established by
+the normal argument and complete CPU evidence. The new result characterizes
+its precision margin and supplies smaller proof dependencies; it is not a
+rediscovery of p53 correctness or a new native performance measurement.
+
+[P5] Replace the first two paragraphs of Section VI
+
+Our rounding tools are established: exact dyadic interpolation, separation
+from representable thresholds, monotonicity and integer quotient/remainder
+analysis. Roux's Theorem 29 [5] assumes an even radix, operands in FLX_p1,
+nonzero denominator, two nearest modes and p2>=2*p1. Admitting the present
+operands to FLX24 gives the direct nearest24 double-rounding identity for
+p2>=48, including 49 and 53. That conclusion is not the fixed b32 threshold
+floor; the direct p1=24 substitution also does not admit p2=45. This
+statement concerns the named theorem's direct use, not non-derivability
+from Roux's entire framework or other mixed-format results.
+
+Saiki et al.'s obtained v1 text [7, Section 5.2, Figure 8] supplies generic safe
+format-containment rules for the displayed equal-directed and round-to-odd
+mode chains, with their padding and non-overflow premises. Our positive
+scaled probability has an RNE intermediate followed by a floor/RTZ target;
+that unrestricted chain is not one of those generic safe rules. Replacing
+legacy RN64 with round-to-odd would require a separate equivalence argument.
+Their semantics-preserving rewrite methodology is prior work, not a new
+framework introduced here. Additional operand invariants may be expressible
+within such frameworks.
+
+Rump's article [6] is relevant prior work, but a premise-level comparison
+with its exact Lemma 4.6 remains unresolved. The exact body, assumptions,
+conclusion and author-draft/final-version correspondence are not currently
+verified. Earlier reading notes report inspection of an author draft and
+pinned Lean source; those historical attestations are not a fresh check of
+the precise lemma bodies in the present artifact. No Lean/Coq execution is
+claimed. We do not infer novelty from unavailable text or from one failed
+direct theorem substitution.
+
+The contract-specific work here is the joint BF16 coefficient, RN32(a/6)
+divisor, b32 lattice and eta-binade exclusion, together with complete finite
+certificates and explicit failure witnesses. Its derivability from all
+closest theory and publication priority remain open. The remaining SR,
+FP4-selection and GPU implementation antecedents discussed below remain
+relevant; differing scale or random-word contracts alone do not establish
+an original algorithm or a universally superior implementation.
+
+[P6] Replace the limitations paragraphs of Section VII, before its conclusion
+
+The p=45 and p=49 statements have a fixed finite-input and virtual-precision scope.
+Their sufficient clauses use analytic reductions and complete finite
+certificates. A short symbolic proof replacing the coefficient exclusions,
+and a proof-assistant development, remain open. The normal p53 analytic
+argument and the sharper computer-assisted boundaries have different proof
+forms. The subnormal independent implementation was not blind and shares
+the written mathematical specification. The full-domain theorem is a
+composition of normal, subnormal and zero/saturation obligations; it is
+neither a mechanically checked CUDA proof nor a maximal-domain theorem.
+
+No native p45/p49 kernel was implemented or measured by this analytical
+extension. The historical CUDA comparisons retain their original scope:
+separate H100 SXM and NVL sessions reported producer-time reductions over
+corrected B of 3.15% and 3.65%. Strong scalar FP64 A-double-prime remains
+faster on the ordinary/model-derived and Gaussian conditions; on the NVL
+core producer comparison, D1 takes 16.81% longer. Repeated synthetic edge
+tensors are a separate fixed condition. The precision theorem adds no
+speedup measurement and does not alter those unfavorable comparisons.
+Temporal-cycle intervals characterize the fixed process/device sessions,
+not repeated rentals or workload families. No new mechanism, achieved
+occupancy, or pure FP64/local-access contribution is established.
+
+Bit-exact finite-word threshold compatibility is not exact real-probability
+unbiasedness, statistical independence of a random stream, or restored BF16
+model quality. BF16 reconstruction, residual addition and application
+behavior require their own evidence. End-to-end LLM acceleration and
+public-library superiority remain unproved. The older 31.43% result used
+another scale/tuning contract and is not combined with these gains.
+
+Exact Rump Lemma 4.6 premises, conclusion and version correspondence remain
+unverified, as do current code-level checks of the historically cited Lean
+lemma bodies. The exact historical final novelty/limitations report has not
+been recovered and is not replaced by a neighboring review. These source
+gaps cannot be counted as evidence of originality. The paper claims no new
+general rounding framework, worldwide firstness or formal verification.
+
+[P7] Replace the final conclusion paragraph of Section VII
+
+Under the specified joint input/scale contract, the final compatibility
+correction is unnecessary at the original p53 setting. The virtual-precision
+extension sharpens this fact to normal p=45 and full-domain p=49 boundaries,
+supported by explicit failure witnesses and small complete computer-assisted
+proofs. Historical native output and timing evidence concerns the original
+implementation and remains separately scoped. The result supports a narrow
+numerical specialization and reproducible boundary characterization, not a
+universally faster quantizer or a new general stochastic-rounding algorithm.

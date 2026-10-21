@@ -1,0 +1,45 @@
+{
+  "schema": "fp4-section-proposal-payload-v1",
+  "files": [
+    {
+      "path": "evidence_links.json",
+      "bytes": 14094,
+      "sha256": "86a85982906d89e80b9ad34356aa4e3564b5da4b7b32513ae8affb32d5c1e39e"
+    },
+    {
+      "path": "proposed_appendix.txt",
+      "bytes": 6073,
+      "sha256": "c47109b4e9a232558d02db32a9038ca05c803720452150b366f805b2acb61081"
+    },
+    {
+      "path": "proposed_sections.txt",
+      "bytes": 12510,
+      "sha256": "8869aa5e4b63b19c38e8007c597bbbcd13d1abebc9daac29fc3ba659becfe2f4"
+    },
+    {
+      "path": "protocol.json",
+      "bytes": 1091,
+      "sha256": "a3beab6405e4a67b9e99524bf590fcb2e7c95711ae7d971c05bf0ea72c16ec0b"
+    },
+    {
+      "path": "README.txt",
+      "bytes": 1958,
+      "sha256": "7b415f1171214cb12ff9ad2073b9202a4cf259074d779ec58c072e80d1a56b00"
+    },
+    {
+      "path": "revision_guide.txt",
+      "bytes": 4416,
+      "sha256": "254c174808984370bf1406b0c7786c3b514f3c4826b5eeadb680a68591e3bc34"
+    },
+    {
+      "path": "verification.json",
+      "bytes": 1216,
+      "sha256": "aded9a4978983491fbe9b6e82d5147c0fc2b7e034bbfd26cd30833428a5daaee"
+    },
+    {
+      "path": "verify_proposal.py",
+      "bytes": 2054,
+      "sha256": "8bcaed048d646ddb9cdab65b6e1ae479db7037892006fcf6f868ac6ca141a25b"
+    }
+  ]
+}

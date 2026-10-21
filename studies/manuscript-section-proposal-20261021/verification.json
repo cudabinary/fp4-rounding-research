@@ -1,0 +1,27 @@
+{
+  "utc": "2026-10-21T07:08:27.831475+00:00",
+  "base_commit": "61cbb3c5bd2d9296e27ef1f91e56971dfbe84d06",
+  "status": "PROPOSAL_ONLY_NOT_APPLIED",
+  "old_tracked_files_byte_unchanged": true,
+  "validation": {
+    "status": "PASS_PROPOSAL_IDENTITIES_AND_REFERENCES",
+    "replacement_blocks": 7,
+    "referenced_evidence_files": 28,
+    "scientific_modules_imported": 0,
+    "scientific_or_integer_checks_executed": 0,
+    "enumeration_runs": 0,
+    "limitation": "Document consistency only; no mathematical proof, numerical result, native execution or layout revalidation"
+  },
+  "scientific_calculations": 0,
+  "scientific_integer_checks": 0,
+  "enumerations": 0,
+  "scientific_programs_executed": [],
+  "GPU_CUDA_kernel_actions": 0,
+  "installs_paid_resources_new_permissions": 0,
+  "Library_B2_uploads": 0,
+  "original_manuscript_PDF_DOCX_edits": 0,
+  "new_DOCX_PDF_outputs": 0,
+  "page_limit_or_layout_validation": "Not performed; separate prose proposal only",
+  "manuscript_source": "Read-only preserved manuscript and completed claim audit; not a newly submitted version",
+  "next_step": "Review wording, notation and space before applying to an isolated revised manuscript copy"
+}

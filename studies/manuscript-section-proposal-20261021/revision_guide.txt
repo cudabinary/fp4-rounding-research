@@ -1,0 +1,49 @@
+Revision guide against the preserved five-page manuscript
+PROPOSAL ONLY: no replacements have been applied.
+
+ID | Existing location / search anchor | Proposed action | Reason | Evidence / OPEN
+R1 | p1 SectionII, after the executable numerical contract | Add P1; retain the original RN64/RNG/packing definitions | Separate virtual-p analysis from the executed reference | N1 section1; T1 C02..C05; no native p45/p49
+R2 | p2 SectionIII.1, 'next lattice boundary' and Eq.(2) paragraph | Use P2; integrate equation numbering later | Make tiny-ratio/left-binade premises explicit and show the p53 specialization | N1 section3; S1 section3; standard rounding facts
+R3 | p2 SectionIII.2 closing scope, 'Subnormal derived scales' | Replace only the closing paragraph with P3; retain the normal p53 Proposition1 and argument | Preserve the older analytic p53 result while distinguishing subnormal units and newer finite certificates | H1; N1; S1; no pure symbolic45/49 claim
+R4 | End of SectionIII.3, before SectionIV | Insert P4 as proposed SectionIII.4, Proposition2 | Add normal45/full49 margins, proof forms and legal failure witnesses without calling p53 newly discovered | N1..N5; S1; I1..I5; W1/W2; certificate-free closure OPEN
+R5 | p5 SectionVI first two paragraphs, beginning 'Roux's Theorem29' and 'Saiki et al.' | Substitute P5; retain other SR/FP4/GPU antecedents with their original scope | Separate the obtained theorem mapping from unresolved Rump/Lean provenance and remove unsupported theory exclusion | T1/T2/T3; exact Rump premises/conclusion/version and full-framework derivability OPEN
+R6 | p5 SectionVII limitations before its last paragraph | Substitute P6 | Align proof status with the extension; retain strong-baseline failures, session scope and quality limits | T1; N5; I2; G1/G2; formal/CUDA/general-workload claims unsupported
+R7 | p5 final SectionVII paragraph, 'Under the specified joint input/scale domain' | Substitute P7 | State the new bounded characterization without overstating implementation or originality | N1/S1/W1; no new speedup or general SR algorithm
+R8 | No existing appendix assigned | Add proposed_appendix.txt as proposed AppendixA or companion theory supplement | Expose normal/subnormal/global dependencies and exact file identities | evidence_links.json; availability/format of any eventual supplement not asserted
+
+Integration notes
+
+Keep the historical532701120-pair result and outside-domain counterexample
+in SectionIII.3; neither is rerun, replaced or contradicted. Retain the
+original p53 normal argument in SectionIII.2. Its conservative analytic
+status differs from the sharper computer-assisted45/49 proposition.
+Use one local exponent convention when typesetting: P4/N1 use d=ex-ea,
+whereas the older SectionIII.2 uses an exponent difference relative to the
+scale. Do not merge those d symbols without their definitions. L+J and eta
+relations in each retained proof must keep their corresponding convention.
+
+P5 deliberately replaces the combined Roux/Rump premise assertion with a
+verified Roux mapping and an explicitly pending Rump comparison. A record
+that a prior reviewer inspected a draft or Lean revision must not become
+a statement that exact current lemma bodies or final-version alignment
+were verified. No access failure is an originality argument.
+
+The other historical sections, figures, output arrays, binary properties,
+timing tables and unfavorable A-double-prime comparisons stay untouched.
+The b37 abstract-lattice result is not inserted into the new small-certificate
+theorem: its older positive certificates have a separate dependency chain.
+No change to Philox word width or addressing is proposed.
+
+This proposal has not been typeset or checked against a page limit. The
+statement and compact proof explanation belong in the theory section; the
+full residue tables and provenance can remain in the companion artifact.
+Do not describe it as a new final/submitted manuscript. Existing reference
+numbers[5],[6],[7] follow the preserved paper and require consistency review
+if the eventual bibliography changes. P1..P7 and DraftA/B are editorial
+labels to remove during integration, not final numbering.
+
+One next step
+
+Review the proposed substitutions together for notation, proof dependencies
+and space, then approve the text for an isolated revised manuscript copy.
+This stage does not apply the text or authorize submission/publication.

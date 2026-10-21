@@ -1,0 +1,15 @@
+{
+  "schema":"fp4-manuscript-section-proposal-v1",
+  "date_kst":"2026-10-21",
+  "base_commit":"61cbb3c5bd2d9296e27ef1f91e56971dfbe84d06",
+  "objective":"Write separate, reviewable English theory, prior-work and limitations replacements using the completed claim-to-evidence audit",
+  "status":"PROPOSAL_ONLY_NOT_APPLIED_TO_MANUSCRIPT",
+  "method":"Read existing text and evidence identities; transcribe and explain frozen propositions without new arithmetic evaluations",
+  "new_scientific_calculations":0,
+  "new_integer_checks":0,
+  "new_enumerations":0,
+  "scientific_programs_to_execute":[],
+  "preservation":"All old source, manuscript, PDF, DOCX, certificates, results and commits remain unchanged; only a fresh study directory is committed",
+  "forbidden":"No original application, submission, publication, GPU/CUDA, kernel, installation, paid resource, Library/B2 upload, new destination/access permission, external human message or other-paper work",
+  "validation":"Reference consistency, file identity, sensitive-data and staged-byte checks only; not a new proof or experiment"
+}

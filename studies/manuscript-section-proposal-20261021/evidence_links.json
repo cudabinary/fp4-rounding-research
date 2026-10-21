@@ -1,0 +1,356 @@
+{
+  "schema": "fp4-manuscript-proposal-evidence-links-v1",
+  "base_commit": "61cbb3c5bd2d9296e27ef1f91e56971dfbe84d06",
+  "artifacts": [
+    {
+      "id": "N1",
+      "path": "studies/normal45-independent-r49-20261021/normal45_proof.txt",
+      "bytes": 9776,
+      "sha256": "853e772c1ee4f542f336537a5b7646ed5334bf0c8d43f4626a4e3dc6db2341d6",
+      "location": "Sections1..8; exact contract, reduction, certificate, lower bound and OPEN",
+      "evidence_status": "Existing completed evidence; no scientific rerun in this proposal"
+    },
+    {
+      "id": "N2",
+      "path": "studies/normal45-independent-r49-20261021/normal45_branch_certificate.csv",
+      "bytes": 183473,
+      "sha256": "5bcdf854c90acb16205aa8ac5e0f57b88957dfbdb7314a15d7a2d7049a2d082f",
+      "location": "Complete normal branch certificate; not executed",
+      "evidence_status": "Existing completed evidence; no scientific rerun in this proposal"
+    },
+    {
+      "id": "N3",
+      "path": "studies/normal45-independent-r49-20261021/normal45_reduction_results.json",
+      "bytes": 60903,
+      "sha256": "6838cb4c9569e526ddac35498454d5183f8d04c2fee7dedcc18bf718afba2256",
+      "location": "All236 normal coarse candidates;234 range and2 eta exclusions",
+      "evidence_status": "Existing completed evidence; no scientific rerun in this proposal"
+    },
+    {
+      "id": "N4",
+      "path": "studies/normal45-independent-r49-20261021/normal45_certificate_verifier.py",
+      "bytes": 3797,
+      "sha256": "676ec1e6d52190fba7fb977ce93ac9fb622fa7793353c9312ef1de8280e980c8",
+      "location": "Existing inverse-free coverage checker; not invoked",
+      "evidence_status": "Existing completed evidence; no scientific rerun in this proposal"
+    },
+    {
+      "id": "N5",
+      "path": "studies/normal45-independent-r49-20261021/verification.json",
+      "bytes": 2750,
+      "sha256": "da2c29b15aae991ef6f74233a8244049c299ead38433d6cfe3cfbe1a2bf12d37",
+      "location": "Previously completed normal certificate and source/identity receipt",
+      "evidence_status": "Existing completed evidence; no scientific rerun in this proposal"
+    },
+    {
+      "id": "N6",
+      "path": "studies/normal45-independent-r49-20261021/fixed_arithmetic_results.json",
+      "bytes": 1506,
+      "sha256": "f6f42926c86160668f6aa60d63ea345c90f3ffc38f0173f638b1851baf7b89ec",
+      "location": "Previously completed fixed scales, normal witness and eta checks; no rerun",
+      "evidence_status": "Existing completed evidence; no scientific rerun in this proposal"
+    },
+    {
+      "id": "S1",
+      "path": "studies/r49-audit-20261021/r49_proof.txt",
+      "bytes": 9094,
+      "sha256": "b0b5607bdd868cd57ef92ffcaeea83856bc3da78789f96bd9d42520e286d67f3",
+      "location": "Sections2..7; subnormal units, legal classes, full reconstruction and composition",
+      "evidence_status": "Existing completed evidence; no scientific rerun in this proposal"
+    },
+    {
+      "id": "I1",
+      "path": "studies/normal45-independent-r49-20261021/independent/direct_j_conditions.py",
+      "bytes": 15922,
+      "sha256": "616d9abd26d9e81b31edb1926ae21456399094607e7862ed4963aee2b00129b2",
+      "location": "Separate direct-j implementation; no execution this phase",
+      "evidence_status": "Existing completed evidence; no scientific rerun in this proposal"
+    },
+    {
+      "id": "I2",
+      "path": "studies/normal45-independent-r49-20261021/independent/independent_results.json",
+      "bytes": 10489,
+      "sha256": "031c1bbc12b2413f4f7db2902cdd9f216dee685fdbf241b5a79f328a0efc6dc3",
+      "location": "Frozen first-run counters, bounds, survivors, six reconstructions and limits",
+      "evidence_status": "Existing completed evidence; no scientific rerun in this proposal"
+    },
+    {
+      "id": "I3",
+      "path": "studies/normal45-independent-r49-20261021/independent/all_coefficient_t_branches.csv",
+      "bytes": 273429,
+      "sha256": "4e28135d795e13c99b17f40ff9c6c156e991f297603512f2249317b5d5083e49",
+      "location": "Complete independent4656-branch summary",
+      "evidence_status": "Existing completed evidence; no scientific rerun in this proposal"
+    },
+    {
+      "id": "I4",
+      "path": "studies/normal45-independent-r49-20261021/independent/freeze_manifest.json",
+      "bytes": 2265,
+      "sha256": "1cee1dbff5b570a9c11621aa1e601d9354dd0bd7df00198248c86dbefcf106fd",
+      "location": "First-run identities including archive-only every-j CSV",
+      "evidence_status": "Existing completed evidence; no scientific rerun in this proposal"
+    },
+    {
+      "id": "I5",
+      "path": "studies/normal45-independent-r49-20261021/r49_comparison_results.json",
+      "bytes": 1860,
+      "sha256": "b35d2d3dc17883213b07d9d4b81cd50bcf8c0200f18d0ec08525e8e068c61e6e",
+      "location": "Frozen whole-branch and reconstruction comparison; no mismatches",
+      "evidence_status": "Existing completed evidence; no scientific rerun in this proposal"
+    },
+    {
+      "id": "I6",
+      "path": "studies/normal45-independent-r49-20261021/independent/normal45_algebra_review.txt",
+      "bytes": 3400,
+      "sha256": "326c10c06399988c997f0c0661b890779285cc86c77b53f416594315d003e9f8",
+      "location": "Refined normal bound and supplied eta exceptions; not independent236 enumeration",
+      "evidence_status": "Existing completed evidence; no scientific rerun in this proposal"
+    },
+    {
+      "id": "W1",
+      "path": "studies/boundary-propositions-20261021/propositions_and_proof.txt",
+      "bytes": 13231,
+      "sha256": "ee088bd396ac581daf2e9ee783ac6f2ffa4d8d0b0e3e08724379ad8f7b8e9b0d",
+      "location": "Propositions1/2, exact p44/p48 witnesses, precision/ordering distinction",
+      "evidence_status": "Existing completed evidence; no scientific rerun in this proposal"
+    },
+    {
+      "id": "W2",
+      "path": "studies/boundary-propositions-20261021/targeted_results.json",
+      "bytes": 40875,
+      "sha256": "1275bb3724a3f9d49c4250d727a2fabc9e97bc383dc672f7b0e2aa7c39f7a39e",
+      "location": "Existing bit-serial witness and prefix receipts; not rerun",
+      "evidence_status": "Existing completed evidence; no scientific rerun in this proposal"
+    },
+    {
+      "id": "T1",
+      "path": "studies/claim-evidence-audit-20261021/claim_to_evidence.txt",
+      "bytes": 16772,
+      "sha256": "57bb840e3b482fa5d69b843b60a9a066fed085322ca7cf676d52dd1ad5c9573d",
+      "location": "ClaimsC01..C10 and source-status corrections",
+      "evidence_status": "Existing completed evidence; no scientific rerun in this proposal"
+    },
+    {
+      "id": "T2",
+      "path": "studies/claim-evidence-audit-20261021/theorem_source_matrix.json",
+      "bytes": 7224,
+      "sha256": "0f75d30c0011227b9e395f04c3e328b1bd30a6a20d1b4663e6df901f4090c0b7",
+      "location": "Exact obtained Roux29/Saiki Figure8 mapping; unresolved Rump/Lean status",
+      "evidence_status": "Existing completed evidence; no scientific rerun in this proposal"
+    },
+    {
+      "id": "T3",
+      "path": "studies/normal45-independent-r49-20261021/source_records.json",
+      "bytes": 1268,
+      "sha256": "881608d00a01b31d21266b2a3bb7117a6d98adff6d1ea0376afe49efa8fb89de",
+      "location": "Preserved primary source identities and missing-source statuses",
+      "evidence_status": "Existing completed evidence; no scientific rerun in this proposal"
+    },
+    {
+      "id": "T4",
+      "path": "studies/claim-evidence-audit-20261021/symbolic_proof_value.txt",
+      "bytes": 5603,
+      "sha256": "26e898b8bca84194c1f9dfda45d07d1090f9f1b3f2175fb1a0f0c685c70e94cf",
+      "location": "Additional-value gates before further symbolic proof work",
+      "evidence_status": "Existing completed evidence; no scientific rerun in this proposal"
+    },
+    {
+      "id": "T5",
+      "path": "studies/normal45-independent-r49-20261021/proof_status.json",
+      "bytes": 2722,
+      "sha256": "57f16bf3e55a704e39023667ac07c3c1df973ec4289e3c6f25d206eb61a708ef",
+      "location": "Current normal45/subnormal49/full49 proof statuses",
+      "evidence_status": "Existing completed evidence; no scientific rerun in this proposal"
+    },
+    {
+      "id": "H1",
+      "path": "results/domain/analytic_lemma_draft.md",
+      "bytes": 6229,
+      "sha256": "cb3140b4e663f7b7b4fa65f65025f3799120bd46e67545233a9cdd2be7bf2067",
+      "location": "Older normal p53 argument retained as such",
+      "evidence_status": "Existing completed evidence; no scientific rerun in this proposal"
+    },
+    {
+      "id": "H2",
+      "path": "docs/historical_03_domain_exactness_results.md",
+      "bytes": 9807,
+      "sha256": "25aa4a8aae964e58257036ab6bf274c17fd17e4a1a409d3ae4c9617350e8cf53",
+      "location": "Historical full CPU result, outside-domain limit and composition",
+      "evidence_status": "Existing completed evidence; no scientific rerun in this proposal"
+    },
+    {
+      "id": "H3",
+      "path": "docs/historical_04_prior_art_delta.md",
+      "bytes": 9715,
+      "sha256": "86b5ddf6f58b7df47f698517f610c963e33d5b43aa8ced790ca3e03a1af2dcae",
+      "location": "Historical Rump/Lean reading attestations, not the missing final-limits report",
+      "evidence_status": "Existing completed evidence; no scientific rerun in this proposal"
+    },
+    {
+      "id": "G1",
+      "path": "results/gpu/independent_performance.csv",
+      "bytes": 11067,
+      "sha256": "079a158c90c34730f57a86fdcb884fb61f9e8296a91d26ec8ce840545e5db25d",
+      "location": "Historical NVL core/general conditions and unfavorable strong-baseline rows",
+      "evidence_status": "Existing completed evidence; no scientific rerun in this proposal"
+    },
+    {
+      "id": "G2",
+      "path": "results/gpu/preregistered_final_protocol.json",
+      "bytes": 2852,
+      "sha256": "19d5fea05687ad0937cd612eff89678aeefb510724f73e1863363ab3eacbff1b",
+      "location": "Historical native cases, session scope, no new experiment",
+      "evidence_status": "Existing completed evidence; no scientific rerun in this proposal"
+    },
+    {
+      "id": "M1",
+      "path": "manuscript/fp4_stochastic_rounding_english_metadata.pdf",
+      "bytes": 663543,
+      "sha256": "c2b78d27c16707045857188f71d245512e4364c22b96104414372bc5288c3d37",
+      "location": "Preserved five-page text; II/III onp1..2, VI/VII onp5; no change",
+      "evidence_status": "Existing completed evidence; no scientific rerun in this proposal"
+    },
+    {
+      "id": "M2",
+      "path": "manuscript/README.md",
+      "bytes": 1187,
+      "sha256": "0d2a421d9ca7a96dc86ebe1b7745e43d337a240c6614f1336b434e375759d57b",
+      "location": "Original-vs-English-metadata derivative identities",
+      "evidence_status": "Existing completed evidence; no scientific rerun in this proposal"
+    },
+    {
+      "id": "A1",
+      "path": "studies/claim-evidence-audit-20261021/payload_manifest.json",
+      "bytes": 1339,
+      "sha256": "e733992aaedcd47c22a2f7764f7fb1dcae4f500935fff871b5ea0e9ab03bfeab",
+      "location": "Identity of the complete preceding claim audit",
+      "evidence_status": "Existing completed evidence; no scientific rerun in this proposal"
+    }
+  ],
+  "modules": [
+    {
+      "id": "P1",
+      "evidence_ids": [
+        "N1",
+        "S1",
+        "M1"
+      ],
+      "scope": "Analytical extension separated from original executable contract"
+    },
+    {
+      "id": "P2",
+      "evidence_ids": [
+        "N1",
+        "S1",
+        "H1"
+      ],
+      "scope": "Restatement of standard crossing and tiny-ratio treatment"
+    },
+    {
+      "id": "P3",
+      "evidence_ids": [
+        "H1",
+        "S1"
+      ],
+      "scope": "Retain older normal53 proof and distinguish unnormalized subnormal units"
+    },
+    {
+      "id": "P4",
+      "evidence_ids": [
+        "N1",
+        "N2",
+        "N3",
+        "N4",
+        "N5",
+        "N6",
+        "S1",
+        "I1",
+        "I2",
+        "I3",
+        "I4",
+        "I5",
+        "I6",
+        "W1",
+        "W2",
+        "T5"
+      ],
+      "scope": "Computer-assisted boundaries and inherited necessity witnesses"
+    },
+    {
+      "id": "P5",
+      "evidence_ids": [
+        "T1",
+        "T2",
+        "T3",
+        "H3"
+      ],
+      "scope": "Actual direct theorem mapping plus exact unknown source premises"
+    },
+    {
+      "id": "P6",
+      "evidence_ids": [
+        "M1",
+        "N5",
+        "I2",
+        "G1",
+        "G2",
+        "T1",
+        "T2",
+        "T3",
+        "T4"
+      ],
+      "scope": "Proof, performance and source limitations retained"
+    },
+    {
+      "id": "P7",
+      "evidence_ids": [
+        "N1",
+        "S1",
+        "W1",
+        "H2",
+        "G1",
+        "M1"
+      ],
+      "scope": "Bounded conclusion without new performance or novelty"
+    },
+    {
+      "id": "AppendixA",
+      "evidence_ids": [
+        "N1",
+        "N2",
+        "N3",
+        "N4",
+        "N5",
+        "N6",
+        "S1",
+        "I1",
+        "I2",
+        "I3",
+        "I4",
+        "I5",
+        "I6",
+        "W1",
+        "W2",
+        "T1",
+        "T2",
+        "T3"
+      ],
+      "scope": "Exact proof dependencies and identities"
+    },
+    {
+      "id": "RevisionGuide",
+      "evidence_ids": [
+        "M1",
+        "M2",
+        "T1",
+        "T2",
+        "T4",
+        "A1"
+      ],
+      "scope": "Placement anchors, notation integration and proposal-only scope"
+    }
+  ],
+  "sources": "Primary-source bytes and exact availability are indexed by T2/T3; this writing phase does not claim a fresh primary-source or Lean-body recheck",
+  "missing_report": "R4_FINAL_GPU_VALIDATION_AND_PAPER_FREEZE_20261017/04_FINAL_NOVELTY_AND_LIMITATIONS.md remains unidentified; H3 is not a substitute",
+  "raw_archive": "Existing v4 retains the independent every-j CSV identified by I4; not copied/uploaded here"
+}
