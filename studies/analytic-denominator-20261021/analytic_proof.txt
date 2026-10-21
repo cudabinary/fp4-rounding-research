@@ -1,0 +1,296 @@
+Analytic denominator reduction and a conservative complete no-carry proof
+2026-10-21
+
+Outcome and scope
+
+This document does NOT close the sharp symbolic p45/p49 sufficiency proof.
+It proves a common divisor/residue reduction, gives analytic precision lower
+bounds from the known witnesses, and supplies a complete elementary argument
+for b32,p53 on the derived-subnormal-scale domain. Combined with the existing
+normal-scale argument, this gives a conservative full-domain p53 sufficient
+condition without the historical 100575-pair subnormal certificate.
+
+The elementary argument uses ten displayed constant integer brackets and five
+displayed nonsquares. These are explicit arithmetic cases in the proof, not a
+hidden input sweep or a large finite certificate. The companion checker only
+recomputes those constants and a few fixed examples. This is a proof draft,
+not proof-assistant verification or a publication-novelty claim.
+
+1. Fixed predicate
+
+Inputs are nonnegative finite BF16 magnitudes 0<=x<=a. For a>0,
+s=RN32(a/6), ties-to-even, gradual underflow. At a=0 use 2^-42.
+The grid is (0,1/2,1,3/2,2,3,4,6), b=32, and virtual RNE-p has the
+binary64 exponent range, 35<=p<=64. No arbitrary F32 inputs/scales or FTZ
+change is admitted. The finite ratio has no working underflow/overflow here.
+
+Indeed the smallest positive a/6 is (2^15/3) F32-subnormal units, so its
+relative subnormal rounding error is less than 1/20000. Normal-scale relative
+rounding error is at most 2^-24. Thus s>a/8 and r<8. Also s<2^126 while
+nonzero x>=2^-133, giving r>2^-259. For p<=64 the smallest needed working
+quantum is at least 2^-322, well inside the binary64 exponent range.
+
+For y in [0,6), select the unique interval [l,h) from that grid and define
+C(y)=(canonical interval index, floor(2^32*(y-l)/(h-l))). At y=6 use
+the last interval index and threshold 2^32. Let P_E(p) assert
+
+ C(min(RNE_p(x/s),6)) = C(min(x/s,6)) for every pair in E.
+
+E_N has a>0 and normal positive F32 s; E_S has subnormal positive F32 s;
+E is their union with the all-zero pair. Sign and packing are unchanged
+composition outside this scalar predicate. This is not a proof of CUDA
+execution or of altered-precision producer binaries.
+
+2. Standard crossing lemma
+
+On a nonsaturated exact interval, S=33,32,31 for widths 1/2,1,2.
+Let r=x/s, E=floor(log2(r)), N/D=r*2^S with integer N,D>0.
+For rem=N mod D nonzero, set j=D-rem and Q=ceil(N/D), so N+j=QD.
+The next threshold boundary is j/(D*2^S) above r. Its binary midpoint
+distance is 2^(E-p). The boundaries are even representable values when
+p>=35. Thus an upward threshold crossing is equivalent to
+
+ j*2^J <= D,  J=p-E-S.                                    (1)
+
+There is no downward floor loss because the lower threshold boundary is
+representable and nearest rounding is monotone. Subtraction of l is exact
+by Sterbenz on each nonzero interval; the zero endpoint and dyadic scaling
+are exact directly. Excluding all threshold crossings also excludes crossing
+an FP4 endpoint, hence preserves the canonical base. Zero and saturation
+are immediate cases. These are established rounding/separation arguments.
+
+For b32, E+S<=33 and Q<=2^34. At p53, J>=20. A positive remainder with
+D<2^24 also forces J<=23. We use those format and lattice facts below.
+
+3. Scale structure, with different units kept explicit
+
+Normal scales. Normalize a=A*2^(ea-7), 128<=A<=255. Write the normal F32
+scale with its 24-bit significand D. Its rounded division by six gives
+
+ 3D=A*2^q+epsilon, epsilon in {-1,0,1},
+ q=18 for A<192, q=17 for A>=192.                          (2)
+
+This is the historical restricted-divisor identity. For normalized BF16 x
+with significand X, its scaled quotient numerator is N=X*2^L, and
+L+J=p+16+eta, eta in {0,1}. If L<0, r*2^S<2^-16; RNE at p>=35 cannot
+reach the first threshold boundary and both floors are zero. Otherwise N is
+an integer and (1) applies with this D. At p53 a carry forces J<=23 and
+therefore L>=46.
+
+Subnormal scales. Use the UNNORMALIZED scale integer D=s*2^149. Here
+the F32 spacing is exactly 2^-149, not the normal 24-bit-significand spacing.
+Positive a codes 1..447 have these exact classes:
+
+ a code             A range       q     a in BF16-minimum units 2^-133
+ 1..255             1..255       15     A
+ 256..383           128..255     16     2A
+ 384..447           128..191     17     4A
+
+In these units a/6 = (A*2^q/3)*2^-149. Consequently the same-shaped identity
+
+ 3D=A*2^q+epsilon, epsilon in {-1,0,1}                       (3)
+
+holds, now for a different integer D and q15/16/17. There is no halfway
+case: the only noninteger fractions have denominator three. In particular
+epsilon=0 exactly when A is divisible by three. At a code 448 the scale
+is exactly 2^-126; this separates all positive subnormal scales.
+
+Write nonzero x=X*2^v*2^-133, with 1<=X<=255 and v in {0,1,2}, restricted
+by x<=a. Then r=X*2^(16+v)/D, N=X*2^L and L=16+v+S>=47. D<2^23.
+Equations (2) and (3) must not be confused: normalizing the subnormal D to
+24 bits would multiply epsilon by a power of two. No such substitution
+is made in this proof.
+
+4. Common residue lemma
+
+Assume N=X*2^L, L>=2q, epsilon=+1 or -1, and a carry candidate (1).
+Then D is odd and gcd(A,D)=1. Since A*2^q == -epsilon (mod D),
+
+ A^2*N == X*2^(L-2q) (mod D).
+
+Putting u=L-2q, the positive integer
+
+ t=(j*A^2+X*2^u)/D                                        (4)
+
+exists. Conversely, if (4) is an integer and 0<j<D, then gcd(A,D)=1
+implies D divides N+j, so this is the same complementary-remainder condition.
+Two useful exact identities and a bound follow:
+
+ 3X*2^u = t*(A*2^q+epsilon)-3j*A^2,                       (5)
+ Q = t*2^(2q)-3j*(A*2^q-epsilon),                         (6)
+ 0<t < 2^(34-2q)+A^2*2^(-J).                             (7)
+
+For (7), substitute X*2^u=(QD-j)/2^(2q) into (4), obtaining
+t=Q/2^(2q)+j*A^2/D-j/(D*2^(2q)), then use (1) and Q<=2^34.
+The strict inequality is useful when bounding the integer t.
+
+Equation (5) gives the safe congruence
+
+ 3j*A^2 == epsilon*t (mod 2^m), m=min(u,q).                (8)
+
+The exponent min(u,q) is essential. For subnormal q15, u is at least 17,
+so reducing to modulus 2^u does NOT eliminate the t*A*2^q term. Copying
+the normal-scale congruence with that larger modulus would be an invalid
+shortcut. The following proof uses only valid fixed moduli.
+
+If epsilon=0, D is divisible by 2^q and N is also divisible by 2^q. Thus
+j must be a positive multiple of 2^q. At p53, (1) gives j<=15 in the
+normal case and j<=7 in the subnormal case. Since q>=15 this is impossible.
+Only epsilon=+/-1 remains.
+
+5. Complete subnormal-scale sufficient condition at p53
+
+Theorem S53. Under the fixed contract, P_E_S(53) holds.
+
+At p53, J>=20. Bounds from (3) and (7), plus the possible L, give:
+
+ q    A range      j upper bound    t possibilities    u lower bound
+ 15   1..255              2             1..16               17
+ 16   128..255            5             1..4                15
+ 17   128..191            7             1                   13
+
+For example q15 has D<3*2^20 and t<16+255^2/2^20<17. The other rows
+follow in the same way: t<4+255^2/2^20<5 and t<1+191^2/2^20<2.
+
+5.1 q15
+
+Use (8) modulo 2^15: 3j*A^2=epsilon*t+k*32768 with 1<=t<=16.
+If j=1, (1) requires D>=2^20 and hence A>=96. Then 1<=k<=5.
+If j=2, (1) requires D>=2^21 and hence A>=192. Then 7<=k<=11.
+
+For each possible k the adjacent integer square brackets below leave a
+distance greater than 16 from 3j*A^2 to k*32768. Monotonicity of A^2 for
+positive A excludes every other integer A as well. The table shows signed
+residuals at the two adjacent A values, not a scan of BF16 input pairs.
+
+ j   k    lower A   upper A    lower residual   upper residual
+ 1   1      104       105          -320              307
+ 1   2      147       148          -709              176
+ 1   3      181       182           -21             1068
+ 1   4      209       210           -29             1228
+ 1   5      233       234          -973              428
+ 2   7      195       196         -1226             1120
+ 2   8      209       210           -58             2456
+ 2   9      221       222         -1866              792
+ 2  10      233       234         -1946              856
+ 2  11      245       246          -298             2648
+
+None can equal epsilon*t, whose absolute value is at most 16. This is a
+complete contradiction for q15.
+
+5.2 q16
+
+Use (8) modulo 2^15, with 1<=j<=5 and 1<=t<=4.
+
+If A is even, t must be divisible by four, so t=4. If A is divisible by
+four, reduction modulo 16 is already contradictory. Otherwise A=2B with
+B odd, 64<=B<=127. Divide by four:
+
+ 3j*B^2 == epsilon (mod 8192).
+
+Since odd squares are one modulo eight, only j=3,epsilon=+1 or
+j=5,epsilon=-1 remain. For j3, (3B-1)(3B+1) must be divisible by 8192.
+The two positive even factors have gcd two; one would have to be at least
+4096, but both are at most 382. For j5, 15B^2+1=m*8192, 8<=m<=29.
+Modulo 15 forces m=8 or 23, giving B^2=4369 or 12561. Neither is a square:
+66^2<4369<67^2 and 112^2<12561<113^2.
+
+If A is odd, reduction modulo eight leaves exactly these cases:
+
+ (j,t,epsilon)=(1,3,+1),(2,2,-1),(3,1,+1),(4,4,+1),
+                (4,4,-1),(5,1,-1).
+
+The first requires A^2==1 (mod 32768); factors A-1,A+1 are too small,
+by the same gcd-two argument. The second requires 3A^2==-1 (mod 16384),
+contradicting modulo eight. The third requires (3A)^2==1 (mod 32768),
+whose factors are at most 766, again too small. Both j4 cases require
+3A^2==+/-1 (mod 8192), also impossible modulo eight. Finally j5 requires
+15A^2+1=m*32768, 8<=m<=29. Modulo 15 leaves m=17, so A^2=37137,
+strictly between 192^2 and 193^2. Thus q16 is excluded.
+
+5.3 q17
+
+Here t=1, j<=7, and (8) holds modulo 8192. A and j must be odd. Modulo
+eight leaves j3,epsilon=+1 or j5,epsilon=-1. The j3 factors 3A-1,3A+1
+are at most 574, so the gcd-two argument again excludes divisibility by
+8192. For j5, 15A^2+1=m*8192 with 30<=m<=67. Modulo 15 leaves only
+m=38 or 53. These give A^2=20753 or 28945, lying strictly between
+144^2 and 145^2, or 170^2 and 171^2, respectively. Both are impossible.
+
+Every possible subnormal branch has now been excluded. This proves S53
+without the old 100575-pair enumeration. The thirteen scale examples in
+verification.json are sanity checks of units and encoding; they are NOT
+the coverage argument. Coverage comes from the classes and the case proof.
+
+6. Normal p53 and the conservative full-domain consequence
+
+The historical normal-scale proof can also be expressed through this lemma.
+For q18, A<=191 and (7) gives t<1/4+191^2/2^20<1, impossible. For q17,
+A<=255, (7) gives t<1+255^2/2^20<2, so t=1, while j<=10.
+Equation (6) gives Q>2^33; hence E+S=33 and J=20. From L+J=69+eta,
+u=L-34 is 15 or 16. Reduce (8) modulo 32768. Parity and modulo eight
+leave j3,epsilon=+1 or j5,epsilon=-1. The j3 factor bound is at most
+766<16384. The j5 case again forces A^2=37137. Both fail, as in the
+existing normal argument. This part is inherited reasoning, not a new result.
+
+Together with S53 and exact zero/saturation cases, the full scalar predicate
+P_E(53) follows analytically. By the standard precision monotonicity lemma,
+P_E(p) also holds for every 53<=p<=64. This is a conservative sufficient
+bound, NOT a proof that the true minimum is 53. The known p48 witness gives
+an analytic lower bound of 49; the exact value 49 still uses the earlier
+finite sufficiency certificate.
+
+7. Analytic necessity at the sharp lower boundaries
+
+The following identities give mathematical precision lower bounds. Their
+lexicographic raw-code minimality, checked in the previous round, is a separate
+statement and is not needed for these lower bounds.
+
+Normal witness: a code 0x01ec, x code 0x00c7. Here A=236,q17,epsilon=-1,
+D=10310997,X=199,S=33,E=0,L=49,j=2845. Equations (4)-(6) give t=16.
+At p44, j*2^11=5826560<=D, but at p45 j*2^12=11653120>D.
+The exact identity is 199*2^49+2845=10864811689*10310997.
+Thus this legal pair fails for every p35..44 and establishes that a uniform
+normal-scale precision in the stated interval must be at least 45. Its
+thresholds at p44 are 2274877096 and 2274877097. The pair's passing at p45
+does not prove uniform sufficiency at p45.
+
+Subnormal witness: a code 0x00f2, x code 0x00dd. Here A=242,q15,
+epsilon=-1,D=2643285,X=221,S=31,E=2,L=47,j=47,t=12.
+At p48, j*2^15=1540096<=D, but at p49 j*2^16=3080192>D.
+The exact identity is 221*2^47+47=11766792051*2643285.
+It fails for every p35..48 and establishes the full-domain uniform lower
+bound 49. Its p48 thresholds are 3176857458 and 3176857459. Again the
+pair passing p49 is not the universal sufficient clause.
+
+8. Exact remaining sharp-sufficiency obligations
+
+R45, normal scales. A carry at p45 would have 12<=J<=23,
+L=61+eta-J>=38, u=L-2q, epsilon=+/-1 and (4)-(5). Bound (7) gives
+t<=9 for q18,A128..191, or t<=16 for q17,A192..255. X is in 128..255.
+The epsilon=0 branch is already impossible: j would be a positive multiple
+of 2^q but (1) bounds it by 4095.
+The unresolved exclusion must retain x<=a, eta=1[X*2^16<D], the exact
+ratio exponent E=45-J-S, and the selected interval width defining S.
+No proof is supplied that these small-t Diophantine conditions have no legal
+solution. The old finite p45 certificate is still needed for sharp sufficiency.
+
+R49, subnormal scales. Keep the three classes of (3). For q15, x has v0
+and 1<=X<=A. For q16, x has v0,X1..255 or v1,X128..A. For q17, x has
+v0,X1..255, v1,X128..255, or v2,X128..A. Put L=16+v+S, u=L-2q,
+J=49-E-S>=16. Bounds give t<=16,4,1 for q15,16,17, respectively, but
+j can now be as large as 42,85,127. The small-j case exclusions of S53
+therefore do not close R49. The full equation (5) and valid modulus (8)
+must be kept; the ten constant brackets above do not cover this larger set.
+The epsilon=0 branch is excluded by j<=127<2^q and divisibility.
+Sharp full-domain p49 sufficiency remains certificate-assisted, not analytic.
+
+9. Interpretation
+
+New: the unnormalized subnormal divisor identity, the common t reduction,
+the complete conservative S53 proof draft, and explicit analytic necessity
+calculations. Inherited: exact p45/p49 finite safety certificates, raw-code
+minimality, and the existing normal p53 argument. Still open: R45/R49,
+proof-assistant checking, complete closest-theory derivability, and publication
+novelty. Known rounding and integer arguments remain the mathematical tools;
+this is not a new generic SR algorithm, hardware claim or faster quantizer.

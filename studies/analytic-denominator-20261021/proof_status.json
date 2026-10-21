@@ -1,0 +1,89 @@
+{
+  "schema": "analytic-proof-status-v1",
+  "checked_utc": "2026-10-21T04:22:41.905210+00:00",
+  "base_commit": "f7ba45359f485eaffd23794604fb9d636546bc56",
+  "contract": "BF16 x<=amax; RN32(amax/6), gradual underflow; b32; p35..64",
+  "proof_units": [
+    {
+      "id": "D",
+      "result": "Normal q17/18 and unnormalized subnormal q15/16/17 divisor structures",
+      "status": "ALGEBRAIC_DERIVATION",
+      "new_part": "Subnormal unit representation"
+    },
+    {
+      "id": "T",
+      "result": "Positive-integer t transform and safe modulus min(u,q)",
+      "status": "ALGEBRAIC_DERIVATION"
+    },
+    {
+      "id": "S53",
+      "result": "All derived subnormal scales have no carry at p53",
+      "status": "COMPLETE_ELEMENTARY_PROOF_DRAFT",
+      "arithmetic_cases": "10 explicit integer brackets, 5 nonsquares and small parity classes",
+      "old_raw_pair_certificate_required": false
+    },
+    {
+      "id": "N53",
+      "result": "Normal-scale p53 no-carry",
+      "status": "INHERITED_ANALYTIC_ARGUMENT_REEXPRESSED"
+    },
+    {
+      "id": "FULL53",
+      "result": "Full magnitude-domain no-carry for p53..64",
+      "status": "CONSERVATIVE_ANALYTIC_SUFFICIENT_CONSEQUENCE"
+    },
+    {
+      "id": "LOWER45",
+      "result": "Normal uniform precision must be at least 45 in p35..64",
+      "status": "EXPLICIT_WITNESS_ANALYTIC_NECESSITY"
+    },
+    {
+      "id": "LOWER49",
+      "result": "Full-domain uniform precision must be at least 49 in p35..64",
+      "status": "EXPLICIT_WITNESS_ANALYTIC_NECESSITY"
+    },
+    {
+      "id": "R45",
+      "result": "Normal p45 sharp universal sufficient clause",
+      "status": "OPEN_ANALYTICALLY_PRIOR_FINITE_CERTIFICATE_RETAINED",
+      "t_bounds": {
+        "q18": 9,
+        "q17": 16
+      }
+    },
+    {
+      "id": "R49",
+      "result": "Full-domain p49 sharp universal sufficient clause",
+      "status": "OPEN_ANALYTICALLY_PRIOR_FINITE_CERTIFICATE_RETAINED",
+      "subnormal_j_bounds": [
+        42,
+        85,
+        127
+      ],
+      "subnormal_t_bounds": [
+        16,
+        4,
+        1
+      ]
+    }
+  ],
+  "verification": {
+    "status": "PASS_EXPLICIT_CONSTANTS_AND_FIXED_WITNESSES",
+    "python_version": "3.12.14",
+    "scale_examples": 13,
+    "integer_brackets": 10,
+    "nonsquares": 5,
+    "fixed_witness_evaluations": 6,
+    "large_scans_rerun": false,
+    "proof_assistant_executed": false
+  },
+  "novelty": "OPEN_STANDARD_ROUNDING_AND_INTEGER_TOOLS",
+  "rump_derivability": "OPEN",
+  "original_scientific_results_modified": false,
+  "library_upload_calls": 0,
+  "duplicate_old_zip_uploads": 0,
+  "b2_transfers": 0,
+  "gpu_executions": 0,
+  "new_optimized_candidates": 0,
+  "next_step": "Prove the explicit R49 larger-j residue exclusion without repeating raw-pair sweeps"
+}

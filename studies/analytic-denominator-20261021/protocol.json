@@ -1,0 +1,13 @@
+{
+  "schema":"analytic-denominator-round-v1",
+  "date_kst":"2026-10-21",
+  "base_commit":"f7ba45359f485eaffd23794604fb9d636546bc56",
+  "contract":"Finite BF16 magnitudes x<=amax; F32 RN-even(amax/6), gradual underflow, fixed E2M1 grid and b32; virtual RNE-p with binary64 exponent range, 35<=p<=64",
+  "primary_objective":"Connect p45/p49 boundaries to analytic denominator and lattice-gap lemmas; leave unresolved exclusions explicitly open",
+  "representation":"Normal scale significand D uses q17/18; subnormal scale uses its unnormalized integer multiple of 2^-149 with q15/16/17; 3D=A*2^q+epsilon",
+  "allowed_checks":"Small integer congruence, algebra identity, explicitly bounded proof-case tables and a few fixed witnesses; no original raw-pair sweep or 78552-pair rerun",
+  "proof_status_rule":"A finite residue check is labelled finite/certificate-assisted and never replaces an unfinished symbolic proof silently",
+  "secondary_target":"If elementary case reasoning closes b32,p53 for derived subnormal scales, state it as a conservative analytic sufficient result, not the exact p49 boundary",
+  "source_rule":"Use already acquired Roux/Saiki primary text; unavailable Rump premises stay unavailable; no TLS/permission bypass",
+  "execution":"CPU arithmetic only; no GPU, compiler, install, optimized quantizer candidate, WFA work, Library duplicate upload or B2 transfer"
+}

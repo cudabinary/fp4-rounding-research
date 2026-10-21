@@ -1,0 +1,60 @@
+Closest-theory premise mapping for this analytic step
+
+Roux 2014, Theorem 29, printed page 140 / PDF page 10
+
+Inspected primary result: radix is even, p2>=2*p1, operands x,y are in
+FLX_p1 with y nonzero, and both the intermediate and final modes are nearest.
+Its conclusion is R_p1(R_p2(x/y))=R_p1(x/y). The statement was re-read from
+the preserved publisher text and compared with the previously viewed page.
+
+Direct p1=24,p2=53 substitution applies to operand membership but concludes
+nearest-24 equivalence, not the current fixed-lattice floor. Calling the
+target FP4's value precision ignores the 32 probability bits. Padding into
+a 34-bit target does not repair the mode mismatch or meet 53>=68.
+The current proof uses standard separation/remainder reasoning plus a
+restricted divisor identity. This does not prove independence from the
+whole Flocq development or other mixed-format lemmas.
+
+Source: https://jfr.unibo.it/article/download/4359/4017/12373
+Publisher PDF SHA256:
+5dda94218f64445a17ab9131d2be7a229d0997d57070de8c06df35d6b4bd7ea0
+Extracted-text SHA256:
+f90fb57b24b197323fed76ae907c2a294f132853348d2c9f1206e9a23cc2f0e0
+
+Saiki et al. 2026, arXiv:2610.09005v1, section 5.2 / Figure 8 and Table 2
+
+The re-read primary text gives safe format-containment rules for equal
+directed modes and RTO-based chains, with the stated precision padding.
+The unrestricted RNE->RTZ chain is among its unsafe pairings. Thus a
+format-only containment rule does not immediately prove the present
+RNE53->floor identity. Switching the reference to RTO would require a
+separate legacy-equivalence argument. The authors already provide a
+semantics-preserving rounding-rewrite methodology; this work does not
+introduce that methodology. Whether additional invariants in their or
+another framework derive the same coupled-domain lemma remains open.
+
+Source: https://arxiv.org/html/2610.09005v1
+Preserved v1 HTML SHA256:
+a24010003cf1b29fd374d47606b371ce6b458ef2cfa0274c8dca5b09e640ae70
+
+Rump, DOI 10.1145/2785965
+
+The exact premises and conclusion of the named Lemma 4.6 were not recovered.
+Earlier author-draft metadata/introduction is not a substitute for that
+lemma or for the published article. Previous official university/publisher
+access ended in TLS failure, timeout or HTTP 403. There is no new access
+attempt or certificate/authorization bypass in this step. Derivability
+from this source remains OPEN; absence of access is not novelty evidence.
+
+Source: https://doi.org/10.1145/2785965
+
+What is additional and what is not
+
+The half-ULP test, dyadic exactness, modular arithmetic and nearest-square
+case arguments are established tools. The scale-unit choice makes the
+specific subnormal BF16/amax-derived divisor tractable; it does not create
+a new generic rounding theory. The conservative p53 correctness conclusion
+was already known from finite evidence. The additional output is its
+explicit subnormal analytic proof draft, together with an exact description
+of the unresolved sharp p45/p49 exclusions. Publication novelty is not
+established by this mapping or by the absence of a direct substitution.
