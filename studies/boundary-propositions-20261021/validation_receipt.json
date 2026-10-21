@@ -1,0 +1,35 @@
+{
+  "checked_utc": "2026-10-21T03:52:52.323322+00:00",
+  "status": "PASS_WITH_EXPLICIT_OPEN_PROOF_OBLIGATIONS",
+  "python_version": "3.12.14",
+  "base_commit": "719fe72340dfc3e07e62f7af2d3d0d87ae0538e2",
+  "preregistered_protocol_and_source_unchanged": true,
+  "original_round_files_and_zip_hashes_unchanged": true,
+  "new_prefix_evaluations": 78552,
+  "new_witness_precision_evaluations": 84,
+  "new_zero_evaluations": 3,
+  "independent_midpoint_checks": 195,
+  "scale_reference_checks": 340,
+  "large_scans_rerun": false,
+  "gpu_executions": 0,
+  "compiler_executions": 0,
+  "library_discovery": {
+    "utc": "2026-10-21T03:49:20.635381+00:00",
+    "operation": "Library read-only tool discovery",
+    "attempts": 1,
+    "uploads_attempted": 0,
+    "status": "SUCCESS",
+    "library_tools": 0,
+    "continuation_available": false
+  },
+  "library_upload_attempts": 0,
+  "library_id": null,
+  "b2_transfers": 0,
+  "remaining_scientific_obligations": [
+    "Compact analytic sufficiency proof",
+    "Proof-assistant verification",
+    "Complete closest-theory derivability audit",
+    "Publication novelty and runtime usefulness"
+  ],
+  "unidentified_final_limits_report": "OPEN_NOT_SUBSTITUTED"
+}

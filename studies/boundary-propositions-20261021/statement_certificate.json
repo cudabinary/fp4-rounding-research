@@ -1,0 +1,132 @@
+{
+  "schema": "certificate-assisted-propositions-v1",
+  "checked_date_kst": "2026-10-21",
+  "base_commit": "719fe72340dfc3e07e62f7af2d3d0d87ae0538e2",
+  "parameter_scope": {
+    "p": [
+      35,
+      64
+    ],
+    "b": [
+      1,
+      40
+    ],
+    "scale": "F32 RN-even(amax/6), gradual underflow; zero fallback 2^-42",
+    "input": "Finite nonnegative BF16 magnitudes x<=amax"
+  },
+  "claims": [
+    {
+      "id": "P1",
+      "predicate": "P_D_N(32,p) iff p>=45",
+      "status": "FINITE_CERTIFICATE_PLUS_WRITTEN_REDUCTION",
+      "necessity": "New minimal normal-scale p44 witness"
+    },
+    {
+      "id": "P2",
+      "predicate": "P_D(32,p) iff p>=49",
+      "status": "FINITE_CERTIFICATE_PLUS_WRITTEN_REDUCTION",
+      "necessity": "New raw-prefix validation of known p48 witness"
+    },
+    {
+      "id": "P3",
+      "predicate": "P_D(b,53) iff b<=37",
+      "status": "FINITE_CERTIFICATE_PLUS_COARSENING_AND_COUNTEREXAMPLE",
+      "necessity": "New raw-prefix validation of known b38 witness and analytic modular derivation"
+    }
+  ],
+  "inherited_positive_cells": [
+    {
+      "id": "F1",
+      "kind": "normal",
+      "b": 32,
+      "p": 45,
+      "pairs": 630848
+    },
+    {
+      "id": "F2",
+      "kind": "subnormal",
+      "b": 32,
+      "p": 49,
+      "pairs": 100575
+    },
+    {
+      "id": "F3",
+      "kind": "normal",
+      "b": 37,
+      "p": 53,
+      "pairs": 712768
+    },
+    {
+      "id": "F4",
+      "kind": "subnormal",
+      "b": 37,
+      "p": 53,
+      "pairs": 100575
+    }
+  ],
+  "inherited_file_identities": [
+    {
+      "path": "direct_validation.json",
+      "bytes": 6794,
+      "sha256": "38a70e8094ff34097dae5252c1776f995b85c081c57e898fcc7c835dd366f544"
+    },
+    {
+      "path": "validate_boundaries.py",
+      "bytes": 4340,
+      "sha256": "c77f05a38158daf835508592e3e4ed1f80a2d83d82c31bd257fe76dfcfa1107e"
+    },
+    {
+      "path": "results.json",
+      "bytes": 28658,
+      "sha256": "479a3d24995c6f427194e12f2bf554b86b8fc20453c507565741af415453faf0"
+    },
+    {
+      "path": "boundary_scan.py",
+      "bytes": 12447,
+      "sha256": "9312da41df2569d8916c0ab02a0f221abaa354a6e68e73cccaa5d5ddbd8fbb85"
+    },
+    {
+      "path": "protocol.json",
+      "bytes": 2368,
+      "sha256": "be84f94976ffe0441fa5ffc94b50e7a761157d0520b9a76cbcccd05e5780444c"
+    },
+    {
+      "path": "payload_manifest.json",
+      "bytes": 2494,
+      "sha256": "1c4ecf9d76038e38ecf8d7afccde30d83b5b97979e057f24975a2e6b2d10f953"
+    }
+  ],
+  "standard_proof_units": [
+    "Exact dyadic interval interpolation",
+    "Representable-boundary half-ULP crossing criterion",
+    "Precision monotonicity in p>=b+3",
+    "Normal-scale exponent normalization and small-ratio tail",
+    "Subnormal-scale code classification",
+    "Probability-lattice coarsening"
+  ],
+  "new_finite_obligations_closed": [
+    "Minimal normal p44 witness in lexicographic magnitude-code order",
+    "Minimal full-domain p48 witness in that order",
+    "Minimal full-domain b38,p53 witness in that order"
+  ],
+  "open_obligations": [
+    "Compact symbolic sufficiency proof for p45/p49 and b37",
+    "Proof-assistant verification of reductions/certificates",
+    "Complete Rump/Flocq derivability audit",
+    "Publication novelty and practical performance"
+  ],
+  "proof_assistant_executed": false,
+  "large_scans_rerun": false,
+  "new_gpu_runs": 0,
+  "exact_missing_final_limits_report": "OPEN_NOT_SUBSTITUTED",
+  "official_source_access": [
+    {
+      "url": "https://tore.tuhh.de/entities/publication/02dea32c-86e8-4416-9f31-edd458a7ca50",
+      "outcome": "TIMEOUT"
+    },
+    {
+      "url": "https://dl.acm.org/doi/10.1145/2785965",
+      "outcome": "HTTP_403_FORBIDDEN"
+    }
+  ]
+}

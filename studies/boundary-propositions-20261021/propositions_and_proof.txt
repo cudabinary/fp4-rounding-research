@@ -1,0 +1,261 @@
+Precision-boundary propositions and proof obligations
+2026-10-21
+
+Status
+
+The propositions below are certificate-assisted mathematical statements about
+a fixed finite input domain. Their positive universal clauses use the sealed
+round-1 finite certificates plus the written reductions given here. The new
+run independently establishes the small failure witnesses and their specified
+lexicographic minimality. This is not a proof-assistant development, a new
+generic double-rounding theorem, or a performance result.
+
+Definitions
+
+B is the set of nonnegative finite BF16 magnitudes, with their monotonically
+ordered unsigned magnitude codes 0..32639. D contains pairs (a,x) in B x B
+with x<=a. Such pairs are realizable by a group containing a, x and zeros.
+For a>0, let s(a)=RN32(a/6), with ties to even and gradual underflow. At a=0
+use the unchanged fallback 2^-42. No independent or arbitrary F32 scale is
+admitted. D_N is the subset with a>0 and normal positive F32 s(a). D_S has positive
+subnormal s(a). The zero group is handled separately.
+
+Let G=(0,1/2,1,3/2,2,3,4,6). For y in [0,6), define the unique k in 0..6
+such that G[k]<=y<G[k+1], and
+
+ C_b(y) = (k, floor(2^b * (y-G[k])/(G[k+1]-G[k]))).
+
+Set C_b(6)=(6,2^b). This is the canonical base and integer threshold, not
+merely equality of output distributions. For r=x/s(a), define
+
+ C_exact(a,x,b) = C_b(min(r,6)),
+ C_rounded(a,x,b,p) = C_b(min(R_p(r),6)),
+
+where R_p is binary round-to-nearest-even with p significand bits and the
+binary64 exponent range. In this study 35<=p<=64. On this domain the ratio
+and all relevant intermediate dyadic interpolation values avoid that range's
+underflow/overflow. FTZ is not enabled. This is virtual arithmetic, not an
+assertion that a native p45 or p49 GPU instruction exists.
+
+P_E(b,p) means equality of these two canonical pairs for every (a,x) in E.
+The original paper's arithmetic setting is P_D(32,53). Values b>32 are
+mathematical probability lattices; no Philox word-address extension is supplied.
+
+Proposition 1: normal-scale precision boundary
+
+For integer p in [35,64],
+
+ P_D_N(32,p) holds if and only if p>=45.
+
+Sufficiency is certificate-assisted: the inherited direct validator has zero
+canonical mismatches at p45 on 630848 normal representative pairs. Lemmas A-C
+below extend those classes to D_N, and precision monotonicity extends p45 to
+the rest of the stated interval. Necessity follows from the legal p44 witness
+below, the same monotonicity lemma, and the new direct evaluations at every
+p=35..44. No minimum for p<35 is asserted.
+
+Proposition 2: full-domain precision boundary
+
+For integer p in [35,64],
+
+ P_D(32,p) holds if and only if p>=49.
+
+The normal part follows from Proposition 1. The inherited direct p49 subnormal
+certificate covers all 100575 pairs with positive a codes 1..447 and x<=a.
+Zero is exact. The p48 witness below establishes necessity throughout 35..48;
+the new bit-serial reference explicitly evaluates those precisions. Thus 49
+is a necessary and sufficient uniform precision threshold in the stated p
+interval for this domain, not for arbitrary F32 inputs or scale policies.
+
+Proposition 3: probability-lattice boundary at fixed p53
+
+For integer b in [1,40],
+
+ P_D(b,53) holds if and only if b<=37.
+
+The positive b37 clause uses the inherited direct certificate: 712768 normal
+representative pairs and all 100575 subnormal pairs pass. Zero is exact.
+For a fixed interval, flooring a finer lattice and then coarsening gives the
+same integer as direct coarsening, so canonical equality at b37 implies it
+at every smaller b. The fixed b38 witness has the same base and a strictly
+larger rounded probability. A difference of at least one lattice unit cannot
+vanish on any finer lattice. It therefore refutes every b in 38..40. This is
+not an application-level claim about changing the original 32-bit RNG policy.
+
+Standard proof units
+
+Lemma A: exact interpolation and the upward-crossing criterion.
+
+For an exact nonsaturated ratio r in one interval, let its width be Delta,
+S=b-log2(Delta), E=floor(log2(r)), and write r=n/d with integers n>=0,d>0.
+Subtracting the lower endpoint and dividing by the dyadic interval width is
+exact after rounding r: nonzero intervals satisfy Sterbenz's ratio condition,
+the zero endpoint is direct, and dyadic scaling is exact. An integer offset
+therefore separates the desired threshold from floor(r*2^S).
+
+For b32 and p>=35, and for b37/b38 at p53, the relevant threshold boundaries
+are representable with even least significand bit. Their scaled absolute
+numerators need at most b+2 bits; p>=b+3 supplies the zero low bit. Monotonicity
+of R_p, fixing each boundary, excludes downward floor loss. A nonzero remainder
+has next-boundary distance
+
+ rem = (n*2^S) mod d,
+ j = d-rem,
+ distance = j/(d*2^S).
+
+The half spacing below that boundary is 2^(E-p), including an upper power-of-two
+boundary. Nearest-even reaches the boundary exactly when
+
+ j * 2^(p-E-S) <= d.                                      (A1)
+
+Equality chooses the even boundary. If rem=0, the ratio is already a lattice
+boundary and no correction is needed. Equation A1 is standard remainder and
+half-ULP reasoning. It is not the new contribution. For fixed b it also proves
+that absence of a crossing at p0 implies absence for every p>=p0 in the stated
+representability region. Crossing an FP4 endpoint would cross one of these
+boundaries; therefore the canonical base is preserved when no crossing occurs.
+
+Lemma B: normal-scale exponent reduction and the small-ratio tail.
+
+Write a=A*2^(ea-7), x=X*2^(ex-7), with A,X in 128..255. Normalized BF16
+subnormals have trailing zeros in the integer significand, so they are included.
+For a normal derived F32 scale, power-of-two rescaling commutes with its RNE
+scale generation without changing the rounded significand. Thus its ratio is
+represented by a'=A/128, x'=X*2^(t-7), t=ex-ea<=0, with X<=A when t=0.
+The representative scale exponent is -3 for A<192 and -2 otherwise.
+
+For each b, the sealed certificate includes every A,X and t in [-(b+6),0]
+subject to that legality condition. These representatives are themselves valid
+BF16 values. The class count is 16384*(b+6)+8256: 630848 at b32 and 712768
+at b37. Zero inputs are exact separately.
+
+For t<-(b+6), the representative scale is at least RN32(1/6)>1/6. Hence
+r<12*2^t<3*2^(-b-4). Even after RNE at the stated precisions it remains below
+the first threshold point 2^(-b-1). Both thresholds are zero. All nonzero
+ratios of the full BF16/derived-scale domain exceed 2^-259 and are below 8;
+p<=64 stays well within binary64's exponent range. This tail does not discard
+an intermediate underflow case or turn arbitrary F32 data into BF16 data.
+
+Lemma C: subnormal-scale classification.
+
+At BF16 code a=448, a/6 is exactly 2^-126, the smallest normal F32 value.
+Monotonicity and the positive minimum scale show that codes 1..447 produce
+positive subnormal F32 scales. Every x code 0..a is explicitly checked there:
+sum(a+1,a=1..447)=100575. The all-zero group adds one separate exact case.
+The normal-scale identity is not reused unchanged for subnormal scales.
+
+Finite proof units reused, not rerun
+
+F1: b32,p45,D_N, 630848 direct evaluations, zero mismatches.
+F2: b32,p49,D_S, 100575 direct evaluations, zero mismatches.
+F3: b37,p53,D_N, 712768 direct evaluations, zero mismatches.
+F4: b37,p53,D_S, 100575 direct evaluations, zero mismatches.
+
+These numbers are in the prior committed direct_validation.json. Its hashes,
+the underlying code and protocol, and the original completion archive identify
+the inherited evidence. The 8.24-million primary gap scan, 3.11-million direct
+pass and original 532701120-pair historical study are not new executions in
+this round. The sufficiency proof remains computer-assisted. A compact
+all-input symbolic derivation of the p45/p49 bounds is OPEN.
+
+New independent witnesses and minimality
+
+The new reference uses normalized binary long division, emitting p significand
+bits followed by guard/sticky and ties-even. It does not use A1 to choose an
+answer. F32 scales use exact encoding bisection and an independent midpoint
+check. All 340 scales agree. Integer nearest-neighbor checks: 195. Prefix
+evaluations: 78552 total. Witness precision checks: 84. Zero checks: 3.
+
+W1, normal-scale D_N, b32,p44:
+a code 0x01ec (492), x code 0x00c7 (199), s bits 0x009d5555 (10310997).
+r=13041664/10310997, interval [1,1.5], canonical base 2.
+Ideal T=2274877096; rounded T=2274877097.
+At word U=2274877096, the selected magnitudes differ.
+The prefix a=448..545, x=0..a includes 48755 pairs and five failures. The
+first is W1. All normal-scale a codes smaller than 492 are in that prefix;
+codes below 448 are outside D_N. Thus W1 is lexicographically minimal in D_N
+by (amax magnitude code,x magnitude code). It fails for p35..44 and the same
+pair passes p45..64. This latter pair-specific pass is not the universal proof.
+
+W2, full D, b32,p48:
+a code 0x00f2 (242), x code 0x00dd (221), s bits 0x00285555 (2643285).
+r=14483456/2643285, interval [4,6], canonical base 6.
+Ideal T=3176857458; rounded T=3176857459.
+At word U=3176857458, the selected magnitudes differ.
+The prefix a=1..242, x=0..a includes 29645 pairs and one failure. With the
+separately checked zero group it includes every preceding pair in D. W2 is
+therefore lexicographically minimal in D under the stated ordering. It fails
+for p35..48 and the pair passes p49..64.
+
+W3, full D, b38,p53:
+a code 0x0010 (16), x code 0x0004 (4), s bits 0x0002aaab (174763).
+Ideal T=274876334082; rounded T=274876334083; canonical base 2.
+An abstract 38-bit word U=274876334082 distinguishes the outputs.
+The prefix a=1..16,x=0..a contains 152 pairs and three failures, all at a=16
+with x=4,8,16. Together with zero it covers every preceding pair, so W3 is
+lexicographically minimal in D for b38,p53. This minimality label concerns
+nonnegative raw magnitude codes, not amplitude under arbitrary rescaling,
+signed bit encodings, RNG seeds, or every possible measure of simplicity.
+
+The prefix endpoints were selected from already-known witnesses. These are
+new minimality verifications, not prospective discovery or independent samples.
+The earlier report intentionally avoided global raw-code minimality; its
+registration and report are unchanged. This round states the ordering and
+supplies the missing complete-prefix argument explicitly.
+
+An analytic explanation of W3
+
+Here a=2^-129, x=2^-131, and in F32 subnormal units
+
+ D=174763=(2^19+1)/3,
+ s=D*2^-149,
+ r=2^18/D.
+
+At b38 the interval is [1,1.5], S=39. As 2^19 == -1 (mod D),
+2^57 == -1 (mod D). The next boundary is
+
+ q/2^39, q=(2^57+1)/D=824632147971,
+
+and its distance above r is 1/(D*2^39). Since E=0 and
+2^(53-39)=16384<=D, it is within the binary64 half-ULP. The boundary is
+exactly representable and even at p53, so R_53(r)=q/2^39. Subtracting the
+lower endpoint yields the one-unit threshold discrepancy in W3.
+
+At b37 the same rounded ratio has scaled value q/2, with q odd. The exact
+scaled value is q/2-1/(2D), so both floors equal (q-1)/2. Both b37 thresholds
+for this pair are 137438167041. This explains this witness's sharp transition;
+it does not by itself prove the universal safe b37 clause, which still uses F3/F4.
+
+Existing theory versus the additional domain result
+
+Exact dyadic interpolation, A1, precision monotonicity, exponent normalization,
+and finite checking are established numerical reasoning. The historical
+normal-scale relation 3D=A*2^q+epsilon, q in {17,18}, epsilon in {-1,0,1},
+is the restricted divisor information used by the original paper's p53 proof.
+The new boundary propositions characterize this same coupled domain more
+sharply; their numerical boundary values have not been derived here from a new
+general symbolic theorem. They are not claims that each domain assumption is
+necessary, that this domain is maximal, or that BF16 alone suffices.
+
+Roux Theorem 29 directly gives a nearest-rounding result when both operands
+and the target belong to its stated same-precision format. Setting p1=24,
+p2=53 does not replace the fixed b32 floor by that target. Saiki v1's generic
+safe mode rules do not include unrestricted RNE->RTZ. These direct mapping
+failures leave an operand-set separation obligation; they do not establish
+independence from the authors' entire frameworks or Flocq. Rump's exact Lemma
+4.6 remains OPEN after official university access timed out and publisher
+access returned 403. No certificate or authorization check was bypassed.
+
+The exact missing historical final-limits report also remains unidentified.
+No neighboring contribution report is substituted. No new GPU implementation,
+native timing, model-quality result, or superiority over A-double-prime is claimed.
+
+Remaining obligations
+
+O1: Compact analytic derivation of the universal p45/p49 and b37 safe clauses.
+O2: Proof-assistant checking of reduction, endpoint composition and finite certificate.
+O3: Complete premise-level derivability audit for Rump/Flocq and other closest work.
+O4: Publication novelty and practical runtime value; both remain unestablished.
+
+The next scientific step is O1, with the certificate and minimal witnesses as
+fixed targets. This is a CPU/mathematical step, not a new GPU candidate campaign.

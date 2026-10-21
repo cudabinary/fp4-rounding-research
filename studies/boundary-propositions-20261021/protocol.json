@@ -1,0 +1,23 @@
+{
+  "schema": "boundary-proposition-round-v1",
+  "date_kst": "2026-10-21",
+  "base_commit": "719fe72340dfc3e07e62f7af2d3d0d87ae0538e2",
+  "input_contract": "Finite nonnegative BF16 magnitude codes, x<=amax; F32 RN-even(amax/6), gradual underflow, zero fallback 2^-42; E2M1 grid unchanged",
+  "working_arithmetic": "Virtual binary RNE-p with binary64 exponent range; theorem precision interval 35<=p<=64",
+  "claims_to_formalize": [
+    "At b32, canonical base/threshold equality on the normal-scale domain holds iff p>=45 within the stated p interval",
+    "At b32, equality on the full magnitude/derived-scale domain holds iff p>=49 within the stated p interval",
+    "At p53, equality on the full domain holds iff b<=37 for integer 1<=b<=40"
+  ],
+  "sufficiency_evidence": "Reuse sealed round-1 finite certificates and written exponent/tail reductions; do not rerun their full scans",
+  "new_independent_reference": "Bit-serial normalized integer long division with guard/sticky/ties-even; independent F32 encoding bisection; no gap inequality for direct decisions",
+  "raw_code_minimality_prefixes": [
+    {"id":"normal-b32-p44", "amax_first":448,"amax_last":545,"x":"0..amax","b":32,"p":44,"scope":"Normal-scale domain; all earlier amax codes have subnormal scales or are zero"},
+    {"id":"full-b32-p48", "amax_first":1,"amax_last":242,"x":"0..amax","b":32,"p":48,"scope":"All lexicographically earlier nonnegative magnitude pairs; zero group checked separately"},
+    {"id":"full-b38-p53", "amax_first":1,"amax_last":16,"x":"0..amax","b":38,"p":53,"scope":"All lexicographically earlier nonnegative magnitude pairs; zero group checked separately"}
+  ],
+  "selection_status": "Prefix endpoints were selected from already-known witnesses. This round verifies minimality, not prospective discovery or independent samples.",
+  "necessity_checks": "Evaluate the selected normal/subnormal b32 witnesses for every p in 35..64, and the b38 witness for p in 41..64; use the old gap lemma only for the written monotonicity proof, not these evaluations",
+  "failure_rules": ["Stop mathematical finalization on a direct-reference or scale-reference disagreement", "Do not promote finite certificates to an all-input symbolic proof or a proof-assistant result", "Do not claim generic F32 applicability, GPU correctness, speed, model quality, or publication novelty", "Do not replace the unresolved exact final-limits report with a nearby report"],
+  "execution_scope": "CPU only, no compiler/install/GPU/optimized quantizer candidate. External disclosure requires the exact approved payload and destination; B2 remains on hold until ledger and cost conditions are satisfied."
+}
